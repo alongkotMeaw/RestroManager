@@ -1,65 +1,72 @@
 package login_page;
 
 import javax.swing.*;
+import java.awt.*;
 
-import java.awt.BorderLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridLayout;
-import java.awt.Insets;
-import java.beans.JavaBean;
-
-public class LayoutLogin {
+public class LayoutLogin extends JFrame {
 
     JButton button_submit;
-    JTextField inputTextField_username, inpuTextField_password;
+    JTextField inputTextField_username, inputTextField_password;
 
     public LayoutLogin() {
-        JFrame mainFrame = new JFrame("Login Page");
-        mainFrame.setSize(750, 500);
-        mainFrame.setLocationRelativeTo(null); // set log in frame center of monitor
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setTitle("Login page");
+        setSize(750, 500);
+        setLocationRelativeTo(null); // set log in frame center of monitor
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JLabel text_login_username = new JLabel("username");
-        JLabel text_login_password = new JLabel("password");
-        button_submit = new JButton("submit");
+        // Create components
+        JLabel text_login_username = new JLabel("Username:");
+        JLabel text_login_password = new JLabel("Password:");
+        button_submit = new JButton("Submit");
         inputTextField_username = new JTextField(16);
-        inpuTextField_password = new JTextField(16);
+        inputTextField_password = new JTextField(16);
 
-        // add and set position to frame
-        JPanel panel = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5, 5, 5, 5); // Padding around components
-        gbc.anchor = GridBagConstraints.WEST; // Align components to the west
+        // Create a panel with a background image
+        JPanel set_background_JPanel = new JPanel() {
+            private Image backgroundImage = new ImageIcon(
+                    "src/login_page/Matrrial/image.png").getImage();
 
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        panel.add(text_login_username, gbc);
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this); // Draw the image to fill the panel
+            }
+        };
+        set_background_JPanel.setLayout(new GridBagLayout()); // Set layout to the background panel
+        GridBagConstraints con = new GridBagConstraints();
+        // con.insets = new Insets(5, 5, 5, 5); //
 
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        panel.add(inputTextField_username, gbc);
+        // Add username label and text field
+        con.gridx = 0;
+        con.gridy = 0;
+        con.anchor = GridBagConstraints.WEST;
+        set_background_JPanel.add(text_login_username, con);
 
-        // Add password label and field
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        panel.add(text_login_password, gbc);
+        con.gridx = 1;
+        con.gridy = 0;
+        con.anchor = GridBagConstraints.EAST;
+        set_background_JPanel.add(inputTextField_username, con);
 
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        panel.add(inpuTextField_password, gbc);
+        // Add password label and text field
+        con.gridx = 0;
+        con.gridy = 1;
+        con.anchor = GridBagConstraints.WEST;
+        set_background_JPanel.add(text_login_password, con);
+
+        con.gridx = 1;
+        con.gridy = 1;
+        con.anchor = GridBagConstraints.EAST;
+        set_background_JPanel.add(inputTextField_password, con);
 
         // Add login button
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        gbc.anchor = GridBagConstraints.EAST; // Align the button to the east
-        panel.add(button_submit, gbc);
+        con.gridx = 1;
+        con.gridy = 2;
+        con.anchor = GridBagConstraints.EAST;
+        set_background_JPanel.add(button_submit, con);
 
-        mainFrame.add(panel);
+        // Add background panel to the frame
+        add(set_background_JPanel);
 
-        // Add panel to the frame
-        // mainFrame.add(panel);
-
-        mainFrame.setVisible(true);
+        setVisible(true);
     }
 
 }
