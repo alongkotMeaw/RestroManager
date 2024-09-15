@@ -23,19 +23,22 @@ public class LayoutLogin extends JFrame {
 
         // Create a panel with a background image
         JPanel set_background_JPanel = new JPanel() {
-            private Image backgroundImage = new ImageIcon(
-                    "src/login_page/Matrrial/image.png").getImage();
+            private Image backgroundImage;
+            {
+                backgroundImage = new ImageIcon("F:oop_project\\src\\login_page\\Matrrial\\Bg_login.png").getImage();
+            }
 
+            @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this); // Draw the image to fill the panel
+                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
             }
         };
+
         set_background_JPanel.setLayout(new GridBagLayout()); // Set layout to the background panel
         GridBagConstraints con = new GridBagConstraints();
         // con.insets = new Insets(5, 5, 5, 5); //
 
-        // Add username label and text field
         con.gridx = 0;
         con.gridy = 0;
         con.anchor = GridBagConstraints.WEST;
@@ -46,7 +49,6 @@ public class LayoutLogin extends JFrame {
         con.anchor = GridBagConstraints.EAST;
         set_background_JPanel.add(inputTextField_username, con);
 
-        // Add password label and text field
         con.gridx = 0;
         con.gridy = 1;
         con.anchor = GridBagConstraints.WEST;
@@ -57,13 +59,12 @@ public class LayoutLogin extends JFrame {
         con.anchor = GridBagConstraints.EAST;
         set_background_JPanel.add(inputTextField_password, con);
 
-        // Add login button
         con.gridx = 1;
         con.gridy = 2;
         con.anchor = GridBagConstraints.EAST;
         set_background_JPanel.add(button_submit, con);
 
-        // Add background panel to the frame
+        // Add background
         add(set_background_JPanel);
 
         setVisible(true);

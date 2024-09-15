@@ -1,9 +1,8 @@
 package login_page;
 
 public class Main_login {
-    public static void main(String[] args) {
+
+    public Main_login() {
         new login_input(new LayoutLogin());
-
     }
-
 }
