@@ -42,7 +42,7 @@ public class login_input {
 
     public void load_password_file() {
         Properties env = new Properties();
-        String password_path = "F:\\oop_project\\oop_project\\src\\login_page\\Matrrial\\.env";
+        String password_path = "src\\login_page\\Matrrial\\.env";
 
         try (FileInputStream input = new FileInputStream(password_path)) {
             env.load(input);

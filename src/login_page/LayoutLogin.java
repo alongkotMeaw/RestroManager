@@ -25,7 +25,7 @@ public class LayoutLogin extends JFrame {
         JPanel set_background_JPanel = new JPanel() {
             private Image backgroundImage;
             {
-                backgroundImage = new ImageIcon("F:oop_project\\src\\login_page\\Matrrial\\Bg_login.png").getImage();
+                backgroundImage = new ImageIcon("src\\login_page\\Matrrial\\Bg_login.png").getImage();
             }
 
             @Override
