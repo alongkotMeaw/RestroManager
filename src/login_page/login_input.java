@@ -19,7 +19,7 @@ public class login_input {
         this.layoutAction = inputLogin;
         load_password_file(); // call for load
 
-        // Create an ActionListener using a lambda expression
+        
         layoutAction.button_submit.addActionListener(e -> {
             if (e.getSource() == layoutAction.button_submit) {
                 System.out.println("user press sybmit botton");
