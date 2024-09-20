@@ -51,8 +51,6 @@ public class order_layout extends JFrame {
         JPanel menu_panel = new JPanel();
         menu_panel.setLayout(new GridLayout(0, 1));
         // test menu
-        button b1 = new button("d1");
-        menu_pane.add(new button());
 
         //
         // create panel
