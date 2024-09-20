@@ -1,0 +1,9 @@
+Pizza,10
+Burger,2 
+Pasta,3 
+Salad,4 
+Sushi,5 
+Steak,6 
+Noodles,7 
+Rice,8 
+Ice Cream,9
