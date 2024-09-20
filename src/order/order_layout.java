@@ -47,35 +47,21 @@ public class order_layout extends JFrame {
 
         /// end menu ///////////////////////////////
         ////////////////////////// in progress //////////////////////
-        /*
-         * JPanel menu_panel = new JPanel();
-         * menu_panel.setLayout(new GridLayout(0, 1));
-         * 
-         * // create left panel
-         * for (int i = 0; i < 3; i++) {
-         * JPanel leftPanel = new JPanel();
-         * leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
-         * leftPanel.add(new JButton("Button 1 - " + (i + 1)));
-         * leftPanel.setBackground(Color.BLACK);
-         * leftPanel.setPreferredSize(new Dimension(300, 200));
-         * menu_panel.add(leftPanel);
-         * }
-         * 
-         * // creatw right panel
-         * JPanel rightPanel = new JPanel();
-         * rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
-         * rightPanel.add(new JButton("Button 2"));
-         * rightPanel.setBackground(Color.white);
-         * 
-         * // add and set size
-         * add(leftPanel, BorderLayout.WEST);
-         * add(rightPanel, BorderLayout.EAST);
-         * 
-         * // Add panel to JScrollPane
-         * JScrollPane scroll_pane = new JScrollPane(menu_panel);
-         * // Add JScrollPane
-         * add(scroll_pane);// add scrooll
-         */
+
+        JPanel menu_panel = new JPanel();
+        menu_panel.setLayout(new GridLayout(0, 1));
+        // test menu
+        button b1 = new button("d1");
+        menu_pane.add(new button());
+
+        //
+        // create panel
+
+        // Add panel to JScrollPane
+        JScrollPane scroll_pane = new JScrollPane(menu_panel);
+        // Add JScroll
+        add(scroll_pane);
+
         setVisible(true);
     }
 
