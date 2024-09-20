@@ -17,8 +17,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import login_page.Main_login;
-
 public class order_layout extends JFrame {
     public order_layout(String order_titleString) {
         super(order_titleString);
