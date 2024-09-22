@@ -1,4 +1,4 @@
-package test.test;
+package Main_program;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +28,7 @@ public class MenuFrame extends JFrame {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("load Menu file eror");
         }
 
         // ScrollPane เพื่อให้เลื่อนดูรายการได้
@@ -40,24 +41,26 @@ public class MenuFrame extends JFrame {
         JPanel itemPanel = new JPanel();
         itemPanel.setLayout(new BorderLayout()); // ใช้ BorderLayout จัดวางองค์ประกอบ
 
-        // parnel size permenu
+        // ขนาดของ itemPanel
         itemPanel.setPreferredSize(new Dimension(350, 150)); // ขนาด 350x150 พิกเซล
 
         // ส่วนของการแสดงชื่อเมนูและปุ่ม
         JPanel leftPanel = new JPanel();
-        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS)); // จัดองค์ประกอบในแนวตั้ง
+        leftPanel.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.BOTH; // ให้คอมโพเนนต์ใช้พื้นที่ทั้งหมด
 
-        JLabel itemLabel = new JLabel(itemName, JLabel.LEFT); // ชื่อเมนู
+        // ชื่อเมนู
+        JLabel itemLabel = new JLabel(itemName, JLabel.LEFT);
         itemLabel.setFont(new Font("Arial", Font.BOLD, 16)); // ตั้งฟอนต์ของชื่อเมนู
 
+        // จำนวน
         JLabel quantityLabel = new JLabel("Quantity: ");
 
-        // ส่วนของการเพิ่มลดจำนวน
+        // ปุ่มเพิ่มลดจำนวน
         JButton minusButton = new JButton("-");
-        JTextField quantityField = new JTextField("0");
-        quantityField.setPreferredSize(new Dimension(1, 1));
+        JTextField quantityField = new JTextField("0", 3); // เพิ่ม quantityField
         JButton plusButton = new JButton("+");
-        // set
 
         // ปุ่มสั่งซื้อ
         JButton orderButton = new JButton("Order");
@@ -69,17 +72,39 @@ public class MenuFrame extends JFrame {
         imageIcon = new ImageIcon(scaledImage); // แปลง Image กลับเป็น ImageIcon
         JLabel imageLabel = new JLabel(imageIcon); // แสดงรูปภาพสินค้า
 
-        // เพิ่ม component ต่าง ๆ ลงใน leftPanel
-        leftPanel.add(itemLabel); // ชื่อเมนูไว้บนสุด
-        leftPanel.add(quantityLabel);
-        leftPanel.add(minusButton);
-        leftPanel.add(quantityField);
-        leftPanel.add(plusButton);
-        leftPanel.add(orderButton);
+        // เพิ่มคอมโพเนนต์ใน leftPanel
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.gridheight = 3; // รูปภาพใช้พื้นที่ 3 แถว
+        leftPanel.add(imageLabel, gbc);
 
-        // เพิ่ม leftPanel และ imageLabel ลงใน itemPanel
-        itemPanel.add(leftPanel, BorderLayout.CENTER); // จัดวาง leftPanel ไว้ทางซ้าย
-        itemPanel.add(imageLabel, BorderLayout.WEST); // จัดวางรูปภาพไว้ทางขวาสุด
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridheight = 1;
+        leftPanel.add(itemLabel, gbc);
+
+        gbc.gridy = 1;
+        gbc.gridheight = 1;
+        leftPanel.add(quantityLabel, gbc);
+
+        gbc.gridy = 2;
+        gbc.gridheight = 1;
+        leftPanel.add(plusButton, gbc);
+
+        gbc.gridy = 2;
+        gbc.gridx = 4; // ตำแหน่งของปุ่มลดจำนวน
+        leftPanel.add(quantityField, gbc);
+
+        gbc.gridy = 2;
+        gbc.gridx = 5; // ตำแหน่งของปุ่มลดจำนวน
+        leftPanel.add(minusButton, gbc);
+
+        gbc.gridy = 2;
+        gbc.gridx = 7;
+        leftPanel.add(orderButton, gbc);
+
+        itemPanel.add(leftPanel, BorderLayout.CENTER);
+        // set bg
 
         // จัดการกับการกดปุ่มเพิ่มหรือลดจำนวนสินค้า
         minusButton.addActionListener(e -> {

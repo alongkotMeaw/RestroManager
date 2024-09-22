@@ -1,7 +1,7 @@
-Pizza,src\Menu_photo\hfn3-listing.jpg
-Burger,src\Menu_photo\hfn3-listing.jpg
-Pasta,src\Menu_photo\hfn3-listing.jpg
-Salad,src\Menu_photo\hfn3-listing.jpg
+Pizza,src\allFile\Menu_photo\hfn3-listing.jpg
+Burger,src\allFile\Menu_photo\hfn3-listing.jpg
+Pasta,src\allFile\Menu_photo\hfn3-listing.jpg
+Salad,src\allFile\Menu_photo\hfn3-listing.jpg
 Sushi,5 
 Steak,6 
 Noodles,7 
