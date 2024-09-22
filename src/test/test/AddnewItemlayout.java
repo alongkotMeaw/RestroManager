@@ -1,4 +1,4 @@
-package test;
+package test.test;
 
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;
