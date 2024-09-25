@@ -6,7 +6,6 @@ import java.io.*;
 
 public class MenuFrame extends JFrame {
 
-    // Constructor to initialize the main frame
     public MenuFrame() {
         setTitle("Main Frame (Menu)");
         setSize(600, 600);
@@ -14,15 +13,13 @@ public class MenuFrame extends JFrame {
 
         // Create a menu bar
         JMenuBar menuBar = new JMenuBar();
-        setJMenuBar(menuBar); // Set the menu bar
+        setJMenuBar(menuBar);
         JMenu itemMenu = new JMenu("Menu");
         menuBar.add(itemMenu);
 
-        // Panel หลัก
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
-        // อ่านข้อมูลจากไฟล์แล้วสร้าง panel สำหรับสินค้า
         try (BufferedReader br = new BufferedReader(new FileReader("src/allfile/Menu_list.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -37,7 +34,6 @@ public class MenuFrame extends JFrame {
             System.out.println("load Menu file eror");
         }
 
-        // ScrollPane เพื่อให้เลื่อนดูรายการได้
         JScrollPane scrollPane = new JScrollPane(mainPanel);
         add(scrollPane, BorderLayout.CENTER);
     }

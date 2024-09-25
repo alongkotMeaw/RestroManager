@@ -1,4 +1,4 @@
-Pizza,src\allFile\Menu_photo\hfn3-listing.jpg
+พริกไทย,src\allFile\Menu_photo\hfn3-listing.jpg
 Burger,src\allFile\Menu_photo\hfn3-listing.jpg
 Pasta,src\allFile\Menu_photo\hfn3-listing.jpg
 Salad,src\allFile\Menu_photo\hfn3-listing.jpg
