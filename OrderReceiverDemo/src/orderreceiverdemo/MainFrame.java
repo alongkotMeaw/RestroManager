@@ -98,6 +98,7 @@ public class MainFrame extends javax.swing.JFrame {
         setResizable(false);
 
         jScrollPane2.setHorizontalScrollBar(null);
+        jScrollPane2.getVerticalScrollBar().setUnitIncrement(16);
 
         jPanel5.setPreferredSize(new java.awt.Dimension(1000, 150));
 
