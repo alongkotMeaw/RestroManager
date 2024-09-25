@@ -786,6 +786,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        if(Integer.valueOf(jTextField2.getText()) > 0)
+        JOptionPane.showMessageDialog(null, jTextField2.getText() + " x [Menu Name 02] has been added to cart", "", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
@@ -807,6 +809,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton45ActionPerformed
         // TODO add your handling code here:
+        if(Integer.valueOf(jTextField15.getText()) > 0)
+        JOptionPane.showMessageDialog(null, jTextField15.getText() + " x [Menu Name 01] has been added to cart", "", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jButton45ActionPerformed
 
     private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
@@ -828,6 +832,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton48ActionPerformed
         // TODO add your handling code here:
+        if(Integer.valueOf(jTextField16.getText()) > 0)
+        JOptionPane.showMessageDialog(null, jTextField16.getText() + " x [Menu Name 03] has been added to cart", "", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jButton48ActionPerformed
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
@@ -849,6 +855,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton51ActionPerformed
         // TODO add your handling code here:
+        if(Integer.valueOf(jTextField17.getText()) > 0)
+        JOptionPane.showMessageDialog(null, jTextField17.getText() + " x [Menu Name 05] has been added to cart", "", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jButton51ActionPerformed
 
     private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
@@ -870,6 +878,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton54ActionPerformed
         // TODO add your handling code here:
+        if(Integer.valueOf(jTextField18.getText()) > 0)
+        JOptionPane.showMessageDialog(null, jTextField18.getText() + " x [Menu Name 04] has been added to cart", "", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_jButton54ActionPerformed
 
     /**
