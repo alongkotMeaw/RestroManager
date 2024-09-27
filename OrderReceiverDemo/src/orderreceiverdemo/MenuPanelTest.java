@@ -1,24 +1,24 @@
 package orderreceiverdemo;
 
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-import javax.swing.border.Border;
 
 public class MenuPanelTest extends JFrame {
 
     public MenuPanelTest() {
-        setTitle("Order Receiver Demo");
 
-        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+
         for (int i = 0; i < 5; i++) {
-            menu_panel panel = new menu_panel("mama", "200", "past_not_use");
-            add(panel);
+            menu_panel panel = new menu_panel("mama", "200", "past_not_use");// op of panel
+            mainPanel.add(panel);// add main panel of fraim
         }
-        setSize(1000, 1000);
 
+        add(mainPanel);
+        setSize(1000, 1000);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
