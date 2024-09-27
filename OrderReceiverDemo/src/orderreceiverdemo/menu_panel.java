@@ -11,12 +11,18 @@ import javax.swing.JOptionPane;
  * @author meama
  */
 public class menu_panel extends javax.swing.JPanel {
+    private String menu_name;
+    private String menu_prince;
+    private String menu_photopath;
 
     /**
      * Creates new form menu_panel
      */
     public menu_panel(String menu_name, String menu_prince, String menu_photopath) {
-        initComponents(menu_name, menu_prince, menu_photopath);
+        this.menu_name = menu_name;
+        this.menu_prince = menu_prince;
+        this.menu_photopath = menu_photopath;
+        initComponents();
     }
 
     /**
@@ -27,7 +33,7 @@ public class menu_panel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
-    private void initComponents(String menu_name, String menu_prince, String menu_photopath) {
+    private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -151,7 +157,7 @@ public class menu_panel extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         if (Integer.valueOf(jTextField1.getText()) > 0)
-            JOptionPane.showMessageDialog(null, jTextField1.getText() + " x [Menu Name 00] has been added to cart.",
+            JOptionPane.showMessageDialog(null, jTextField1.getText() + " x " + menu_name + " has been added to cart.",
                     "item added", JOptionPane.PLAIN_MESSAGE);
     }// GEN-LAST:event_jButton3ActionPerformed
 
