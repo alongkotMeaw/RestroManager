@@ -14,7 +14,7 @@ import java.io.*;
 /**
  *
  * @author Disc2
- */
+ *////////
 public class MainFrame extends javax.swing.JFrame {
 
         /**
