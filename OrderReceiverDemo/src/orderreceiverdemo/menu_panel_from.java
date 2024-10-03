@@ -6,6 +6,11 @@ package orderreceiverdemo;
 
 import java.awt.Font;
 import java.awt.MediaTracker;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -190,11 +195,29 @@ public class menu_panel_from extends javax.swing.JPanel {
         }// </editor-fold>//GEN-END:initComponents
 
         private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
-                // TODO add your handling code here:
-                if (Integer.valueOf(jTextField1.getText()) > 0)
-                        JOptionPane.showMessageDialog(null,
-                                        jTextField1.getText() + " x " + menu_name + " has been added to cart.",
-                                        "item added", JOptionPane.PLAIN_MESSAGE);
+
+                if (Integer.valueOf(jTextField1.getText()) > 0) {
+                        /*
+                         * try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+                         * new FileWriter("src/restaurant_log/user_order.txt", StandardCharsets.UTF_8),
+                         * StandardCharsets.UTF_8))) {
+                         * 
+                         * writer.write(menu_name + "," + jTextField1.getText());
+                         * writer.close();
+                         * 
+                         * } catch (IOException e) {
+                         * System.out.println("write file eror by" + menu_name);
+                         * e.printStackTrace();
+                         * }
+                         */
+                        // jTextField1.setFont(new Font("Tahoma", Font.PLAIN, 12)); // set thai
+                        JLabel messageLabel = new JLabel(
+                                        menu_name + " x " + jTextField1.getText() + " has been added to cart.");
+                        messageLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
+
+                        // Show the message dialog with the custom label
+                        JOptionPane.showMessageDialog(null, messageLabel, "Item Added", JOptionPane.PLAIN_MESSAGE);
+                }
         }// GEN-LAST:event_jButton3ActionPerformed
 
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
