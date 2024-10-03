@@ -13,7 +13,7 @@ public class MenuPanelTest extends JFrame {
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
         for (int i = 0; i < 5; i++) {
-            menu_panel panel = new menu_panel("mama", "200", "past_not_use");// op of panel
+            menu_panel_from panel = new menu_panel_from("mama", "200", "past_not_use");// op of panel
             mainPanel.add(panel);// add main panel of fraim
         }
 

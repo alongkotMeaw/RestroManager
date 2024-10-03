@@ -1,5 +1,0 @@
-001,500,src\ImageFolder\test.jpg
-002,250,src\ImageFolder\test.jpg
-003,300,src\ImageFolder\test.jpg
-004,350,src\ImageFolder\test.jpg
-005,400,src\ImageFolder\test.jpg
