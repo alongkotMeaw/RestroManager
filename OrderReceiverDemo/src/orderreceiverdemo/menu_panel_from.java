@@ -19,8 +19,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author meama
- */
-public class menu_panel_from extends javax.swing.JPanel {
+ */public class menu_panel_from extends javax.swing.JPanel {
         private String menu_name;
         private String menu_prince;
         private String menu_photopath;
@@ -56,16 +55,17 @@ public class menu_panel_from extends javax.swing.JPanel {
                 ////////// cath menu photo
                 try {
                         // Load the image using the path stored in the string
-                        ImageIcon icon = new ImageIcon(getClass().getResource(menu_photopath));
+                        ImageIcon icon = new ImageIcon(getClass().getResource(
+                                        "C:\\Users\\meama\\source\\repos\\oop_project\\OrderReceiverDemo\\src\\ImageFolder\\image.jpg"));
 
                         // Check if the image was loaded correctly
                         if (icon.getImageLoadStatus() == MediaTracker.ERRORED) {
-                                System.out.println("Image not found at: " + menu_photopath);
+                                System.out.println("Image not found at: " + "src\\ImageFolder\\image.jpg");
                         } else {
                                 jLabel1.setIcon(icon);
                         }
                 } catch (NullPointerException e) {
-                        System.out.println("Resource not found: " + menu_photopath);
+                        System.out.println("Resource not found: " + "src\\ImageFolder\\image.jpg");
                         e.printStackTrace();
                 }
 
