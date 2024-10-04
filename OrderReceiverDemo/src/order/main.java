@@ -65,9 +65,6 @@ public class main extends javax.swing.JFrame {
         choice1 = new java.awt.Choice();
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel14 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jPanel16 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -82,6 +79,9 @@ public class main extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jPanel20 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jPanel21 = new javax.swing.JPanel();
 
         jScrollPane6.setHorizontalScrollBar(null);
 
@@ -99,6 +99,10 @@ public class main extends javax.swing.JFrame {
         jScrollPane6.setViewportView(jPanel15);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        main_menu_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+
+        Menu_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
 
         jScrollPane1.setHorizontalScrollBar(null);
 
@@ -129,7 +133,7 @@ public class main extends javax.swing.JFrame {
             .addComponent(jScrollPane1)
         );
 
-        Menu_panel.addTab("tab2", menu_panel2);
+        Menu_panel.addTab("ของว่าง", menu_panel2);
 
         jScrollPane2.setHorizontalScrollBar(null);
 
@@ -160,7 +164,7 @@ public class main extends javax.swing.JFrame {
             .addComponent(jScrollPane2)
         );
 
-        Menu_panel.addTab("tab3", menu_panel3);
+        Menu_panel.addTab("อาหารจานหลัก", menu_panel3);
 
         jScrollPane3.setHorizontalScrollBar(null);
 
@@ -191,7 +195,7 @@ public class main extends javax.swing.JFrame {
             .addComponent(jScrollPane3)
         );
 
-        Menu_panel.addTab("tab3", menu_panel4);
+        Menu_panel.addTab("อาหารจานเดียว", menu_panel4);
 
         jScrollPane4.setHorizontalScrollBar(null);
 
@@ -222,7 +226,7 @@ public class main extends javax.swing.JFrame {
             .addComponent(jScrollPane4)
         );
 
-        Menu_panel.addTab("tab3", menu_panel5);
+        Menu_panel.addTab("เครื่องดืม", menu_panel5);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -235,7 +239,7 @@ public class main extends javax.swing.JFrame {
             .addGap(0, 394, Short.MAX_VALUE)
         );
 
-        Menu_panel.addTab("tab5", jPanel13);
+        Menu_panel.addTab("ของหวาน", jPanel13);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -251,18 +255,19 @@ public class main extends javax.swing.JFrame {
             .addComponent(Menu_panel, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        main_menu_panel.addTab("MENU", jPanel1);
+        main_menu_panel.addTab("เมนู", jPanel1);
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setText("table num:");
+        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel1.setText("หมายเลขโต๊ะ");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(523, Short.MAX_VALUE)
+                .addContainerGap(505, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(42, 42, 42)
                 .addComponent(choice1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -308,49 +313,12 @@ public class main extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE))
         );
 
-        main_menu_panel.addTab("tab2", jPanel2);
-
-        jScrollPane7.setHorizontalScrollBar(null);
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 678, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
-        );
-
-        jScrollPane7.setViewportView(jPanel16);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        main_menu_panel.addTab("tab3", jPanel3);
+        main_menu_panel.addTab("รถเข็น", jPanel2);
 
         jPanel6.setBackground(new java.awt.Color(51, 102, 255));
 
-        jLabel2.setText("operate menu");
+        jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel2.setText("จัดการเมนู");
 
         jScrollPane8.setHorizontalScrollBar(null);
 
@@ -408,15 +376,20 @@ public class main extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel3.setText("menu_name");
+        jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        jLabel3.setText("ชื่อเมนู");
 
-        jLabel4.setText("operate menu");
+        jLabel4.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel4.setText("เพิ่มเมนู");
 
-        jLabel5.setText("price");
+        jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel5.setText("ราคา");
 
-        jLabel6.setText("chose file/photo");
+        jLabel6.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel6.setText("เลือกรูป");
 
-        jButton1.setText("add");
+        jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jButton1.setText("เพิ่ม");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -498,7 +471,45 @@ public class main extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        main_menu_panel.addTab("tab4", jPanel4);
+        main_menu_panel.addTab("เพิ่ม/ลบ", jPanel4);
+
+        jScrollPane9.setHorizontalScrollBar(null);
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 678, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
+
+        jScrollPane9.setViewportView(jPanel21);
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel20Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 429, Short.MAX_VALUE)
+            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel20Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        main_menu_panel.addTab("สรุปยอด", jPanel20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -578,8 +589,10 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -592,8 +605,8 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTabbedPane main_menu_panel;
