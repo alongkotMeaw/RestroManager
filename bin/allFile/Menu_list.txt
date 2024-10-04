@@ -1,1 +1,0 @@
-menu,price, status o or 1 ,photo path
