@@ -11,7 +11,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import javax.swing.BoxLayout;
+import javax.swing.*;
+
+import com.formdev.flatlaf.FlatLightLaf;
 
 import orderreceiverdemo.menu_panel_from;
 
@@ -214,11 +216,12 @@ public class main extends javax.swing.JFrame {
         // </editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new main().setVisible(true);
-            }
-        });
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+            new main().setVisible(true);
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
