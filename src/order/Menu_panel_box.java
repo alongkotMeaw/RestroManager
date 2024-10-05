@@ -1,5 +1,11 @@
 package order;
 
+import java.io.*;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.awt.*;
+import java.nio.charset.StandardCharsets;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
@@ -11,11 +17,21 @@ package order;
  */
 public class Menu_panel_box extends javax.swing.JPanel {
 
+    private String menu_name;
+    private double menu_price;
+    private String menu_photopath;
+    private String menu_type;
     /**
      * Creates new form Menu_panel_box
      */
-    public Menu_panel_box(String menu_name, double menu_price, String menu_photopath) {
-        initComponents(menu_name, menu_price, menu_photopath);
+    private int puatity = 0;
+
+    public Menu_panel_box(String menu_name, double menu_price, String menu_photopath, String menu_type) {
+        this.menu_name = menu_name;
+        this.menu_price = menu_price;
+        this.menu_photopath = menu_photopath;
+        this.menu_type = menu_type;
+        initComponents();
     }
 
     /**
@@ -27,17 +43,19 @@ public class Menu_panel_box extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
-    private void initComponents(String menu_name, double menu_price, String menu_photopath) {
+    private void initComponents() {
 
         jButton3 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        plus_jButton = new javax.swing.JButton();
+        minus_jButton = new javax.swing.JButton();
+        jLabel_menu_name = new javax.swing.JLabel();
+        jLabel_menu_photo = new javax.swing.JLabel();
+        order_jButton = new javax.swing.JButton();
+        jLabel_menu_price = new javax.swing.JLabel();
+        jLabel_alert = new javax.swing.JLabel();
 
         jButton3.setText("order");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -48,23 +66,55 @@ public class Menu_panel_box extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(680, 160));
 
-        jTextField1.setText("0");
+        jTextField1.setText("" + puatity);
 
-        jButton1.setText("^");
+        plus_jButton.setText("^");
+        plus_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plus_jButtonActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("-");
+        minus_jButton.setText("-");
+        minus_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minus_jButtonActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jLabel1.setText(menu_name);
+        jLabel_menu_name.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel_menu_name.setText(menu_name);
 
-        jLabel2.setBackground(new java.awt.Color(153, 204, 0));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImageFolder/test.jpg"))); // NOI18N
+        try {
+            jLabel_menu_photo.setBackground(new java.awt.Color(153, 204, 0));
 
-        jButton4.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jButton4.setText("ออเดอร์");
+            // Attempt to load the image
+            java.net.URL imgURL = getClass().getResource(menu_photopath);
+            if (imgURL != null) {
+                // jLabel_menu_photo.setIcon(new javax.swing.ImageIcon(imgURL)); // NOI18N
+                // image resize
+                Image originalImage = new ImageIcon(imgURL).getImage();
+                Image resizedImage = originalImage.getScaledInstance(135, 120, Image.SCALE_SMOOTH); // Width: 100px,
+                                                                                                    // Height: 100px
+                jLabel_menu_photo.setIcon(new ImageIcon(resizedImage)); // Set resized image as icon
 
-        jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jLabel3.setText("" + menu_price);
+            } else {
+                System.out.println("Image not found at path: " + menu_photopath);
+            }
+        } catch (Exception e) {
+            System.out.println("Error loading menu photo for " + menu_name + ": " + e.getMessage());
+        }
+
+        order_jButton.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        order_jButton.setText("ออเดอร์");
+        order_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                order_jButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel_menu_price.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel_menu_price.setText("" + menu_price);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -72,27 +122,25 @@ public class Menu_panel_box extends javax.swing.JPanel {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(14, 14, 14)
-                                .addComponent(jLabel2)
+                                .addComponent(jLabel_menu_photo)
                                 .addGap(98, 98, 98)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel1)
+                                                .addComponent(jLabel_menu_name)
                                                 .addGap(30, 30, 30)
-                                                .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jLabel_menu_price))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
+                                                .addComponent(plus_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
+                                                .addComponent(minus_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168,
                                         Short.MAX_VALUE)
-                                .addComponent(jButton4)
+                                .addComponent(order_jButton)
                                 .addGap(59, 59, 59)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,8 +150,8 @@ public class Menu_panel_box extends javax.swing.JPanel {
                                                 .addGap(25, 25, 25)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel1)
-                                                        .addComponent(jLabel3))
+                                                        .addComponent(jLabel_menu_name)
+                                                        .addComponent(jLabel_menu_price))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -111,27 +159,79 @@ public class Menu_panel_box extends javax.swing.JPanel {
                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jButton1)
-                                                        .addComponent(jButton2)
-                                                        .addComponent(jButton4)))
+                                                        .addComponent(plus_jButton)
+                                                        .addComponent(minus_jButton)
+                                                        .addComponent(order_jButton)))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()
-                                                .addComponent(jLabel2)))
+                                                .addComponent(jLabel_menu_photo)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void plus_jButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_plus_jButtonActionPerformed
+        puatity++;
+        jTextField1.setText("" + puatity);
+    }// GEN-LAST:event_plus_jButtonActionPerformed
+
+    private void minus_jButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_minus_jButtonActionPerformed
+        if (puatity > 0) {
+            puatity--;
+            jTextField1.setText("" + puatity);
+        }
+        // TODO add your handling code here:
+    }// GEN-LAST:event_minus_jButtonActionPerformed
+
+    private void order_jButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_order_jButtonActionPerformed
+        /// write to file of cart
+        if (puatity > 0) {
+
+            jLabel_alert.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+            jLabel_alert.setText("คุณสั่ง " + menu_name + " " + puatity);
+            JOptionPane.showMessageDialog(null, jLabel_alert);
+
+            try (BufferedWriter writer = new BufferedWriter(
+                    new FileWriter("src\\restaurant_log\\cart_log\\cart_menu.txt", StandardCharsets.UTF_8))) {
+                System.out.println("user order" + menu_type + ',' + menu_name + ',' + menu_price + ',' + puatity);
+                writer.write(menu_type + ',' + menu_name + ',' + menu_price + ',' + puatity);
+                System.out.println("File written successfully!");
+            } catch (IOException e) {
+                System.out.println("Error writing to file: " + e.getMessage());
+            }
+            // use menu type for select file for write
+            /*
+             * int response = JOptionPane.showConfirmDialog(
+             * null,
+             * "Do you want to proceed with the order?",
+             * "Confirm Order",
+             * JOptionPane.YES_NO_OPTION);
+             * 
+             * if (response == JOptionPane.YES_OPTION) {
+             * // Write to file or perform the order action
+             * // TODO: Add your file writing code here
+             * JOptionPane.showMessageDialog(null, "Order placed successfully!");
+             * } else {
+             * // Handle the case where the user cancels
+             * JOptionPane.showMessageDialog(null, "Order was canceled.");
+             * }
+             */
+        }
+
+        // TODO add your handling code here:
+    }// GEN-LAST:event_order_jButtonActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel_menu_name;
+    private javax.swing.JLabel jLabel_menu_photo;
+    private javax.swing.JLabel jLabel_menu_price;
+    private javax.swing.JLabel jLabel_alert;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton minus_jButton;
+    private javax.swing.JButton order_jButton;
+    private javax.swing.JButton plus_jButton;
     // End of variables declaration//GEN-END:variables
 }

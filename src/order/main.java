@@ -11,13 +11,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.swing.*;
-import order.Menu_panel_box;
+
 import com.formdev.flatlaf.FlatLightLaf;
 
 /**
  *
  * @author meama
  */
+
+import order.*;
+
 public class main extends javax.swing.JFrame {
 
         /**
@@ -38,6 +41,8 @@ public class main extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // <editor-fold defaultstate="collapsed" desc="Generated
         // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
@@ -50,7 +55,7 @@ public class main extends javax.swing.JFrame {
                 snacks_panel2 = new javax.swing.JPanel();
                 snacks_jScrollPane = new javax.swing.JScrollPane();
                 snacks_panel_for_add = new javax.swing.JPanel();
-                panel_box = new javax.swing.JPanel();
+                panel_test = new javax.swing.JPanel();
                 menu_panel3 = new javax.swing.JPanel();
                 maincourse_jScrollPane = new javax.swing.JScrollPane();
                 maincourse_panel_for_add = new javax.swing.JPanel();
@@ -83,6 +88,9 @@ public class main extends javax.swing.JFrame {
                 jButton1 = new javax.swing.JButton();
                 jTextField1 = new javax.swing.JTextField();
                 jTextField2 = new javax.swing.JTextField();
+                jLabel7 = new javax.swing.JLabel();
+                jTextField3 = new javax.swing.JTextField();
+                jPanel1 = new javax.swing.JPanel();
                 main_Summary_panel = new javax.swing.JPanel();
                 Summary_jScrollPane = new javax.swing.JScrollPane();
                 Summary_panel = new javax.swing.JPanel();
@@ -109,22 +117,31 @@ public class main extends javax.swing.JFrame {
                 snacks_jScrollPane.setHorizontalScrollBar(null);
 
                 snacks_panel_for_add.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+                // chode make can read from file
+                snacks_panel_for_add.setLayout(new BoxLayout(snacks_panel_for_add, BoxLayout.Y_AXIS));
                 for (int i = 0; i < 5; i++) {
 
-                        snacks_panel_for_add.add(Menu_panel_box("mama", 500.0, "testpath"));
-
+                        snacks_panel_for_add
+                                        .add(new Menu_panel_box("มาม่า", 500.0, "/ImageFolder/image.jpg", "ของว่าง"));// menu
+                                                                                                                      // poto
+                                                                                                                      // type
+                                                                                                                      // like
+                                                                                                                      // all
+                                                                                                                      // menu
+                                                                                                                      // frae
                 }
+
                 /*
-                 * javax.swing.GroupLayout panel_boxLayout = new
-                 * javax.swing.GroupLayout(panel_box);
-                 * panel_box.setLayout(panel_boxLayout);
-                 * panel_boxLayout.setHorizontalGroup(
-                 * panel_boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.
+                 * javax.swing.GroupLayout panel_testLayout = new
+                 * javax.swing.GroupLayout(panel_test);
+                 * panel_test.setLayout(panel_testLayout);
+                 * panel_testLayout.setHorizontalGroup(
+                 * panel_testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.
                  * LEADING)
                  * .addGap(0, 666, Short.MAX_VALUE)
                  * );
-                 * panel_boxLayout.setVerticalGroup(
-                 * panel_boxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.
+                 * panel_testLayout.setVerticalGroup(
+                 * panel_testLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.
                  * LEADING)
                  * .addGap(0, 100, Short.MAX_VALUE)
                  * );
@@ -135,18 +152,19 @@ public class main extends javax.swing.JFrame {
                  * snacks_panel_for_addLayout.setHorizontalGroup(
                  * snacks_panel_for_addLayout.createParallelGroup(javax.swing.GroupLayout.
                  * Alignment.LEADING)
-                 * .addComponent(panel_box, javax.swing.GroupLayout.DEFAULT_SIZE,
+                 * .addComponent(panel_test, javax.swing.GroupLayout.DEFAULT_SIZE,
                  * javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                  * );
                  * snacks_panel_for_addLayout.setVerticalGroup(
                  * snacks_panel_for_addLayout.createParallelGroup(javax.swing.GroupLayout.
                  * Alignment.LEADING)
                  * .addGroup(snacks_panel_for_addLayout.createSequentialGroup()
-                 * .addComponent(panel_box, javax.swing.GroupLayout.PREFERRED_SIZE,
+                 * .addComponent(panel_test, javax.swing.GroupLayout.PREFERRED_SIZE,
                  * javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                  * .addGap(0, 292, Short.MAX_VALUE))
                  * );
                  */
+
                 snacks_jScrollPane.setViewportView(snacks_panel_for_add);
                 snacks_panel_for_add.getAccessibleContext().setAccessibleName("");
                 snacks_panel_for_add.getAccessibleContext().setAccessibleDescription("");
@@ -494,6 +512,20 @@ public class main extends javax.swing.JFrame {
 
                 jTextField2.setText("jTextField1");
 
+                jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+                jLabel7.setText("เลือกรูป");
+
+                jTextField3.setText("jTextField1");
+
+                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+                jPanel1.setLayout(jPanel1Layout);
+                jPanel1Layout.setHorizontalGroup(
+                                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGap(0, 0, Short.MAX_VALUE));
+                jPanel1Layout.setVerticalGroup(
+                                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGap(0, 119, Short.MAX_VALUE));
+
                 javax.swing.GroupLayout add_menu_panelLayout = new javax.swing.GroupLayout(add_menu_panel);
                 add_menu_panel.setLayout(add_menu_panelLayout);
                 add_menu_panelLayout.setHorizontalGroup(
@@ -508,7 +540,6 @@ public class main extends javax.swing.JFrame {
                                                                                                 .addGroup(add_menu_panelLayout
                                                                                                                 .createParallelGroup(
                                                                                                                                 javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addComponent(jLabel6)
                                                                                                                 .addGroup(add_menu_panelLayout
                                                                                                                                 .createParallelGroup(
                                                                                                                                                 javax.swing.GroupLayout.Alignment.TRAILING,
@@ -532,7 +563,29 @@ public class main extends javax.swing.JFrame {
                                                                                                                                                 .addComponent(jTextField1,
                                                                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                                                                                 167,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                                                .addGroup(add_menu_panelLayout
+                                                                                                                                .createParallelGroup(
+                                                                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                                                                false)
+                                                                                                                                .addGroup(add_menu_panelLayout
+                                                                                                                                                .createSequentialGroup()
+                                                                                                                                                .addComponent(jLabel6)
+                                                                                                                                                .addPreferredGap(
+                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                                                                                .addComponent(jPanel1,
+                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                Short.MAX_VALUE))
+                                                                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                                                                                add_menu_panelLayout
+                                                                                                                                                                .createSequentialGroup()
+                                                                                                                                                                .addComponent(jLabel7)
+                                                                                                                                                                .addGap(18, 18, 18)
+                                                                                                                                                                .addComponent(jTextField3,
+                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                                167,
+                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                                                                 .addGroup(add_menu_panelLayout
                                                                                                 .createSequentialGroup()
                                                                                                 .addGap(110, 110, 110)
@@ -571,12 +624,34 @@ public class main extends javax.swing.JFrame {
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                .addGap(32, 32, 32)
-                                                                .addComponent(jLabel6)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)
+                                                                .addGap(20, 20, 20)
+                                                                .addGroup(add_menu_panelLayout
+                                                                                .createParallelGroup(
+                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                .addComponent(jLabel7)
+                                                                                .addComponent(jTextField3,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                .addGroup(add_menu_panelLayout
+                                                                                .createParallelGroup(
+                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                .addGroup(add_menu_panelLayout
+                                                                                                .createSequentialGroup()
+                                                                                                .addGap(18, 18, 18)
+                                                                                                .addComponent(jLabel6)
+                                                                                                .addPreferredGap(
+                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                Short.MAX_VALUE))
+                                                                                .addGroup(add_menu_panelLayout
+                                                                                                .createSequentialGroup()
+                                                                                                .addGap(27, 27, 27)
+                                                                                                .addComponent(jPanel1,
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                Short.MAX_VALUE)
+                                                                                                .addGap(18, 18, 18)))
                                                                 .addComponent(jButton1)
                                                                 .addGap(67, 67, 67))
                                                 .addGroup(add_menu_panelLayout.createParallelGroup(
@@ -738,12 +813,15 @@ public class main extends javax.swing.JFrame {
         private javax.swing.JLabel jLabel4;
         private javax.swing.JLabel jLabel5;
         private javax.swing.JLabel jLabel6;
+        private javax.swing.JLabel jLabel7;
+        private javax.swing.JPanel jPanel1;
         private javax.swing.JPanel jPanel15;
         private javax.swing.JPanel jPanel17;
         private javax.swing.JScrollPane jScrollPane6;
         private javax.swing.JScrollPane jScrollPane8;
         private javax.swing.JTextField jTextField1;
         private javax.swing.JTextField jTextField2;
+        private javax.swing.JTextField jTextField3;
         private javax.swing.JPanel main_Summary_panel;
         private javax.swing.JPanel main_addremove_panel;
         private javax.swing.JPanel main_cart_panel;
@@ -758,7 +836,7 @@ public class main extends javax.swing.JFrame {
         private javax.swing.JPanel menu_panel6;
         private javax.swing.JScrollPane one_dish_jScrollPane;
         private javax.swing.JPanel one_dish_panel_for_add;
-        private javax.swing.JPanel panel_box;
+        private javax.swing.JPanel panel_test;
         private javax.swing.JScrollPane snacks_jScrollPane;
         private javax.swing.JPanel snacks_panel2;
         private javax.swing.JPanel snacks_panel_for_add;
