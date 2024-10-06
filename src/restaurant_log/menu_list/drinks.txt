@@ -9,4 +9,33 @@
 ต้มจืด,250,1,/ImageFolder/image.jpg
 ต้มโคล้ง,300,1,/ImageFolder/image.jpg
 ต้มซุปเปอร์,44,1,/ImageFolder/image.jpg
+ต้มยำกุ้ง,500,1,/ImageFolder/image.jpg
+ต้มจืด,250,1,/ImageFolder/image.jpg
+ต้มโคล้ง,300,1,/ImageFolder/image.jpg
+ต้มยำกุ้ง,500,1,/ImageFolder/image.jpg
+ต้มจืด,250,1,/ImageFolder/image.jpg
+ต้มโคล้ง,300,1,/ImageFolder/image.jpg
+ต้มซุปเปอร์ ,1,/ImageFolder/image.jpg
+ต้มยำกุ้ง,500,1,/ImageFolder/image.jpg
+ต้มจืด,250,1,/ImageFolder/image.jpg
+ต้มโคล้ง,300,1,/ImageFolder/image.jpg
+ต้มซุปเปอร์,44,1,/ImageFolder/image.jpg
 
+
+
+
+ // call reader for add all menu
+        add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\drinks.txt",
+                drinks_panel_for_add, "drinks");
+
+        add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\maincourse_menu.txt",
+                maincourse_panel_for_add,
+                "maincourse");
+
+        add_Reader_adapter.menu_reader_for_panel_add("src/restaurant_log/menu_list/snack_menu.txt",
+                snacks_panel_for_add, "snack");
+
+        add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\desert_menu.txt",
+                dessert_panel_for_add1, "desert");
+        add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\one_dish_menu.txt",
+                one_dish_panel_for_add, "one_dish");

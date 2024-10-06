@@ -77,6 +77,7 @@ public class main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         main_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+
         main_menu_panel.add(new menu());
         main_panel.addTab("เมนู", main_menu_panel);
 
