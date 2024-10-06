@@ -1,7 +1,0 @@
-ต้มยำกุ้ง,500,1,src\ImageFolder\src\ImageFolder\image.jpg
-ต้มจืด,250,1,src\ImageFolder\image.jpg
-ต้มโคล้ง ,300,1,src\ImageFolder\image.jpg
-ต้มซุปเปอร์ ,1,src\ImageFolder\image.jpg
-ต้มกะทิ,400,1,src\ImageFolder\image.jpg
-
-#menuname/price/status/photopath

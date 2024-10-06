@@ -2,6 +2,9 @@ package order;
 
 import java.io.*;
 import javax.swing.*;
+
+import file_loader.file_writer_to_cart;
+
 import java.awt.image.BufferedImage;
 import java.awt.*;
 import java.nio.charset.StandardCharsets;
@@ -188,15 +191,17 @@ public class Menu_panel_box extends javax.swing.JPanel {
             jLabel_alert.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
             jLabel_alert.setText("คุณสั่ง " + menu_name + " " + puatity);
             JOptionPane.showMessageDialog(null, jLabel_alert);
-
+            /// write file to cart file
             try (BufferedWriter writer = new BufferedWriter(
-                    new FileWriter("src\\restaurant_log\\cart_log\\cart_menu.txt", StandardCharsets.UTF_8))) {
+                    new OutputStreamWriter(new FileOutputStream("src\\restaurant_log\\cart_log\\cart_menu.txt", true),
+                            StandardCharsets.UTF_8))) {
                 System.out.println("user order" + menu_type + ',' + menu_name + ',' + menu_price + ',' + puatity);
-                writer.write(menu_type + ',' + menu_name + ',' + menu_price + ',' + puatity);
+                writer.write(menu_type + ',' + menu_name + ',' + menu_price + ',' + puatity + "\n");
                 System.out.println("File written successfully!");
             } catch (IOException e) {
                 System.out.println("Error writing to file: " + e.getMessage());
             }
+
             // use menu type for select file for write
             /*
              * int response = JOptionPane.showConfirmDialog(
@@ -219,11 +224,13 @@ public class Menu_panel_box extends javax.swing.JPanel {
         // TODO add your handling code here:
     }// GEN-LAST:event_order_jButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//
+        // GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel_menu_name;
     private javax.swing.JLabel jLabel_menu_photo;

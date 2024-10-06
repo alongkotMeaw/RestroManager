@@ -1,0 +1,12 @@
+ต้มยำกุ้ง,500,1,/ImageFolder/image.jpg
+ต้มจืด,250,1,/ImageFolder/image.jpg
+ต้มโคล้ง,300,1,/ImageFolder/image.jpg
+ต้มยำกุ้ง,500,1,/ImageFolder/image.jpg
+ต้มจืด,250,1,/ImageFolder/image.jpg
+ต้มโคล้ง,300,1,/ImageFolder/image.jpg
+ต้มซุปเปอร์ ,1,/ImageFolder/image.jpg
+ต้มยำกุ้ง,500,1,/ImageFolder/image.jpg
+ต้มจืด,250,1,/ImageFolder/image.jpg
+ต้มโคล้ง,300,1,/ImageFolder/image.jpg
+ต้มซุปเปอร์,44,1,/ImageFolder/image.jpg
+

@@ -14,12 +14,13 @@ import javax.swing.*;
 
 import com.formdev.flatlaf.FlatLightLaf;
 
+import file_loader.file_reader_for_add;
+import order.*;
+
 /**
  *
  * @author meama
  */
-
-import order.*;
 
 public class main extends javax.swing.JFrame {
 
@@ -94,6 +95,7 @@ public class main extends javax.swing.JFrame {
                 main_Summary_panel = new javax.swing.JPanel();
                 Summary_jScrollPane = new javax.swing.JScrollPane();
                 Summary_panel = new javax.swing.JPanel();
+                add_Reader_adapter = new file_reader_for_add();
 
                 jScrollPane6.setHorizontalScrollBar(null);
 
@@ -118,18 +120,9 @@ public class main extends javax.swing.JFrame {
 
                 snacks_panel_for_add.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
                 // chode make can read from file
-                snacks_panel_for_add.setLayout(new BoxLayout(snacks_panel_for_add, BoxLayout.Y_AXIS));
-                for (int i = 0; i < 5; i++) {
 
-                        snacks_panel_for_add
-                                        .add(new Menu_panel_box("มาม่า", 500.0, "/ImageFolder/image.jpg", "ของว่าง"));// menu
-                                                                                                                      // poto
-                                                                                                                      // type
-                                                                                                                      // like
-                                                                                                                      // all
-                                                                                                                      // menu
-                                                                                                                      // frae
-                }
+                add_Reader_adapter.menu_reader_for_panel_add("src/restaurant_log/menu_list/snack_menu.txt",
+                                snacks_panel_for_add, "snack");
 
                 /*
                  * javax.swing.GroupLayout panel_testLayout = new
@@ -185,19 +178,27 @@ public class main extends javax.swing.JFrame {
                 Menu_panel.addTab("ของว่าง", snacks_panel2);
 
                 maincourse_jScrollPane.setHorizontalScrollBar(null);
-
-                javax.swing.GroupLayout maincourse_panel_for_addLayout = new javax.swing.GroupLayout(
-                                maincourse_panel_for_add);
-                maincourse_panel_for_add.setLayout(maincourse_panel_for_addLayout);
-                maincourse_panel_for_addLayout.setHorizontalGroup(
-                                maincourse_panel_for_addLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGap(0, 982, Short.MAX_VALUE));
-                maincourse_panel_for_addLayout.setVerticalGroup(
-                                maincourse_panel_for_addLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGap(0, 392, Short.MAX_VALUE));
-
+                // *****************************************************************************************************************************
+                // */
+                add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\maincourse_menu.txt",
+                                maincourse_panel_for_add,
+                                "maincourse");
+                /*
+                 * javax.swing.GroupLayout maincourse_panel_for_addLayout = new
+                 * javax.swing.GroupLayout(
+                 * maincourse_panel_for_add);
+                 * maincourse_panel_for_add.setLayout(maincourse_panel_for_addLayout);
+                 * maincourse_panel_for_addLayout.setHorizontalGroup(
+                 * maincourse_panel_for_addLayout
+                 * .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                 * .addGap(0, 982, Short.MAX_VALUE));
+                 * maincourse_panel_for_addLayout.setVerticalGroup(
+                 * maincourse_panel_for_addLayout
+                 * .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                 * .addGap(0, 392, Short.MAX_VALUE));
+                 */
+                // *****************************************************************************************************************************
+                // */
                 maincourse_jScrollPane.setViewportView(maincourse_panel_for_add);
 
                 javax.swing.GroupLayout menu_panel3Layout = new javax.swing.GroupLayout(menu_panel3);
@@ -217,21 +218,28 @@ public class main extends javax.swing.JFrame {
                                                 .addComponent(maincourse_jScrollPane));
 
                 Menu_panel.addTab("อาหารจานหลัก", menu_panel3);
-
+                ///
                 one_dish_jScrollPane.setHorizontalScrollBar(null);
-
-                javax.swing.GroupLayout one_dish_panel_for_addLayout = new javax.swing.GroupLayout(
-                                one_dish_panel_for_add);
-                one_dish_panel_for_add.setLayout(one_dish_panel_for_addLayout);
-                one_dish_panel_for_addLayout.setHorizontalGroup(
-                                one_dish_panel_for_addLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGap(0, 982, Short.MAX_VALUE));
-                one_dish_panel_for_addLayout.setVerticalGroup(
-                                one_dish_panel_for_addLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGap(0, 392, Short.MAX_VALUE));
-
+                /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\one_dish_menu.txt",
+                                one_dish_panel_for_add, "one_dish");
+                /*
+                 * C:\Users\meama\source\repos\oop_project\src\restaurant_log\menu_list\
+                 * one_dish_menu.txt
+                 * javax.swing.GroupLayout one_dish_panel_for_addLayout = new
+                 * javax.swing.GroupLayout(
+                 * one_dish_panel_for_add);
+                 * one_dish_panel_for_add.setLayout(one_dish_panel_for_addLayout);
+                 * one_dish_panel_for_addLayout.setHorizontalGroup(
+                 * one_dish_panel_for_addLayout
+                 * .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                 * .addGap(0, 982, Short.MAX_VALUE));
+                 * one_dish_panel_for_addLayout.setVerticalGroup(
+                 * one_dish_panel_for_addLayout
+                 * .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                 * .addGap(0, 392, Short.MAX_VALUE));
+                 */
+                //////////////////////////////////////////
                 one_dish_jScrollPane.setViewportView(one_dish_panel_for_add);
 
                 javax.swing.GroupLayout menu_panel4Layout = new javax.swing.GroupLayout(menu_panel4);
@@ -253,18 +261,25 @@ public class main extends javax.swing.JFrame {
                 Menu_panel.addTab("อาหารจานเดียว", menu_panel4);
 
                 drinks_jScrollPane.setHorizontalScrollBar(null);
-
-                javax.swing.GroupLayout drinks_panel_for_addLayout = new javax.swing.GroupLayout(drinks_panel_for_add);
-                drinks_panel_for_add.setLayout(drinks_panel_for_addLayout);
-                drinks_panel_for_addLayout.setHorizontalGroup(
-                                drinks_panel_for_addLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGap(0, 982, Short.MAX_VALUE));
-                drinks_panel_for_addLayout.setVerticalGroup(
-                                drinks_panel_for_addLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGap(0, 392, Short.MAX_VALUE));
-
+                ////////////////////////////////////////////////////////////////////////////////////////////////////
+                add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\drinks.txt",
+                                drinks_panel_for_add, "drinks");
+                /*
+                 * C:\Users\meama\source\repos\oop_project\src\restaurant_log\menu_list\drinks.
+                 * txt
+                 * javax.swing.GroupLayout drinks_panel_for_addLayout = new
+                 * javax.swing.GroupLayout(drinks_panel_for_add);
+                 * drinks_panel_for_add.setLayout(drinks_panel_for_addLayout);
+                 * drinks_panel_for_addLayout.setHorizontalGroup(
+                 * drinks_panel_for_addLayout
+                 * .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                 * .addGap(0, 982, Short.MAX_VALUE));
+                 * drinks_panel_for_addLayout.setVerticalGroup(
+                 * drinks_panel_for_addLayout
+                 * .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                 * .addGap(0, 392, Short.MAX_VALUE));
+                 */
+                //////////////////////////////////////////////////////////////////////////////
                 drinks_jScrollPane.setViewportView(drinks_panel_for_add);
 
                 javax.swing.GroupLayout menu_panel5Layout = new javax.swing.GroupLayout(menu_panel5);
@@ -286,19 +301,26 @@ public class main extends javax.swing.JFrame {
                 Menu_panel.addTab("เครื่องดืม", menu_panel5);
 
                 desert_jScrollPane.setHorizontalScrollBar(null);
-
-                javax.swing.GroupLayout dessert_panel_for_add1Layout = new javax.swing.GroupLayout(
-                                dessert_panel_for_add1);
-                dessert_panel_for_add1.setLayout(dessert_panel_for_add1Layout);
-                dessert_panel_for_add1Layout.setHorizontalGroup(
-                                dessert_panel_for_add1Layout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGap(0, 982, Short.MAX_VALUE));
-                dessert_panel_for_add1Layout.setVerticalGroup(
-                                dessert_panel_for_add1Layout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGap(0, 392, Short.MAX_VALUE));
-
+                ////////////////////////////////////////////////////////////////
+                add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\desert_menu.txt",
+                                dessert_panel_for_add1, "desert");
+                /*
+                 * C:\Users\meama\source\repos\oop_project\src\restaurant_log\menu_list\
+                 * desert_menu.txt
+                 * javax.swing.GroupLayout dessert_panel_for_add1Layout = new
+                 * javax.swing.GroupLayout(
+                 * dessert_panel_for_add1);
+                 * dessert_panel_for_add1.setLayout(dessert_panel_for_add1Layout);
+                 * dessert_panel_for_add1Layout.setHorizontalGroup(
+                 * dessert_panel_for_add1Layout
+                 * .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                 * .addGap(0, 982, Short.MAX_VALUE));
+                 * dessert_panel_for_add1Layout.setVerticalGroup(
+                 * dessert_panel_for_add1Layout
+                 * .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                 * .addGap(0, 392, Short.MAX_VALUE));
+                 */
+                //////////////////////////////////////////////////////////////////////////////////
                 desert_jScrollPane.setViewportView(dessert_panel_for_add1);
 
                 javax.swing.GroupLayout menu_panel6Layout = new javax.swing.GroupLayout(menu_panel6);
@@ -793,6 +815,7 @@ public class main extends javax.swing.JFrame {
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private file_reader_for_add add_Reader_adapter;
         private javax.swing.JTabbedPane Menu_panel;
         private javax.swing.JScrollPane Summary_jScrollPane;
         private javax.swing.JPanel Summary_panel;
