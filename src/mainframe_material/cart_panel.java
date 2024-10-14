@@ -7,6 +7,10 @@ package mainframe_material;
 import java.io.*;
 import javax.swing.*;
 
+import file_loader.file_reader_cart;
+import file_loader.file_reader_for_add;
+import src.file_loader.*;
+
 import java.awt.image.BufferedImage;
 import java.awt.*;
 import java.nio.charset.StandardCharsets;
@@ -31,11 +35,8 @@ public class cart_panel extends javax.swing.JPanel {
          */
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // <editor-fold defaultstate="collapsed" desc="Generated
-        // <editor-fold defaultstate="collapsed" desc="Generated
         // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
-
                 main_cart_panel = new javax.swing.JPanel();
                 cart_top_panel = new javax.swing.JPanel();
                 jLabel1 = new javax.swing.JLabel();
@@ -44,12 +45,15 @@ public class cart_panel extends javax.swing.JPanel {
                 cart_panel_for_add = new javax.swing.JPanel();
 
                 cart_top_panel.setBackground(new java.awt.Color(204, 204, 204));
-
                 jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-                for (int i = 1; i < 20; i++)
-                        cart_choice1.add("" + i);
                 jLabel1.setText("หมายเลขโต๊ะ");
 
+                // เพิ่มรายการให้กับ Choice
+                for (int i = 0; i < 21; i++) {
+                        cart_choice1.add("" + i);
+                }
+
+                // Layout for the top panel
                 javax.swing.GroupLayout cart_top_panelLayout = new javax.swing.GroupLayout(cart_top_panel);
                 cart_top_panel.setLayout(cart_top_panelLayout);
                 cart_top_panelLayout.setHorizontalGroup(
@@ -57,7 +61,7 @@ public class cart_panel extends javax.swing.JPanel {
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
                                                                 cart_top_panelLayout
                                                                                 .createSequentialGroup()
-                                                                                .addContainerGap(517, Short.MAX_VALUE)
+                                                                                .addContainerGap(541, Short.MAX_VALUE)
                                                                                 .addComponent(jLabel1)
                                                                                 .addGap(42, 42, 42)
                                                                                 .addComponent(cart_choice1,
@@ -80,38 +84,30 @@ public class cart_panel extends javax.swing.JPanel {
                                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                 Short.MAX_VALUE)));
 
-                cart_jscrollpane.setHorizontalScrollBar(null);
-
-                cart_panel_for_add.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+                // Set layout for the panel that will hold sub-panels
                 cart_panel_for_add.setLayout(new BoxLayout(cart_panel_for_add, BoxLayout.Y_AXIS));
-                for (int i = 1; i < 20; i++)
-                        cart_panel_for_add.add(new cart_sub_panel());
-                /*
-                 * javax.swing.GroupLayout cart_panel_for_addLayout = new
-                 * javax.swing.GroupLayout(cart_panel_for_add);
-                 * cart_panel_for_add.setLayout(cart_panel_for_addLayout);
-                 * cart_panel_for_addLayout.setHorizontalGroup(
-                 * cart_panel_for_addLayout.createParallelGroup(javax.swing.GroupLayout.
-                 * Alignment.LEADING)
-                 * .addGap(0, 680, Short.MAX_VALUE)
-                 * );
-                 * cart_panel_for_addLayout.setVerticalGroup(
-                 * cart_panel_for_addLayout.createParallelGroup(javax.swing.GroupLayout.
-                 * Alignment.LEADING)
-                 * .addGap(0, 392, Short.MAX_VALUE)
-                 * );
-                 */
+
+                // ตั้งค่า preferred size ให้ cart_panel_for_add เพื่อให้ ScrollBar ทำงาน
+                cart_panel_for_add.setPreferredSize(new Dimension(700, 1000)); // สามารถปรับขนาดได้ตามต้องการ
+
+                cart_jscrollpane.setHorizontalScrollBar(null);
 
                 cart_jscrollpane.setViewportView(cart_panel_for_add);
 
+                // Main cart panel layout
                 javax.swing.GroupLayout main_cart_panelLayout = new javax.swing.GroupLayout(main_cart_panel);
                 main_cart_panel.setLayout(main_cart_panelLayout);
                 main_cart_panelLayout.setHorizontalGroup(
                                 main_cart_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(cart_top_panel, javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(cart_jscrollpane, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                0, Short.MAX_VALUE));
+                                                .addGroup(main_cart_panelLayout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(cart_jscrollpane,
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                704,
+                                                                                Short.MAX_VALUE)
+                                                                .addContainerGap()));
                 main_cart_panelLayout.setVerticalGroup(
                                 main_cart_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(main_cart_panelLayout.createSequentialGroup()
@@ -123,9 +119,11 @@ public class cart_panel extends javax.swing.JPanel {
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(cart_jscrollpane,
                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                383,
-                                                                                Short.MAX_VALUE)));
-                /* */
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                .addContainerGap()));
+
+                // Layout for the entire panel
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
                 layout.setHorizontalGroup(
@@ -152,9 +150,13 @@ public class cart_panel extends javax.swing.JPanel {
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addGap(0, 0, Short.MAX_VALUE))));
-        }// </editor-fold>//GEN-END:initComponents
+                // Add a few sub-panels dynamically
+                add_Reader_adapter.menu_reader_for_panel_add("src//restaurant_log//cart_log//cart_menu.txt",
+                                cart_panel_for_add);
+        }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
+        private file_reader_cart add_Reader_adapter = new file_reader_cart();
         private java.awt.Choice cart_choice1;
         private javax.swing.JScrollPane cart_jscrollpane;
         private javax.swing.JPanel cart_panel_for_add;
