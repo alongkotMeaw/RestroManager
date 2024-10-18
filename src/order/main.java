@@ -83,6 +83,12 @@ public class main extends javax.swing.JFrame {
         main_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
         setSize(1000, 700);
         setPreferredSize(new Dimension(1000, 700));
+        main_panel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                main_panelMouseClicked(evt);
+            }
+        });
+
         setResizable(false);
         setTitle("OrderReceiver & RestaurantManagement");
         try {
@@ -93,7 +99,6 @@ public class main extends javax.swing.JFrame {
             
         }
 
-        
         main_menu_panel.add(new menu());
         main_panel.addTab("เมนู", main_menu_panel);
 
@@ -117,6 +122,12 @@ public class main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //โหลดเมนูใหม่
+    private void main_panelMouseClicked(java.awt.event.MouseEvent evt) {     
+        main_menu_panel.removeAll();
+        main_menu_panel.add(new menu());
+    }   
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:

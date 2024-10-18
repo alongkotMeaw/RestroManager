@@ -36,6 +36,7 @@ public class cart_panel extends javax.swing.JPanel {
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
         // Code">//GEN-BEGIN:initComponents
+
         private void initComponents() {
                 main_cart_panel = new javax.swing.JPanel();
                 cart_top_panel = new javax.swing.JPanel();
@@ -154,6 +155,10 @@ public class cart_panel extends javax.swing.JPanel {
                 // Add a few sub-panels dynamically
                 add_Reader_adapter.menu_reader_for_panel_add("src//restaurant_log//cart_log//cart_menu.txt",
                                 cart_panel_for_add);
+        }
+
+        private void main_panelMouseClicked(java.awt.event.MouseEvent evt) {
+                System.out.println("clicked at Menu");
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
