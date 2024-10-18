@@ -34,13 +34,13 @@ public class cart_sub_panel extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(996, 120));
 
-        quatity_label.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        quatity_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         quatity_label.setText("" + quatity);
 
-        menu_neme_label.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        menu_neme_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         menu_neme_label.setText(name);
 
-        total_label.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        total_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         total_label.setText("ราคารวม " + (prince * quatity));
 
         remove_button.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N

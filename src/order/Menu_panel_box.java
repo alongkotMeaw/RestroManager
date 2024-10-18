@@ -70,22 +70,23 @@ public class Menu_panel_box extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(950, 150));
 
         jTextField1.setText("" + puatity);
+        jTextField1.setHorizontalAlignment(JTextField.CENTER);
 
-        plus_jButton.setText("^");
+        plus_jButton.setText("-");
         plus_jButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plus_jButtonActionPerformed(evt);
-            }
-        });
-
-        minus_jButton.setText("-");
-        minus_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minus_jButtonActionPerformed(evt);
             }
         });
 
-        jLabel_menu_name.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        minus_jButton.setText("+");
+        minus_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plus_jButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel_menu_name.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jLabel_menu_name.setText(menu_name);
 
         try {
@@ -108,7 +109,7 @@ public class Menu_panel_box extends javax.swing.JPanel {
             System.out.println("Error loading menu photo for " + menu_name + ": " + e.getMessage());
         }
 
-        order_jButton.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        order_jButton.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         order_jButton.setText("ออเดอร์");
         order_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +117,7 @@ public class Menu_panel_box extends javax.swing.JPanel {
             }
         });
 
-        jLabel_menu_price.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel_menu_price.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jLabel_menu_price.setText("" + menu_price);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -188,7 +189,7 @@ public class Menu_panel_box extends javax.swing.JPanel {
         /// write to file of cart
         if (puatity > 0) {
 
-            jLabel_alert.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+            jLabel_alert.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
             jLabel_alert.setText("คุณสั่ง " + menu_name + " " + puatity);
             JOptionPane.showMessageDialog(null, jLabel_alert);
             /// write file to cart file

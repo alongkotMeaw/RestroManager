@@ -48,7 +48,7 @@ public class add_remove_panel extends javax.swing.JPanel {
 
         top_panel_opera.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jLabel2.setText("จัดการเมนู");
 
         jScrollPane8.setHorizontalScrollBar(null);
@@ -107,19 +107,19 @@ public class add_remove_panel extends javax.swing.JPanel {
 
         add_menu_panel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Sukhumvit Set", 0, 18)); // NOI18N
         jLabel3.setText("ชื่อเมนู");
 
-        jLabel4.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jLabel4.setText("เพิ่มเมนู");
 
-        jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jLabel5.setText("ราคา");
 
-        jLabel6.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jLabel6.setText("เลือกรูป");
 
-        jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jButton1.setText("เพิ่ม");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +131,7 @@ public class add_remove_panel extends javax.swing.JPanel {
 
         jTextField2.setText("jTextField1");
 
-        jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jLabel7.setText("เลือกรูป");
 
         jTextField3.setText("jTextField1");

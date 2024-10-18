@@ -46,7 +46,7 @@ public class cart_panel extends javax.swing.JPanel {
                 cart_panel_for_add = new javax.swing.JPanel();
 
                 cart_top_panel.setBackground(new java.awt.Color(204, 204, 204));
-                jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+                jLabel1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
                 jLabel1.setText("หมายเลขโต๊ะ");
                 main_cart_panel.setPreferredSize(new Dimension(960, 635));
                 cart_jscrollpane.getVerticalScrollBar().setUnitIncrement(16);

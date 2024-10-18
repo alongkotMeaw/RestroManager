@@ -4,18 +4,11 @@
  */
 package order;
 
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.image.*;
-import java.awt.Image;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.awt.*;
+import java.io.File;
+import java.io.*;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import javax.swing.event.*;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
@@ -57,7 +50,12 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        try {
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("lib/SukhumvitSet-Light.ttf")));
+        } catch (Exception e) {
 
+        }
         jFileChooser1 = new javax.swing.JFileChooser();
         jScrollPane6 = new javax.swing.JScrollPane();
         jPanel15 = new javax.swing.JPanel();
@@ -82,7 +80,7 @@ public class main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        main_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        main_panel.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         setSize(1000, 700);
         setPreferredSize(new Dimension(1000, 700));
         main_panel.addChangeListener(new ChangeListener() {

@@ -59,11 +59,11 @@ public class menu extends javax.swing.JPanel {
                 desert_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
                 /////
 
-                Menu_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+                Menu_panel.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
                 Menu_panel.setPreferredSize(new Dimension(960, 635));
                 snacks_jScrollPane.setHorizontalScrollBar(null);
 
-                snacks_panel_for_add.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+                snacks_panel_for_add.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
 
                 javax.swing.GroupLayout snacks_panel_for_addLayout = new javax.swing.GroupLayout(snacks_panel_for_add);
                 snacks_panel_for_add.setLayout(snacks_panel_for_addLayout);
