@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.swing.*;
 
-import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
 import file_loader.file_reader_for_add;
 import mainframe_material.add_remove_panel;
@@ -144,7 +144,7 @@ public class main extends javax.swing.JFrame {
 
         /* Create and display the form */
         try {
-            UIManager.setLookAndFeel(new FlatLightLaf());
+            UIManager.setLookAndFeel(new FlatMacLightLaf());
             new main().setVisible(true);
         } catch (Exception ex) {
             System.err.println("Failed to initialize LaF");
