@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package order;
+package main;
 
 import java.awt.*;
 import java.io.File;
@@ -13,11 +13,13 @@ import javax.swing.event.*;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
 import file_loader.file_reader_for_add;
-import mainframe_material.add_remove_panel;
-import mainframe_material.cart_panel;
-import mainframe_material.menu;
-import mainframe_material.sumary_panel;
-import order.*;
+import main.*;
+import mainframe_material.menu.*;
+import mainframe_material.cart.*;
+import mainframe_material.add.*;
+import mainframe_material.sumary.*;
+import mainframe_material.add.remove.add_remove_panel;
+import mainframe_material.sumary.sumary_panel;
 
 /**
  *
@@ -87,7 +89,7 @@ public class main extends javax.swing.JFrame {
             @Override
             public void stateChanged(ChangeEvent e) {
                 // TODO Auto-generated method stub
-                if(((JTabbedPane)e.getSource()).getSelectedIndex() == 0) {
+                if (((JTabbedPane) e.getSource()).getSelectedIndex() == 0) {
                     main_menu_panel.removeAll();
                     main_menu_panel.add(new menu());
                 }
@@ -101,7 +103,7 @@ public class main extends javax.swing.JFrame {
             Image icon = iconImage.getImage();
             setIconImage(icon);
         } catch (Exception e) {
-            
+
         }
 
         main_menu_panel.add(new menu());
@@ -115,7 +117,7 @@ public class main extends javax.swing.JFrame {
 
         main_Summary_panel.add(new sumary_panel());
         main_panel.addTab("สรุปยอด", main_Summary_panel);
-        
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

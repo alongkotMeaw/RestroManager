@@ -1,18 +1,10 @@
 package file_loader;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import java.io.*;
 import javax.swing.*;
-
-import mainframe_material.cart_panel;
-import mainframe_material.cart_sub_panel;
-import src.order.Menu_panel_box;
-
-import java.awt.image.BufferedImage;
+import mainframe_material.cart.*;
+import mainframe_material.cart.cart_sub_panel;
 import java.awt.*;
-import java.nio.charset.StandardCharsets;
 
 public class file_reader_cart {
 
@@ -32,6 +24,7 @@ public class file_reader_cart {
                     panelForAdd.add(new cart_sub_panel(name, price, quatity, catalog));
                     JPanel panel = new JPanel();
                     panel.setMinimumSize(new Dimension(980, 1));
+                    panel.setSize(980, 1);
                     panel.setBackground(Color.GRAY);
                     panelForAdd.add(panel);
                 } else {
