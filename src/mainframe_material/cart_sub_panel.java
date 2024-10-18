@@ -41,11 +41,12 @@ public class cart_sub_panel extends javax.swing.JPanel {
         menu_neme_label.setText(name);
 
         total_label.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        total_label.setText("ราคารวม" + (prince * quatity));
+        total_label.setText("ราคารวม " + (prince * quatity));
 
         remove_button.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         remove_button.setForeground(new java.awt.Color(255, 51, 51));
         remove_button.setText("-");
+        remove_button.putClientProperty("JButton.buttonType", "roundRect");
         remove_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 remove_buttonActionPerformed(evt);

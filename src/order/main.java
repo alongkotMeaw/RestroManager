@@ -14,6 +14,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
@@ -83,9 +85,14 @@ public class main extends javax.swing.JFrame {
         main_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
         setSize(1000, 700);
         setPreferredSize(new Dimension(1000, 700));
-        main_panel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                main_panelMouseClicked(evt);
+        main_panel.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                // TODO Auto-generated method stub
+                if(((JTabbedPane)e.getSource()).getSelectedIndex() == 0) {
+                    main_menu_panel.removeAll();
+                    main_menu_panel.add(new menu());
+                }
             }
         });
 
@@ -122,16 +129,6 @@ public class main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    //โหลดเมนูใหม่
-    private void main_panelMouseClicked(java.awt.event.MouseEvent evt) {     
-        main_menu_panel.removeAll();
-        main_menu_panel.add(new menu());
-    }   
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }// GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

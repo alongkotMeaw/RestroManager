@@ -30,6 +30,10 @@ public class file_reader_cart {
                     double price = Double.parseDouble(arrOfStr[2]);
                     int quatity = Integer.parseInt(arrOfStr[3]);
                     panelForAdd.add(new cart_sub_panel(name, price, quatity, catalog));
+                    JPanel panel = new JPanel();
+                    panel.setMinimumSize(new Dimension(980, 1));
+                    panel.setBackground(Color.GRAY);
+                    panelForAdd.add(panel);
                 } else {
                     System.err.println("Invalid data format: " + data);
                 }
