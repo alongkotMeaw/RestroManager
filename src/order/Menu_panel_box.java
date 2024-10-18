@@ -47,6 +47,7 @@ public class Menu_panel_box extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -67,28 +68,27 @@ public class Menu_panel_box extends javax.swing.JPanel {
             }
         });
 
-        setPreferredSize(new java.awt.Dimension(950, 150));
+        setPreferredSize(new java.awt.Dimension(680, 160));
 
-        jTextField1.setText("" + puatity);
-        jTextField1.setHorizontalAlignment(JTextField.CENTER);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("0");
 
-        plus_jButton.setText("-");
+        plus_jButton.setText("+");
         plus_jButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minus_jButtonActionPerformed(evt);
-            }
-        });
-
-        minus_jButton.setText("+");
-        minus_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 plus_jButtonActionPerformed(evt);
             }
         });
 
+        minus_jButton.setText("-");
+        minus_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minus_jButtonActionPerformed(evt);
+            }
+        });
+
         jLabel_menu_name.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         jLabel_menu_name.setText(menu_name);
-
         try {
             jLabel_menu_photo.setBackground(new java.awt.Color(153, 204, 0));
 
@@ -134,15 +134,16 @@ public class Menu_panel_box extends javax.swing.JPanel {
                                                 .addGap(30, 30, 30)
                                                 .addComponent(jLabel_menu_price))
                                         .addGroup(layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
                                                 .addComponent(plus_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 24,
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(minus_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168,
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156,
                                         Short.MAX_VALUE)
                                 .addComponent(order_jButton)
                                 .addGap(59, 59, 59)));
@@ -231,15 +232,14 @@ public class Menu_panel_box extends javax.swing.JPanel {
     }// GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel_menu_name;
     private javax.swing.JLabel jLabel_menu_photo;
     private javax.swing.JLabel jLabel_menu_price;
-    private javax.swing.JLabel jLabel_alert;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton minus_jButton;
     private javax.swing.JButton order_jButton;
     private javax.swing.JButton plus_jButton;
+    private javax.swing.JLabel jLabel_alert;
     // End of variables declaration//GEN-END:variables
 }
