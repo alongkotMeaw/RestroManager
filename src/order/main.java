@@ -49,7 +49,7 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jFileChooser1 = new javax.swing.JFileChooser();
@@ -66,38 +66,83 @@ public class main extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
-                jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 678, Short.MAX_VALUE));
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 678, Short.MAX_VALUE)
+        );
         jPanel15Layout.setVerticalGroup(
-                jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 427, Short.MAX_VALUE));
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
 
         jScrollPane6.setViewportView(jPanel15);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         main_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
+        main_panel.setPreferredSize(new java.awt.Dimension(1000, 700));
 
-        main_menu_panel.add(new menu());
+        javax.swing.GroupLayout main_menu_panelLayout = new javax.swing.GroupLayout(main_menu_panel);
+        main_menu_panel.setLayout(main_menu_panelLayout);
+        main_menu_panelLayout.setHorizontalGroup(
+            main_menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        main_menu_panelLayout.setVerticalGroup(
+            main_menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 665, Short.MAX_VALUE)
+        );
+
         main_panel.addTab("เมนู", main_menu_panel);
 
-        main_cart_panel.add(new cart_panel());
+        javax.swing.GroupLayout main_cart_panelLayout = new javax.swing.GroupLayout(main_cart_panel);
+        main_cart_panel.setLayout(main_cart_panelLayout);
+        main_cart_panelLayout.setHorizontalGroup(
+            main_cart_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        main_cart_panelLayout.setVerticalGroup(
+            main_cart_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 665, Short.MAX_VALUE)
+        );
+
         main_panel.addTab("รถเข็น", main_cart_panel);
 
-        main_addremove_panel.add(new add_remove_panel());
+        javax.swing.GroupLayout main_addremove_panelLayout = new javax.swing.GroupLayout(main_addremove_panel);
+        main_addremove_panel.setLayout(main_addremove_panelLayout);
+        main_addremove_panelLayout.setHorizontalGroup(
+            main_addremove_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        main_addremove_panelLayout.setVerticalGroup(
+            main_addremove_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 665, Short.MAX_VALUE)
+        );
+
         main_panel.addTab("เพิ่ม/ลบ", main_addremove_panel);
 
-        main_Summary_panel.add(new sumary_panel());
+        javax.swing.GroupLayout main_Summary_panelLayout = new javax.swing.GroupLayout(main_Summary_panel);
+        main_Summary_panel.setLayout(main_Summary_panelLayout);
+        main_Summary_panelLayout.setHorizontalGroup(
+            main_Summary_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        main_Summary_panelLayout.setVerticalGroup(
+            main_Summary_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 665, Short.MAX_VALUE)
+        );
+
         main_panel.addTab("สรุปยอด", main_Summary_panel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(main_panel));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(main_panel));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(main_panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
