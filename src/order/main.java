@@ -4,7 +4,10 @@
  */
 package order;
 
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.image.*;
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -78,8 +81,19 @@ public class main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         main_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
-        main_panel.setPreferredSize(new java.awt.Dimension(1000, 700));
+        setSize(1000, 700);
+        setPreferredSize(new Dimension(1000, 700));
+        setResizable(false);
+        setTitle("OrderReceiver & RestaurantManagement");
+        try {
+            ImageIcon iconImage = new ImageIcon("src\\ImageFolder\\stack-overflow.png");
+            Image icon = iconImage.getImage();
+            setIconImage(icon);
+        } catch (Exception e) {
+            
+        }
 
+        
         main_menu_panel.add(new menu());
         main_panel.addTab("เมนู", main_menu_panel);
 
@@ -91,7 +105,7 @@ public class main extends javax.swing.JFrame {
 
         main_Summary_panel.add(new sumary_panel());
         main_panel.addTab("สรุปยอด", main_Summary_panel);
-
+        
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

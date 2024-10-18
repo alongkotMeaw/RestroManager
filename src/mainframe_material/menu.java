@@ -4,6 +4,8 @@
  */
 package mainframe_material;
 
+import java.awt.Dimension;
+
 import file_loader.file_reader_for_add;
 
 /**
@@ -49,8 +51,16 @@ public class menu extends javax.swing.JPanel {
         desert_jScrollPane = new javax.swing.JScrollPane();
         dessert_panel_for_add1 = new javax.swing.JPanel();
 
-        Menu_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        //set scroll speed
+        snacks_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        maincourse_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        one_dish_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        drinks_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        desert_jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        /////
 
+        Menu_panel.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
+        Menu_panel.setPreferredSize(new Dimension(960, 635));
         snacks_jScrollPane.setHorizontalScrollBar(null);
 
         snacks_panel_for_add.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N

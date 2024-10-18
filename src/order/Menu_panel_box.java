@@ -67,7 +67,7 @@ public class Menu_panel_box extends javax.swing.JPanel {
             }
         });
 
-        setPreferredSize(new java.awt.Dimension(680, 160));
+        setPreferredSize(new java.awt.Dimension(950, 150));
 
         jTextField1.setText("" + puatity);
 
