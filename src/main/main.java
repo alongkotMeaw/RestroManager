@@ -76,7 +76,7 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        main_panel.setFont(new java.awt.Font("Sukhumvit Set", 0, 18)); // NOI18N
+        main_panel.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         setBackground(new Color(244, 243, 242));
         setSize(1000, 700);
         setPreferredSize(new Dimension(1000, 700));
