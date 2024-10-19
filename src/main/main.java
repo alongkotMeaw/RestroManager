@@ -92,7 +92,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         setResizable(false);
-        setTitle("Order-receiver version.pre-alpha");
+        setTitle("Order Receiver 0.1a");
         try {
             ImageIcon iconImage = new ImageIcon("src\\ImageFolder\\stack-overflow.png");
             Image icon = iconImage.getImage();
