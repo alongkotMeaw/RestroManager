@@ -184,7 +184,7 @@ public class menu extends javax.swing.JPanel {
                                 menu_panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(drinks_jScrollPane));
 
-                Menu_panel.addTab("เครื่องดืม", menu_panel5);
+                Menu_panel.addTab("เครื่องดื่ม", menu_panel5);
 
                 desert_jScrollPane.setHorizontalScrollBar(null);
 
