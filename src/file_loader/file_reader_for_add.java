@@ -1,18 +1,11 @@
 package file_loader;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import java.io.*;
 import javax.swing.*;
 
 import mainframe_material.menu.Menu_panel_box;
 
-import java.awt.image.BufferedImage;
-import java.awt.*;
-import java.nio.charset.StandardCharsets;
-
-public class file_reader_for_add implements DAO {
+public class file_reader_for_add {
 
     public void menu_reader_for_panel_add(String filePath, JPanel panelForAdd, String category) {
 
