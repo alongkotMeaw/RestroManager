@@ -183,13 +183,18 @@ public class Menu_panel_box extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void plus_jButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_plus_jButtonActionPerformed
-        if(puatity < 99)
+        if(puatity < 99) {
+            jTextField1.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));;
             puatity++;
-        jTextField1.setText("" + puatity);
+            jTextField1.setText("" + puatity);
+        }
     }// GEN-LAST:event_plus_jButtonActionPerformed
 
     private void minus_jButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_minus_jButtonActionPerformed
         if (puatity > 0) {
+            if(puatity == 1) {
+                jTextField1.setBorder(BorderFactory.createEmptyBorder());
+            }
             puatity--;
             jTextField1.setText("" + puatity);
         }
