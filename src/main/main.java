@@ -101,7 +101,6 @@ public class Main extends javax.swing.JFrame {
 
         }
 
-        main_menu_panel.add(new menu());
         main_panel.addTab("เมนู", main_menu_panel);
 
         main_cart_panel.add(new cart_panel());
