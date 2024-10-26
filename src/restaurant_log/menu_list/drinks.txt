@@ -1,5 +1,11 @@
-ต้มยำกุ้ง,500,1,/ImageFolder/image.jpg
-ต้มจืด,250,1,/ImageFolder/image.jpg
-ต้มซุปเปอร์ ,1,/ImageFolder/image.jpg
-ต้มยำกุ้ง,500,1,/ImageFolder/image.jpg
-ต้มจืด,250,1,/ImageFolder/image.jpg
+น้ำแข็ง(ถัง),5,1,/ImageFolder/น้ำแข็ง(ถัง).jpg
+น้ำเปล่า,10,1,/ImageFolder/น้ำเปล่า.jpg
+น้ำอัดลม(ขวดเล็ก),15,1,/ImageFolder/น้ำอัดลม(ขวดเล็ก).jpg
+น้ำอัดลม(ขวดใหญ่),25,1,/ImageFolder/น้ำอัดลม(ขวดใหญ่).jpg
+น้ำเก๊กฮวย,15,1,/ImageFolder/น้ำเก๊กฮวย.jpg
+น้ำอัญชัน,15,1,/ImageFolder/น้ำอัญชัน.jpg
+น้ำกระเจี๊ยบ,15,1,/ImageFolder/น้ำกระเจี๊ยบ.jpg
+ชาดำเย็น,15,1,/ImageFolder/ชาดำเย็น.jpg
+น้ำแดงโซดา,15,1,/ImageFolder/น้ำแดงโซดา.jpg
+น้ำเขียวโซดา,15,1,/ImageFolder/น้ำเขียวโซดา.jpg
+ชาน้ำผึ้งมะนาว,15,1,/ImageFolder/ชาน้ำผึ้งมะนาว.jpg
