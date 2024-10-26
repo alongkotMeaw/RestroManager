@@ -11,7 +11,7 @@ public class file_reader_for_add {
 
         panelForAdd.setLayout(new BoxLayout(panelForAdd, BoxLayout.Y_AXIS));
         System.out.println("file reader call by " + filePath);
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"), 8192)) {
             String data;
             while ((data = br.readLine()) != null) {
                 String[] arrOfStr = data.split(",");

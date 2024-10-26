@@ -5,7 +5,7 @@
 package mainframe_material.menu;
 
 import java.awt.Dimension;
-
+import java.util.concurrent.*;
 import file_loader.file_reader_for_add;
 
 /**
@@ -257,20 +257,46 @@ public class menu extends javax.swing.JPanel {
                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addGap(0, 0, Short.MAX_VALUE))));
                 // call reader for add all menu
-                add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\drinks.txt",
-                                drinks_panel_for_add, "drinks");
+                ExecutorService executor = Executors.newFixedThreadPool(5);
+                Runnable loadDrinks = () -> add_Reader_adapter.menu_reader_for_panel_add(
+                        "src\\restaurant_log\\menu_list\\drinks.txt",
+                        drinks_panel_for_add, "drinks"
+                );
 
-                add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\maincourse_menu.txt",
-                                maincourse_panel_for_add,
-                                "maincourse");
+                Runnable loadMainCourse = () -> add_Reader_adapter.menu_reader_for_panel_add(
+                        "src\\restaurant_log\\menu_list\\maincourse_menu.txt",
+                        maincourse_panel_for_add, "maincourse"
+                );
 
-                add_Reader_adapter.menu_reader_for_panel_add("src/restaurant_log/menu_list/snack_menu.txt",
-                                snacks_panel_for_add, "snack");
+                Runnable loadSnacks = () -> add_Reader_adapter.menu_reader_for_panel_add(
+                        "src/restaurant_log/menu_list/snack_menu.txt",
+                        snacks_panel_for_add, "snack"
+                );
 
-                add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\desert_menu.txt",
-                                dessert_panel_for_add1, "desert");
-                add_Reader_adapter.menu_reader_for_panel_add("src\\restaurant_log\\menu_list\\one_dish_menu.txt",
-                                one_dish_panel_for_add, "one_dish");
+                Runnable loadDessert = () -> add_Reader_adapter.menu_reader_for_panel_add(
+                        "src\\restaurant_log\\menu_list\\desert_menu.txt",
+                        dessert_panel_for_add1, "desert"
+                );
+
+                Runnable loadOneDish = () -> add_Reader_adapter.menu_reader_for_panel_add(
+                        "src\\restaurant_log\\menu_list\\one_dish_menu.txt",
+                        one_dish_panel_for_add, "one_dish"
+                );
+
+                executor.submit(loadDrinks);
+                executor.submit(loadMainCourse);
+                executor.submit(loadSnacks);
+                executor.submit(loadDessert);
+                executor.submit(loadOneDish);
+
+                executor.shutdown();
+                try {
+                    if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
+                        executor.shutdownNow();
+                    }
+                } catch (InterruptedException e) {
+                    executor.shutdownNow();
+                }
         }// </editor-fold>//GEN-END:initComponents
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

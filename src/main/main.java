@@ -9,6 +9,8 @@ import java.io.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
+import java.util.concurrent.*;
+
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
 import mainframe_material.menu.*;
@@ -80,6 +82,38 @@ public class Main extends javax.swing.JFrame {
         setBackground(new Color(244, 243, 242));
         setSize(1000, 700);
         setPreferredSize(new Dimension(1000, 700));
+        setResizable(false);
+        setTitle("Order Receiver 0.1a");
+        try {
+            ImageIcon iconImage = new ImageIcon("src\\ImageFolder\\stack-overflow.png");
+            Image icon = iconImage.getImage();
+            setIconImage(icon);
+        } catch (Exception e) {
+
+        }
+        main_panel.addTab("เมนู", main_menu_panel);
+        main_panel.addTab("รถเข็น", main_cart_panel);
+        main_panel.addTab("เพิ่ม/ลบ", main_addremove_panel);
+        main_panel.addTab("สรุปยอด", main_Summary_panel);
+        setVisible(true);
+        ExecutorService executor = Executors.newFixedThreadPool(4);
+        Runnable menu = () -> main_menu_panel.add(new menu());
+        Runnable cart = () -> main_cart_panel.add(new cart_panel());
+        Runnable addremove = () -> main_addremove_panel.add(new add_remove_panel());
+        Runnable summary = () -> main_Summary_panel.add(new sumary_panel());
+        executor.submit(menu);
+        executor.submit(cart);
+        executor.submit(addremove);
+        executor.submit(summary);
+
+        executor.shutdown();
+            try {
+                if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
+                    executor.shutdownNow();
+                }
+            } catch (InterruptedException e) {
+                executor.shutdownNow();
+            }
         main_panel.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -90,28 +124,6 @@ public class Main extends javax.swing.JFrame {
                 }
             }
         });
-
-        setResizable(false);
-        setTitle("Order Receiver 0.1a");
-        try {
-            ImageIcon iconImage = new ImageIcon("src\\ImageFolder\\stack-overflow.png");
-            Image icon = iconImage.getImage();
-            setIconImage(icon);
-        } catch (Exception e) {
-
-        }
-
-        main_panel.addTab("เมนู", main_menu_panel);
-
-        main_cart_panel.add(new cart_panel());
-        main_panel.addTab("รถเข็น", main_cart_panel);
-
-        main_addremove_panel.add(new add_remove_panel());
-        main_panel.addTab("เพิ่ม/ลบ", main_addremove_panel);
-
-        main_Summary_panel.add(new sumary_panel());
-        main_panel.addTab("สรุปยอด", main_Summary_panel);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,7 +175,7 @@ public class Main extends javax.swing.JFrame {
         /* Create and display the form */
         try {
             UIManager.setLookAndFeel(new FlatMacLightLaf());
-            new Main().setVisible(true);
+            new Main();
         } catch (Exception ex) {
             System.err.println("Failed to initialize LaF");
         }
