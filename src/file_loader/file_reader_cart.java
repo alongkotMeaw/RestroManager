@@ -19,7 +19,9 @@ public class file_reader_cart {
                     String name = arrOfStr[1];
                     double price = Double.parseDouble(arrOfStr[2]);
                     int quatity = Integer.parseInt(arrOfStr[3]);
-                    panelForAdd.add(new cart_sub_panel(name, price, quatity, catalog));
+                    cart_sub_panel cart_panel = new cart_sub_panel(name, price, quatity, catalog);
+                    cart_panel.setSize(996, 50);
+                    panelForAdd.add(cart_panel);
                     panelForAdd.add(new JSeparator());
                 } else {
                     System.err.println("Invalid data format: " + data);
