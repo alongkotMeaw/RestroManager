@@ -106,14 +106,7 @@ public class Main extends javax.swing.JFrame {
         executor.submit(addremove);
         executor.submit(summary);
 
-        executor.shutdown();
-            try {
-                if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
-                    executor.shutdownNow();
-                }
-            } catch (InterruptedException e) {
-                executor.shutdownNow();
-            }
+        executor.shutdownNow();
         main_panel.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {

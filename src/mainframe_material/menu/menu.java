@@ -288,15 +288,7 @@ public class menu extends javax.swing.JPanel {
                 executor.submit(loadSnacks);
                 executor.submit(loadDessert);
                 executor.submit(loadOneDish);
-
                 executor.shutdown();
-                try {
-                    if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
-                        executor.shutdownNow();
-                    }
-                } catch (InterruptedException e) {
-                    executor.shutdownNow();
-                }
         }// </editor-fold>//GEN-END:initComponents
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
