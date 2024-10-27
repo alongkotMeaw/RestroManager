@@ -25,6 +25,7 @@ public class cart_panel extends javax.swing.JPanel {
                 jPanel3 = new javax.swing.JPanel();
         
                 jScrollPane1.getVerticalScrollBar().setUnitIncrement(16);
+
                 jLabel1.setFont(new java.awt.Font("Sukhumvit Set", 0, 18));
                 jButton1.setFont(new java.awt.Font("Sukhumvit Set", 0, 18));
                 jLabel2.setFont(new java.awt.Font("Sukhumvit Set", 0, 18));
