@@ -9,3 +9,4 @@
 เผือกทอด,60,1,/ImageFolder/เผือกทอด.jpg
 ลาบทอด,60,1,/ImageFolder/ลาบทอด.jpg
 
+test,1000,1,src/ImageFolder/937.jpg
