@@ -168,11 +168,11 @@ public class main extends javax.swing.JFrame {
         /* Create and display the form */
         try {
             UIManager.setLookAndFeel(new FlatMacLightLaf());
-<<<<<<< HEAD
+
             new main().setVisible(true);
-=======
-            new Main();
->>>>>>> d9c21dff6e009d51401e14c9c3ed7175fd8444de
+
+            new main();
+
         } catch (Exception ex) {
             System.err.println("Failed to initialize LaF");
         }
