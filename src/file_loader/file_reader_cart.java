@@ -1,5 +1,6 @@
 package file_loader;
 
+import java.awt.Dimension;
 import java.io.*;
 import javax.swing.*;
 import mainframe_material.cart.cart_sub_panel;
@@ -20,7 +21,9 @@ public class file_reader_cart {
                     double price = Double.parseDouble(arrOfStr[2]);
                     int quatity = Integer.parseInt(arrOfStr[3]);
                     cart_sub_panel cart_panel = new cart_sub_panel(name, price, quatity, catalog);
-                    cart_panel.setSize(996, 50);
+                    cart_panel.setMinimumSize(new Dimension(996, 50));
+                    cart_panel.setMaximumSize(new Dimension(996, 50));
+                    cart_panel.setPreferredSize(new Dimension(996, 50));
                     panelForAdd.add(cart_panel);
                     panelForAdd.add(new JSeparator());
                 } else {

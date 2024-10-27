@@ -116,7 +116,7 @@ public class Menu_panel_box extends javax.swing.JPanel {
         }
 
         order_jButton.setFont(new java.awt.Font("Sukhumvit Set", 0, 18)); // NOI18N
-        order_jButton.setText("ออเดอร์");
+        order_jButton.setText("เพิ่ม");
         order_jButton.setFocusable(false);
         order_jButton.setBackground(new Color(85, 124, 86));
         order_jButton.setForeground(Color.white);
