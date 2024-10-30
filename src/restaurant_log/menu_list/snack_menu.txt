@@ -9,4 +9,7 @@
 เผือกทอด,60,1,/ImageFolder/เผือกทอด.jpg
 ลาบทอด,60,1,/ImageFolder/ลาบทอด.jpg
 
-test,1000,1,src/ImageFolder/937.jpg
+เเมวทอด,100,1,/ImageFolder/937.jpg
+ไก่ทอด,100,1,/ImageFolder/359720452_999730174499739_4936259844174656944_n (1).jpg
+ไก่ย่าง,500,1,/ImageFolder/Screenshot_20240723_192507_Summoners War.jpg
+เเมวย่าง,1000,1,/ImageFolder/937.jpg
