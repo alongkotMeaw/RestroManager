@@ -6,12 +6,14 @@ package mainframe_material.add.remove;
 
 import javax.swing.*;
 
+import file_loader.file_reader_for_remove_panal;
 import file_loader.write_new_menu;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.dnd.*;
 import java.io.File;
+import java.util.LinkedList;
 import java.util.List;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -59,6 +61,10 @@ public class add_remove_panel extends javax.swing.JPanel {
                 jLabel2 = new javax.swing.JLabel();
                 jScrollPane8 = new javax.swing.JScrollPane();
                 photo_Panel7 = new javax.swing.JPanel();
+                readder_adapter = new file_reader_for_remove_panal();
+                // test
+                // menu_opera_for_add.setLayout(new BoxLayout(menu_opera_for_add,
+                // BoxLayout.Y_AXIS));
 
                 add_menu_panel.setBackground(new java.awt.Color(255, 255, 255));
                 // set defal photo of photo panel
@@ -266,6 +272,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                                 .addContainerGap(362, Short.MAX_VALUE)));
+
                 top_panel_operaLayout.setVerticalGroup(
                                 top_panel_operaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(top_panel_operaLayout.createSequentialGroup()
@@ -279,26 +286,37 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                 Short.MAX_VALUE)));
 
-                javax.swing.GroupLayout menu_opera_for_addLayout = new javax.swing.GroupLayout(menu_opera_for_add);
-                menu_opera_for_add.setLayout(menu_opera_for_addLayout);
-                menu_opera_for_addLayout.setHorizontalGroup(
-                                menu_opera_for_addLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                menu_opera_for_addLayout.createSequentialGroup()
-                                                                                .addComponent(top_panel_opera,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addGap(26, 26, 26)));
-                menu_opera_for_addLayout.setVerticalGroup(
-                                menu_opera_for_addLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(menu_opera_for_addLayout.createSequentialGroup()
-                                                                .addComponent(top_panel_opera,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                47,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(0, 0, Short.MAX_VALUE)));
+                /*
+                 * javax.swing.GroupLayout menu_opera_for_addLayout = new
+                 * javax.swing.GroupLayout(menu_opera_for_add);
+                 * menu_opera_for_add.setLayout(menu_opera_for_addLayout);
+                 * menu_opera_for_addLayout.setHorizontalGroup(
+                 * menu_opera_for_addLayout.createParallelGroup(javax.swing.GroupLayout.
+                 * Alignment.LEADING)
+                 * .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                 * menu_opera_for_addLayout.createSequentialGroup()
+                 * .addComponent(top_panel_opera,
+                 * javax.swing.GroupLayout.DEFAULT_SIZE,
+                 * javax.swing.GroupLayout.DEFAULT_SIZE,
+                 * Short.MAX_VALUE)
+                 * .addGap(26, 26, 26)));
+                 * menu_opera_for_addLayout.setVerticalGroup(
+                 * menu_opera_for_addLayout.createParallelGroup(javax.swing.GroupLayout.
+                 * Alignment.LEADING)
+                 * .addGroup(menu_opera_for_addLayout.createSequentialGroup()
+                 * .addComponent(top_panel_opera,
+                 * javax.swing.GroupLayout.PREFERRED_SIZE,
+                 * 47,
+                 * javax.swing.GroupLayout.PREFERRED_SIZE)
+                 * .addGap(0, 0, Short.MAX_VALUE)));
+                 */
 
+                JScrollPane scrollPane = new JScrollPane(menu_opera_for_add);
+                scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+                scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+                menu_opera_for_add.setPreferredSize(new Dimension(300, 600));
+                menu_opera_for_add.setLayout(new BoxLayout(menu_opera_for_add, BoxLayout.Y_AXIS));
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
                 layout.setHorizontalGroup(
@@ -311,11 +329,12 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(menu_opera_for_add,
+                                                                .addComponent(scrollPane,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                300,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addContainerGap(18, Short.MAX_VALUE)));
+
                 layout.setVerticalGroup(
                                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout
@@ -324,7 +343,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                 .addGroup(layout.createParallelGroup(
                                                                                 javax.swing.GroupLayout.Alignment.TRAILING,
                                                                                 false)
-                                                                                .addComponent(menu_opera_for_add,
+                                                                                .addComponent(scrollPane,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 Short.MAX_VALUE)
@@ -333,7 +352,31 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 Short.MAX_VALUE))
                                                                 .addGap(38, 38, 38)));
+
                 manage_photo(photo_Panel);
+                menu_opera_for_add.add(top_panel_opera);
+                LinkedList<remove_sup_panal> snack = new LinkedList<>();
+                LinkedList<remove_sup_panal> drinks = new LinkedList<>();
+                LinkedList<remove_sup_panal> desert = new LinkedList<>();
+                LinkedList<remove_sup_panal> one_dish = new LinkedList<>();
+                LinkedList<remove_sup_panal> main_course = new LinkedList<>();
+
+                readder_adapter.reader("src\\restaurant_log\\menu_list\\snack_menu.txt", snack);
+                readder_adapter.reader("src\\restaurant_log\\menu_list\\drinks.txt", drinks);
+                readder_adapter.reader("src\\restaurant_log\\menu_list\\desert_menu.txt", desert);
+                readder_adapter.reader("src\\restaurant_log\\menu_list\\one_dish_menu.txt", one_dish);
+                readder_adapter.reader("src\\restaurant_log\\menu_list\\maincourse_menu.txt", main_course);
+
+                add_panel(snack);
+                add_panel(drinks);
+                add_panel(desert);
+                add_panel(one_dish);
+                add_panel(main_course);
+
+                revalidate(); // อัปเดต UI
+                repaint(); // วาด UI ใหม่
+                System.out.println("all file load success");
+
         }// </editor-fold>//GEN-END:initComponents
          // manage_photo(photo_Panel); in component when use net bean
 
@@ -453,6 +496,13 @@ public class add_remove_panel extends javax.swing.JPanel {
                 return "sad";
         }
 
+        private void add_panel(LinkedList<remove_sup_panal> panel_add) {
+                for (remove_sup_panal snack : panel_add) {
+                        menu_opera_for_add.add(snack);
+                }
+
+        }
+
         private write_new_menu file_Write_new_menu = new write_new_menu();
         private javax.swing.JPanel add_menu_panel;
         private javax.swing.JButton jButton1;
@@ -470,6 +520,7 @@ public class add_remove_panel extends javax.swing.JPanel {
         private javax.swing.JPanel menu_opera_for_add;
         private javax.swing.JLabel panel_label;
         private javax.swing.JPanel top_panel_opera;
+        private file_reader_for_remove_panal readder_adapter;
         // for actionlistener
         private String new_menu_name;
         private String new_mewnu_price;

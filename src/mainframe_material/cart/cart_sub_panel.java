@@ -4,6 +4,9 @@
  */
 package mainframe_material.cart;
 
+import java.awt.Color;
+import java.util.LinkedList;
+
 /**
  *
  * @author meama
@@ -14,6 +17,8 @@ public class cart_sub_panel extends javax.swing.JPanel {
      * Creates new form cart_sub_panel
      */
     public cart_sub_panel(String name, double prince, int quatity, String catalog) {
+        // this.index_of_cart = index_of_cart;
+        // sub_panel_link = this.sub_panel_link;
         initComponents(name, prince, quatity, catalog);
     }
 
@@ -31,7 +36,7 @@ public class cart_sub_panel extends javax.swing.JPanel {
         menu_neme_label = new javax.swing.JLabel();
         total_label = new javax.swing.JLabel();
         remove_button = new javax.swing.JButton();
-
+        setBackground(Color.lightGray);
         quatity_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
         quatity_label.setText("" + quatity);
 
@@ -81,6 +86,11 @@ public class cart_sub_panel extends javax.swing.JPanel {
 
     private void remove_buttonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_remove_buttonActionPerformed
         // TODO add your handling code here:
+        remove_button.setText("undo");
+        remove_button.setForeground(Color.black);
+        setBackground(Color.white);
+        // sub_panel_link.remove(0);
+        // System.out.println(sub_panel_link);
     }// GEN-LAST:event_remove_buttonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -88,5 +98,7 @@ public class cart_sub_panel extends javax.swing.JPanel {
     private javax.swing.JLabel quatity_label;
     private javax.swing.JButton remove_button;
     private javax.swing.JLabel total_label;
+    private LinkedList<cart_sub_panel> sub_panel_link;
+    private int index_of_cart;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,14 +2,19 @@ package file_loader;
 
 import java.awt.Dimension;
 import java.io.*;
+import java.util.LinkedList;
+
 import javax.swing.*;
 import mainframe_material.cart.cart_sub_panel;
 
 public class file_reader_cart {
 
     public void menu_reader_for_panel_add(String filePath, JPanel panelForAdd) {
+        // int index_of_panel = 0;
+
         panelForAdd.setLayout(new BoxLayout(panelForAdd, BoxLayout.Y_AXIS));
         System.out.println("file reader call by " + filePath);
+
         try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"))) {
             String data;
             while ((data = br.readLine()) != null) {
@@ -26,6 +31,7 @@ public class file_reader_cart {
                     cart_panel.setPreferredSize(new Dimension(996, 50));
                     panelForAdd.add(cart_panel);
                     panelForAdd.add(new JSeparator());
+                    // sub_panel_link.add(cart_panel);
                 } else {
                     System.err.println("Invalid data format: " + data);
                 }
