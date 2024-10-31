@@ -286,33 +286,6 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                 Short.MAX_VALUE)));
 
-                /*
-                 * javax.swing.GroupLayout menu_opera_for_addLayout = new
-                 * javax.swing.GroupLayout(menu_opera_for_add);
-                 * menu_opera_for_add.setLayout(menu_opera_for_addLayout);
-                 * menu_opera_for_addLayout.setHorizontalGroup(
-                 * menu_opera_for_addLayout.createParallelGroup(javax.swing.GroupLayout.
-                 * Alignment.LEADING)
-                 * .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                 * menu_opera_for_addLayout.createSequentialGroup()
-                 * .addComponent(top_panel_opera,
-                 * javax.swing.GroupLayout.DEFAULT_SIZE,
-                 * javax.swing.GroupLayout.DEFAULT_SIZE,
-                 * Short.MAX_VALUE)
-                 * .addGap(26, 26, 26)));
-                 * menu_opera_for_addLayout.setVerticalGroup(
-                 * menu_opera_for_addLayout.createParallelGroup(javax.swing.GroupLayout.
-                 * Alignment.LEADING)
-                 * .addGroup(menu_opera_for_addLayout.createSequentialGroup()
-                 * .addComponent(top_panel_opera,
-                 * javax.swing.GroupLayout.PREFERRED_SIZE,
-                 * 47,
-                 * javax.swing.GroupLayout.PREFERRED_SIZE)
-                 * .addGap(0, 0, Short.MAX_VALUE)));
-                 */
-
-                //
-
                 // set jscroll pane
                 JScrollPane scrollPane = new JScrollPane(menu_opera_for_add);
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
