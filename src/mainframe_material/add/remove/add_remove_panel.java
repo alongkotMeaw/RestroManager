@@ -334,18 +334,19 @@ public class add_remove_panel extends javax.swing.JPanel {
                 manage_photo(photo_Panel);
                 menu_opera_for_add.add(top_panel_opera);
 
-                LinkedList<remove_sup_panal> snack = new LinkedList<>();
-                LinkedList<remove_sup_panal> drinks = new LinkedList<>();
-                LinkedList<remove_sup_panal> desert = new LinkedList<>();
-                LinkedList<remove_sup_panal> one_dish = new LinkedList<>();
-                LinkedList<remove_sup_panal> main_course = new LinkedList<>();
+                snack = new LinkedList<>();
+                drinks = new LinkedList<>();
+                desert = new LinkedList<>();
+                one_dish = new LinkedList<>();
+                main_course = new LinkedList<>();
 
                 // Read menu files into lists
-                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack);
-                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks);
-                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt", desert);
-                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt", one_dish);
-                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt", main_course);
+                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack, this, "Snack");
+                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks, this, "Drinks");
+                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt", desert, this, "Desert");
+                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt", one_dish, this, "Onedish");
+                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt", main_course, this,
+                                "Maincourse");
 
                 // Add items to the main panel
                 add_panel(snack);
@@ -358,6 +359,21 @@ public class add_remove_panel extends javax.swing.JPanel {
 
         }// </editor-fold>//GEN-END:initComponents
          // manage_photo(photo_Panel); in component when use net bean
+        /*
+         * public void action_button_of_suppanel(String menu_type, int menu_index) {
+         * if (menu_type == "snack") {
+         * snack.remove(menu_index);
+         * } else if (menu_type == "drinks") {
+         * drinks.remove(menu_index);
+         * } else if (menu_type == "one_dish") {
+         * one_dish.remove(menu_index);
+         * } else if (menu_type == "desert") {
+         * desert.remove(menu_index);
+         * } else if (menu_type == "main_course") {
+         * main_course.remove(menu_index);
+         * }
+         * }
+         */
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
                 // TODO add your handling code here:
@@ -504,6 +520,12 @@ public class add_remove_panel extends javax.swing.JPanel {
         private String new_menu_name;
         private String new_mewnu_price;
         private String new_menu_type;
+
+        LinkedList<remove_sup_panal> snack;
+        LinkedList<remove_sup_panal> drinks;
+        LinkedList<remove_sup_panal> desert;
+        LinkedList<remove_sup_panal> one_dish;
+        LinkedList<remove_sup_panal> main_course;
         // End of variables declaration//GEN-END:variables
 
         public class ImagePanel extends JPanel {
