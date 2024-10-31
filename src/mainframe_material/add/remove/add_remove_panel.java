@@ -311,12 +311,16 @@ public class add_remove_panel extends javax.swing.JPanel {
                  * .addGap(0, 0, Short.MAX_VALUE)));
                  */
 
+                //
+
+                // set jscroll pane
                 JScrollPane scrollPane = new JScrollPane(menu_opera_for_add);
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
                 scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-
-                menu_opera_for_add.setPreferredSize(new Dimension(300, 600));
+                scrollPane.setPreferredSize(new Dimension(300, 600));
                 menu_opera_for_add.setLayout(new BoxLayout(menu_opera_for_add, BoxLayout.Y_AXIS));
+                menu_opera_for_add.setPreferredSize(new Dimension(300, 7000));
+
                 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
                 this.setLayout(layout);
                 layout.setHorizontalGroup(
@@ -353,29 +357,31 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                                                 Short.MAX_VALUE))
                                                                 .addGap(38, 38, 38)));
 
+                // Load components and add them to the panel
                 manage_photo(photo_Panel);
                 menu_opera_for_add.add(top_panel_opera);
+
                 LinkedList<remove_sup_panal> snack = new LinkedList<>();
                 LinkedList<remove_sup_panal> drinks = new LinkedList<>();
                 LinkedList<remove_sup_panal> desert = new LinkedList<>();
                 LinkedList<remove_sup_panal> one_dish = new LinkedList<>();
                 LinkedList<remove_sup_panal> main_course = new LinkedList<>();
 
-                readder_adapter.reader("src\\restaurant_log\\menu_list\\snack_menu.txt", snack);
-                readder_adapter.reader("src\\restaurant_log\\menu_list\\drinks.txt", drinks);
-                readder_adapter.reader("src\\restaurant_log\\menu_list\\desert_menu.txt", desert);
-                readder_adapter.reader("src\\restaurant_log\\menu_list\\one_dish_menu.txt", one_dish);
-                readder_adapter.reader("src\\restaurant_log\\menu_list\\maincourse_menu.txt", main_course);
+                // Read menu files into lists
+                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack);
+                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks);
+                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt", desert);
+                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt", one_dish);
+                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt", main_course);
 
+                // Add items to the main panel
                 add_panel(snack);
                 add_panel(drinks);
                 add_panel(desert);
                 add_panel(one_dish);
                 add_panel(main_course);
 
-                revalidate(); // อัปเดต UI
-                repaint(); // วาด UI ใหม่
-                System.out.println("all file load success");
+                System.out.println("All files loaded successfully.");
 
         }// </editor-fold>//GEN-END:initComponents
          // manage_photo(photo_Panel); in component when use net bean
