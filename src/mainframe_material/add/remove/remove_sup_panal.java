@@ -126,6 +126,7 @@ public class remove_sup_panal extends javax.swing.JPanel {
 
             String line;
             int currentLine = 1;
+            // write to temp
             while ((line = reader.readLine()) != null) {
                 if (currentLine == lineToEdit) {
                     writer.write(newContent);
@@ -135,14 +136,19 @@ public class remove_sup_panal extends javax.swing.JPanel {
                 writer.newLine();
                 currentLine++;
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-            File inputFile = new File(inputFilePath);
-            File outputFile = new File(outputFilePath);
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(outputFilePath), StandardCharsets.UTF_8));
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(new FileOutputStream(inputFilePath, false), StandardCharsets.UTF_8))) {
 
-            if (inputFile.delete()) {
-                outputFile.renameTo(inputFile);
-            } else {
-                System.out.println("ไม่สามารถลบไฟล์ต้นฉบับได้");
+            String line;
+            while ((line = reader.readLine()) != null) {
+                writer.write(line);
+                writer.newLine();
             }
 
         } catch (IOException e) {
@@ -151,7 +157,60 @@ public class remove_sup_panal extends javax.swing.JPanel {
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        String inputFilePath = "";
+        String outputFilePath = "src\\restaurant_log\\menu_list\\temp.txt";
+        if (menu_type == "Desert") {
+            inputFilePath = "src\\restaurant_log\\menu_list\\desert_menu.txt";
+        } else if (menu_type == "Snack") {
+            inputFilePath = "src\\restaurant_log\\menu_list\\snack_menu.txt";
+        } else if (menu_type == "Maincourse") {
+            inputFilePath = "src\\restaurant_log\\menu_list\\maincourse_menu.txt";
+        } else if (menu_type == "Onedish") {
+            inputFilePath = "src\\restaurant_log\\menu_list\\one_dish_menu.txt";
+        } else if (menu_type == "Drinks") {
+            inputFilePath = "src\\restaurant_log\\menu_list\\drinks.txt";
+        } else {
+            System.out.println("Invalid menu type: " + menu_type);
+
+        }
+        int lineToEdit = menu_index + 1;
+        String newContent = menu_name + ',' + menu_price + ',' + menu_status + ',' + image_paht;
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(new FileOutputStream(outputFilePath), StandardCharsets.UTF_8))) {
+
+            String line;
+            int currentLine = 1;
+            // write to temp
+            while ((line = reader.readLine()) != null) {
+                if (currentLine == lineToEdit) {
+                    System.out.println("delete sucess");
+                } else {
+                    writer.write(line);
+                }
+                writer.newLine();
+                currentLine++;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(outputFilePath), StandardCharsets.UTF_8));
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(new FileOutputStream(inputFilePath, false), StandardCharsets.UTF_8))) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                writer.write(line);
+                writer.newLine();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // Variables declaration - do not modify
