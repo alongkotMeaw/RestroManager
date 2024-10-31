@@ -6,6 +6,7 @@ package mainframe_material.cart;
 
 import java.awt.Color;
 import java.util.LinkedList;
+import java.util.Objects;
 
 /**
  *
@@ -16,9 +17,14 @@ public class cart_sub_panel extends javax.swing.JPanel {
     /**
      * Creates new form cart_sub_panel
      */
-    public cart_sub_panel(String name, double prince, int quatity, String catalog) {
+    public cart_sub_panel(String name, double prince, int quatity, String catalog, int index_of_cart) {
         // this.index_of_cart = index_of_cart;
         // sub_panel_link = this.sub_panel_link;
+        this.name = name;
+        this.prince = prince;
+        this.catalog = catalog;
+        this.quatity = quatity;
+        this.index_of_cart = index_of_cart;
         initComponents(name, prince, quatity, catalog);
     }
 
@@ -89,6 +95,8 @@ public class cart_sub_panel extends javax.swing.JPanel {
         remove_button.setText("undo");
         remove_button.setForeground(Color.black);
         setBackground(Color.white);
+        System.out.println("cart index = " + index_of_cart);
+        index_of_cart = -1;
         // sub_panel_link.remove(0);
         // System.out.println(sub_panel_link);
     }// GEN-LAST:event_remove_buttonActionPerformed
@@ -100,5 +108,30 @@ public class cart_sub_panel extends javax.swing.JPanel {
     private javax.swing.JLabel total_label;
     private LinkedList<cart_sub_panel> sub_panel_link;
     private int index_of_cart;
+    private String name;
+    private double prince;
+    private int quatity;
+    private String catalog;
+
     // End of variables declaration//GEN-END:variables
+    public int getIndexofcart() {
+        return index_of_cart;
+    }
+
+    public String getnameofcart() {
+        return name;
+    }
+
+    public double getpriceofcart() {
+        return prince;
+    }
+
+    public int getquatityofcart() {
+        return quatity;
+    }
+
+    public String getcatalogofcart() {
+        return catalog;
+    }
+
 }
