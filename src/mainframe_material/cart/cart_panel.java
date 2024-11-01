@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import main.*;
 
 public class cart_panel extends javax.swing.JPanel {
 
@@ -57,7 +58,7 @@ public class cart_panel extends javax.swing.JPanel {
                 jLabel2.setText("ราคารวม :");
 
                 jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-                jLabel3.setText("change total_price here!");
+                jLabel3.setText(String.valueOf(total_price));
 
                 jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
                 jLabel4.setText(", โต๊ะ :");
@@ -205,8 +206,9 @@ public class cart_panel extends javax.swing.JPanel {
                 // add panel
                 for (cart_sub_panel p : link_Sub_panels) {
                         jPanel3.add(p);
+                        total_price += p.getPrice() * p.getQuantity();
                 }
-
+                jLabel3.setText(String.valueOf(total_price));
         }// </editor-fold>
 
         private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,25 +227,24 @@ public class cart_panel extends javax.swing.JPanel {
 
                 String formattedTime = currentTime.format(formatter);
                 for (cart_sub_panel p : link_Sub_panels) {
-                        if (p.getIndex() != -1) {// -1 if status delete from class
-                                // write to file
+                        total_price = total_price + p.getPrice() * p.getQuantity();
+                        jLabel3.setText(String.valueOf(total_price));
+                        String data = String.valueOf(jComboBox1.getSelectedIndex()) + ","
+                                        + p.getCatalog() + ","
+                                        + p.getName() + ","
+                                        + p.getQuantity() + ","
+                                        + p.getPrice() + ","
+                                        + formattedTime;
 
-                                String data = String.valueOf(jComboBox1.getSelectedIndex()) + ","
-                                                + p.getCatalog() + ","
-                                                + p.getName() + ","
-                                                + p.getQuantity() + ","
-                                                + p.getPrice() + ","
-                                                + formattedTime;
-
-                                try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-                                                new FileOutputStream(filePath, true), StandardCharsets.UTF_8))) {
-                                        writer.write(data);
-                                        writer.newLine(); //
-                                } catch (IOException e) {
-                                        e.printStackTrace();
-                                        System.out.println("Error writing to file: " + filePath);
-                                }
+                        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+                                        new FileOutputStream(filePath, true), StandardCharsets.UTF_8))) {
+                                writer.write(data);
+                                writer.newLine(); //
+                        } catch (IOException e) {
+                                e.printStackTrace();
+                                System.out.println("Error writing to file: " + filePath);
                         }
+
                 }
                 // delete data
                 try (OutputStreamWriter writer = new OutputStreamWriter(
@@ -256,6 +257,13 @@ public class cart_panel extends javax.swing.JPanel {
                         System.out.println("something wrong delete " + filePath);
                 }
 
+                // popup
+
+                Main.cart_reload();
+                JLabel temp = new JLabel("ได้รับออเดอร์เรียบร้อยแล้ว");
+                temp.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+                JOptionPane.showMessageDialog(null, temp, "order received",
+                                JOptionPane.DEFAULT_OPTION);
         }// GEN-LAST:event_jButton1ActionPerformed
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -273,5 +281,6 @@ public class cart_panel extends javax.swing.JPanel {
         private javax.swing.JScrollPane jScrollPane1;
         private LinkedList<cart_sub_panel> link_Sub_panels;
         private int table_index = 0;
+        private double total_price = 0;
 
 }
