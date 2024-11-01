@@ -6,6 +6,7 @@ package mainframe_material.cart;
 
 import java.nio.charset.StandardCharsets;
 import java.io.*;
+import main.*;
 
 /**
  *
@@ -84,8 +85,9 @@ public class cart_sub_panel extends javax.swing.JPanel {
 
         System.out.println("index = " + index_of_cart);
         int lineToEdit = index_of_cart;
-        String inputFilePath = "src\\restaurant_log\\cart_log\\cart_menu.txt",
-                outputFilePath = "src\\restaurant_log\\menu_list\\temp.txt";
+        // src/restaurant_log/cart_log/cart_menu.txt
+        String inputFilePath = "src/restaurant_log/cart_log/cart_menu.txt",
+                outputFilePath = "src/restaurant_log/menu_list/temp_cart.txt";
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
                 BufferedWriter writer = new BufferedWriter(
@@ -98,32 +100,32 @@ public class cart_sub_panel extends javax.swing.JPanel {
                 if (currentLine == lineToEdit) {
                     System.out.println("delete sucess");
                 } else if (currentLine != lineToEdit) {
-                    writer.write(line);
+                    writer.write(line + "\n");
                 }
-                writer.newLine();
                 currentLine++;
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        inputFilePath = "src/restaurant_log/menu_list/temp.txt";
-        outputFilePath = "src/restaurant_log/cart_log/cart_menu.txt";
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream(outputFilePath), StandardCharsets.UTF_8));
-                BufferedWriter writer = new BufferedWriter(
-                        new OutputStreamWriter(new FileOutputStream(inputFilePath, false), StandardCharsets.UTF_8))) {
+        String inputFilePath2 = "src/restaurant_log/menu_list/temp_cart.txt",
+                outputFilePath2 = "src/restaurant_log/cart_log/cart_menu.txt";
+        try (BufferedReader reader2 = new BufferedReader(
+                new InputStreamReader(new FileInputStream(inputFilePath2),
+                        StandardCharsets.UTF_8));
+                BufferedWriter writer2 = new BufferedWriter(
+                        new OutputStreamWriter(new FileOutputStream(outputFilePath2, false),
+                                StandardCharsets.UTF_8))) {
 
             String line;
-            while ((line = reader.readLine()) != null) {
-                writer.write(line);
-                writer.newLine();
+            while ((line = reader2.readLine()) != null) {
+                writer2.write(line + "\n");
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Main.cart_reload();
 
     }// GEN-LAST:event_remove_buttonActionPerformed
 

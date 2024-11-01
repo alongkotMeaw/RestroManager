@@ -187,9 +187,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JPanel main_Summary_panel;
     private javax.swing.JPanel main_addremove_panel;
-    private javax.swing.JPanel main_cart_panel;
+    private static javax.swing.JPanel main_cart_panel;
     private javax.swing.JPanel main_menu_panel;
     private javax.swing.JTabbedPane main_panel;
     // End of variables declaration//GEN-END:variables
+
+    public static void cart_reload() {
+        main_cart_panel.removeAll();
+        main_cart_panel.add(new cart_panel());
+    }
 
 }
