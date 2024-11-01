@@ -117,6 +117,9 @@ public class Main extends javax.swing.JFrame {
                 } else if (((JTabbedPane) e.getSource()).getSelectedIndex() == 1) {
                     main_cart_panel.removeAll();
                     main_cart_panel.add(new cart_panel());
+                } else if (((JTabbedPane) e.getSource()).getSelectedIndex() == 2) {
+                    main_addremove_panel.removeAll();
+                    main_addremove_panel.add(new add_remove_panel());
                 }
             }
         });

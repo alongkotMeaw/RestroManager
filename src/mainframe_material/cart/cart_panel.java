@@ -105,7 +105,7 @@ public class cart_panel extends javax.swing.JPanel {
                                                                                 .addComponent(jLabel5))
                                                                 .addContainerGap(223, Short.MAX_VALUE)));
 
-                jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+                jPanel2.setBackground(new java.awt.Color(255, 136, 91));
 
                 jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(
                                 new String[] { "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
@@ -199,6 +199,7 @@ public class cart_panel extends javax.swing.JPanel {
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)));
 
                 jPanel3.setLayout(new BoxLayout(jPanel3, BoxLayout.Y_AXIS));
+
                 add_Reader_adapter.menu_reader_for_panel_add("src//restaurant_log//cart_log//cart_menu.txt",
                                 link_Sub_panels);
                 // add panel
@@ -224,7 +225,7 @@ public class cart_panel extends javax.swing.JPanel {
 
                 String formattedTime = currentTime.format(formatter);
                 for (cart_sub_panel p : link_Sub_panels) {
-                        if (p.getIndex() != -1) {//-1 if status delete from class
+                        if (p.getIndex() != -1) {// -1 if status delete from class
                                 // write to file
 
                                 String data = String.valueOf(jComboBox1.getSelectedIndex()) + ","

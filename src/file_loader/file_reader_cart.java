@@ -1,6 +1,5 @@
 package file_loader;
 
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;

@@ -7,6 +7,8 @@ package mainframe_material.cart;
 import java.awt.Color;
 import java.util.LinkedList;
 import java.util.Objects;
+import java.nio.charset.StandardCharsets;
+import java.io.*;
 
 /**
  *
@@ -36,11 +38,11 @@ public class cart_sub_panel extends javax.swing.JPanel {
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        quantity_num = new javax.swing.JLabel();
+        remove_button = new javax.swing.JButton();
+        menu_name = new javax.swing.JLabel();
+        constant_args_dontfixthis = new javax.swing.JLabel();
+        total_price = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(996, 50));
         setMaximumSize(new java.awt.Dimension(996, 50));
@@ -48,40 +50,92 @@ public class cart_sub_panel extends javax.swing.JPanel {
         setSize(new java.awt.Dimension(996, 50));
         setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
-        jLabel2.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
-        jLabel3.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
-        jLabel4.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
-        jButton1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        quantity_num.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        menu_name.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        constant_args_dontfixthis.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        total_price.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        remove_button.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        remove_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                remove_buttonActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText(String.valueOf(quantity) + " x");
-        add(jLabel1);
-        jLabel1.setBounds(32, 17, 50, 35);
+        quantity_num.setText(String.valueOf(quantity) + " x");
+        add(quantity_num);
+        quantity_num.setBounds(32, 17, 50, 35);
 
-        jButton1.setText("ยกเลิก");
-        add(jButton1);
-        jButton1.setBounds(741, 14, 150, 25);
+        remove_button.setText("ยกเลิก");
+        add(remove_button);
+        remove_button.setBounds(741, 25, 150, 25);
 
-        jLabel2.setText(name);
-        add(jLabel2);
-        jLabel2.setBounds(75, 17, 200, 35);
+        menu_name.setText(name);
+        add(menu_name);
+        menu_name.setBounds(75, 17, 200, 35);
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel3.setText("ราคารวม : ");
-        add(jLabel3);
-        jLabel3.setBounds(350, 17, 100, 35);
+        constant_args_dontfixthis.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        constant_args_dontfixthis.setText("ราคารวม : ");
+        add(constant_args_dontfixthis);
+        constant_args_dontfixthis.setBounds(350, 17, 100, 35);
 
-        jLabel4.setText(String.valueOf(quantity * price));
-        add(jLabel4);
-        jLabel4.setBounds(450, 17, 50, 35);
+        total_price.setText(String.valueOf(quantity * price));
+        add(total_price);
+        total_price.setBounds(450, 17, 50, 35);
     }// </editor-fold>
 
+    private void remove_buttonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_remove_buttonActionPerformed
+
+        System.out.println("index = " + index_of_cart);
+        int lineToEdit = index_of_cart + 1;
+        String inputFilePath = "src/restaurant_log/cart_log/cart_menu.txt",
+                outputFilePath = "src/restaurant_log/menu_list/temp.txt";
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(new FileOutputStream(outputFilePath), StandardCharsets.UTF_8))) {
+
+            String line;
+            int currentLine = 1;
+            // write to temp
+            while ((line = reader.readLine()) != null) {
+                if (currentLine == lineToEdit) {
+                    System.out.println("delete sucess");
+                } else {
+                    writer.write(line);
+                }
+                writer.newLine();
+                currentLine++;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        inputFilePath = "src/restaurant_log/menu_list/temp.txt";
+        outputFilePath = "src/restaurant_log/cart_log/cart_menu.txt";
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(outputFilePath), StandardCharsets.UTF_8));
+                BufferedWriter writer = new BufferedWriter(
+                        new OutputStreamWriter(new FileOutputStream(inputFilePath, false), StandardCharsets.UTF_8))) {
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                writer.write(line);
+                writer.newLine();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }// GEN-LAST:event_remove_buttonActionPerformed
+
     // Variables declaration - do not modify
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton remove_button;
+    private javax.swing.JLabel quantity_num;
+    private javax.swing.JLabel menu_name;
+    private javax.swing.JLabel constant_args_dontfixthis;
+    private javax.swing.JLabel total_price;
     private String name;
     private double price;
     private int quantity;
