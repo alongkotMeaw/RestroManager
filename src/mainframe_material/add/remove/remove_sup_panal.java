@@ -2,7 +2,7 @@ package mainframe_material.add.remove;
 
 import java.awt.Dimension;
 import java.nio.charset.StandardCharsets;
-import main.main;
+import main.Main;
 import java.io.*;
 
 /**

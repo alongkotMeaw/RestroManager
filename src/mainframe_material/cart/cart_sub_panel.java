@@ -17,15 +17,13 @@ public class cart_sub_panel extends javax.swing.JPanel {
     /**
      * Creates new form cart_sub_panel
      */
-    public cart_sub_panel(String name, double prince, int quatity, String catalog, int index_of_cart) {
-        // this.index_of_cart = index_of_cart;
-        // sub_panel_link = this.sub_panel_link;
+    public cart_sub_panel(String name, double price, int quantity, String catalog, int index_of_cart) {
         this.name = name;
-        this.prince = prince;
+        this.price = price;
+        this.quantity = quantity;
         this.catalog = catalog;
-        this.quatity = quatity;
         this.index_of_cart = index_of_cart;
-        initComponents(name, prince, quatity, catalog);
+        initComponents();
     }
 
     /**
@@ -36,102 +34,79 @@ public class cart_sub_panel extends javax.swing.JPanel {
     // @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
-    private void initComponents(String name, double prince, int quatity, String catalog) {
+    private void initComponents() {
 
-        quatity_label = new javax.swing.JLabel();
-        menu_neme_label = new javax.swing.JLabel();
-        total_label = new javax.swing.JLabel();
-        remove_button = new javax.swing.JButton();
-        setBackground(Color.lightGray);
-        quatity_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
-        quatity_label.setText("" + quatity);
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
-        menu_neme_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
-        menu_neme_label.setText(name);
+        setMinimumSize(new java.awt.Dimension(996, 50));
+        setMaximumSize(new java.awt.Dimension(996, 50));
+        setPreferredSize(new java.awt.Dimension(996, 50));
+        setSize(new java.awt.Dimension(996, 50));
+        setLayout(null);
 
-        total_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
-        total_label.setText("ราคารวม " + (prince * quatity));
+        jLabel1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        jLabel2.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        jLabel3.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        jLabel4.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        jButton1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
 
-        remove_button.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        remove_button.setForeground(new java.awt.Color(255, 51, 51));
-        remove_button.setText("-");
-        remove_button.putClientProperty("JButton.buttonType", "roundRect");
-        remove_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                remove_buttonActionPerformed(evt);
-            }
-        });
+        jLabel1.setText(String.valueOf(quantity) + " x");
+        add(jLabel1);
+        jLabel1.setBounds(32, 17, 50, 35);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addComponent(quatity_label)
-                                .addGap(126, 126, 126)
-                                .addComponent(menu_neme_label)
-                                .addGap(155, 155, 155)
-                                .addComponent(total_label)
-                                .addGap(122, 122, 122)
-                                .addComponent(remove_button)
-                                .addContainerGap(76, Short.MAX_VALUE)));
-        layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(quatity_label)
-                                        .addComponent(menu_neme_label)
-                                        .addComponent(remove_button)
-                                        .addComponent(total_label))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-        setSize(996, 50);
+        jButton1.setText("ยกเลิก");
+        add(jButton1);
+        jButton1.setBounds(741, 14, 150, 25);
 
-    }// </editor-fold>//GEN-END:initComponents
+        jLabel2.setText(name);
+        add(jLabel2);
+        jLabel2.setBounds(75, 17, 200, 35);
 
-    private void remove_buttonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_remove_buttonActionPerformed
-        // TODO add your handling code here:
-        remove_button.setText("undo");
-        remove_button.setForeground(Color.black);
-        setBackground(Color.white);
-        System.out.println("cart index = " + index_of_cart);
-        index_of_cart = -1;
-        // sub_panel_link.remove(0);
-        // System.out.println(sub_panel_link);
-    }// GEN-LAST:event_remove_buttonActionPerformed
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel3.setText("ราคารวม : ");
+        add(jLabel3);
+        jLabel3.setBounds(350, 17, 100, 35);
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel menu_neme_label;
-    private javax.swing.JLabel quatity_label;
-    private javax.swing.JButton remove_button;
-    private javax.swing.JLabel total_label;
-    private LinkedList<cart_sub_panel> sub_panel_link;
-    private int index_of_cart;
+        jLabel4.setText(String.valueOf(quantity * price));
+        add(jLabel4);
+        jLabel4.setBounds(450, 17, 50, 35);
+    }// </editor-fold>
+
+    // Variables declaration - do not modify
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private String name;
-    private double prince;
-    private int quatity;
+    private double price;
+    private int quantity;
     private String catalog;
+    private int index_of_cart;
+    // End of variables declaration
 
-    // End of variables declaration//GEN-END:variables
-    public int getIndexofcart() {
-        return index_of_cart;
+    public String getName() {
+        return this.name;
     }
 
-    public String getnameofcart() {
-        return name;
+    public String getCatalog() {
+        return this.catalog;
     }
 
-    public double getpriceofcart() {
-        return prince;
+    public double getPrice() {
+        return this.price;
     }
 
-    public int getquatityofcart() {
-        return quatity;
+    public int getQuantity() {
+        return this.quantity;
     }
 
-    public String getcatalogofcart() {
-        return catalog;
+    public int getIndex() {
+        return this.index_of_cart;
     }
 
 }

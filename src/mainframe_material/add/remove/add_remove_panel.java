@@ -9,13 +9,14 @@ import javax.swing.*;
 import file_loader.file_reader_for_remove_panal;
 import file_loader.write_new_menu;
 import mainframe_material.menu.menu;
-
+import java.util.concurrent.*;
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.dnd.*;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -340,12 +341,34 @@ public class add_remove_panel extends javax.swing.JPanel {
                 main_course = new LinkedList<>();
 
                 // Read menu files into lists
-                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack, this, "Snack");
-                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks, this, "Drinks");
-                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt", desert, this, "Desert");
-                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt", one_dish, this, "Onedish");
-                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt", main_course, this,
-                                "Maincourse");
+                ExecutorService executor = Executors.newFixedThreadPool(4);
+                Runnable c1 = () -> readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack, this,
+                                "Snack");
+                Runnable c2 = () -> readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks, this,
+                                "Drinks");
+                Runnable c3 = () -> readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt", desert, this,
+                                "Desert");
+                Runnable c4 = () -> readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt",
+                                main_course, this, "Maincourse");
+                executor.submit(c1);
+                executor.submit(c2);
+                executor.submit(c3);
+                executor.submit(c4);
+                executor.shutdownNow();
+
+                /*
+                 * readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack,
+                 * this, "Snack");
+                 * readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks,
+                 * this, "Drinks");
+                 * readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt",
+                 * desert, this, "Desert");
+                 * readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt",
+                 * one_dish, this, "Onedish");
+                 * readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt",
+                 * main_course, this,
+                 * "Maincourse");
+                 */
 
                 // Add items to the main panel
                 add_panel(snack);

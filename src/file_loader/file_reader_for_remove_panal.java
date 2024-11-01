@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 
-import javax.swing.JSeparator;
-
 import mainframe_material.add.remove.add_remove_panel;
 import mainframe_material.add.remove.remove_sup_panal;
 

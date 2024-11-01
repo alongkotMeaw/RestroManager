@@ -220,18 +220,18 @@ public class cart_panel extends javax.swing.JPanel {
                 System.out.println("test");
                 String filePath = "src\\restaurant_log\\user_order.txt";
                 LocalDateTime currentTime = LocalDateTime.now();
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy/HH:mm:ss");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy,HH:mm:ss");
 
                 String formattedTime = currentTime.format(formatter);
                 for (cart_sub_panel p : link_Sub_panels) {
-                        if (p.getIndexofcart() != -1) {
+                        if (p.getIndex() != -1) {//-1 if status delete from class
                                 // write to file
 
                                 String data = String.valueOf(jComboBox1.getSelectedIndex()) + ","
-                                                + p.getcatalogofcart() + ","
-                                                + p.getnameofcart() + ","
-                                                + p.getquatityofcart() + ","
-                                                + p.getpriceofcart() + ","
+                                                + p.getCatalog() + ","
+                                                + p.getName() + ","
+                                                + p.getQuantity() + ","
+                                                + p.getPrice() + ","
                                                 + formattedTime;
 
                                 try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
