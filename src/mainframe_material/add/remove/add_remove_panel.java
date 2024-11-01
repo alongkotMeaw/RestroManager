@@ -8,6 +8,7 @@ import javax.swing.*;
 
 import file_loader.file_reader_for_remove_panal;
 import file_loader.write_new_menu;
+import mainframe_material.menu.menu;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
@@ -329,7 +330,6 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                                                 Short.MAX_VALUE))
                                                                 .addGap(38, 38, 38)));
 
-                // Load components and add them to the panel
                 manage_photo(photo_Panel);
                 menu_opera_for_add.add(top_panel_opera);
 
@@ -380,7 +380,19 @@ public class add_remove_panel extends javax.swing.JPanel {
 
                 new_menu_name = jTextField1.getText();
                 new_mewnu_price = jTextField2.getText();
-                new_menu_type = jTextField3.getText();
+                new_menu_type = jComboBox1.getSelectedItem().toString();
+                if (new_menu_type == "ของว่าง") {
+                        new_menu_type = "Snack";
+                } else if (new_menu_type == "ของหวาน") {
+                        new_menu_type = "Desert";
+                } else if (new_menu_type == "อาหารจานหลัก") {
+                        new_menu_type = "Maincourse";
+                } else if (new_menu_type == "อาหารจานเดียว") {
+                        new_menu_type = "Onedish";
+                } else if (new_menu_type == "เครื่องดื่ม") {
+                        new_menu_type = "Drinks";
+                }
+
                 System.out.println("name = " + new_menu_name + "price = " + new_mewnu_price);
                 if (new_menu_name == "" || new_menu_type == "" || new_mewnu_price == "") {
                         System.out.println("mewnu format add eror");

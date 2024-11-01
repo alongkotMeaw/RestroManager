@@ -8,4 +8,3 @@
 เกี๊ยวหมูทอด,50,1,/ImageFolder/เกี๊ยวหมูทอด.jpg
 เผือกทอด,60,1,/ImageFolder/เผือกทอด.jpg
 ลาบทอด,60.0,1,/ImageFolder/ลาบทอด.jpg
-
