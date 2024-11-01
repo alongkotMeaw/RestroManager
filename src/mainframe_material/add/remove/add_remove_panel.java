@@ -62,6 +62,11 @@ public class add_remove_panel extends javax.swing.JPanel {
                 jScrollPane8 = new javax.swing.JScrollPane();
                 photo_Panel7 = new javax.swing.JPanel();
                 readder_adapter = new file_reader_for_remove_panal();
+                jComboBox1 = new javax.swing.JComboBox<>();
+                jComboBox1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18));
+                jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(
+                                new String[] { "-", "ของว่าง", "อาหารจานหลัก", "อาหารจานเดียว", "เครื่องดื่ม",
+                                                "ของหวาน" }));
                 // test
                 // menu_opera_for_add.setLayout(new BoxLayout(menu_opera_for_add,
                 // BoxLayout.Y_AXIS));
@@ -97,10 +102,6 @@ public class add_remove_panel extends javax.swing.JPanel {
                 jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
                 jLabel7.setText("ประเภทเมนู");
 
-                jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(
-                                new String[] { "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
-                                                "14", "15" }));
-
                 javax.swing.GroupLayout photo_PanelLayout = new javax.swing.GroupLayout(photo_Panel);
                 photo_Panel.setLayout(photo_PanelLayout);
                 photo_PanelLayout.setHorizontalGroup(
@@ -114,15 +115,14 @@ public class add_remove_panel extends javax.swing.JPanel {
                 jLabel8.setText("เลือกรูป");
 
                 jTextField3.setText("");
-
-                javax.swing.GroupLayout add_menu_panelLayout = new javax.swing.GroupLayout(add_menu_panel);
+                GroupLayout add_menu_panelLayout = new GroupLayout(add_menu_panel);
                 add_menu_panel.setLayout(add_menu_panelLayout);
+
                 add_menu_panelLayout.setHorizontalGroup(
-                                add_menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                add_menu_panelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                 .addGroup(add_menu_panelLayout.createSequentialGroup()
-                                                                .addGroup(add_menu_panelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(add_menu_panelLayout.createParallelGroup(
+                                                                                GroupLayout.Alignment.LEADING)
                                                                                 .addGroup(add_menu_panelLayout
                                                                                                 .createSequentialGroup()
                                                                                                 .addGap(168, 168, 168)
@@ -132,104 +132,99 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                                                 .addGap(24, 24, 24)
                                                                                                 .addGroup(add_menu_panelLayout
                                                                                                                 .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                                                GroupLayout.Alignment.LEADING)
                                                                                                                 .addComponent(jLabel8)
                                                                                                                 .addGroup(add_menu_panelLayout
                                                                                                                                 .createParallelGroup(
-                                                                                                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                                                                GroupLayout.Alignment.TRAILING,
                                                                                                                                                 false)
                                                                                                                                 .addGroup(add_menu_panelLayout
                                                                                                                                                 .createSequentialGroup()
                                                                                                                                                 .addComponent(jLabel7)
                                                                                                                                                 .addPreferredGap(
-                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                LayoutStyle.ComponentPlacement.RELATED,
+                                                                                                                                                                GroupLayout.DEFAULT_SIZE,
                                                                                                                                                                 Short.MAX_VALUE)
-                                                                                                                                                .addComponent(jTextField3,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                .addComponent(jComboBox1,
+                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
                                                                                                                                                                 167,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                                                                .addGroup(GroupLayout.Alignment.LEADING,
                                                                                                                                                 add_menu_panelLayout
                                                                                                                                                                 .createSequentialGroup()
                                                                                                                                                                 .addComponent(jLabel3)
                                                                                                                                                                 .addPreferredGap(
-                                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                                LayoutStyle.ComponentPlacement.RELATED,
+                                                                                                                                                                                GroupLayout.DEFAULT_SIZE,
                                                                                                                                                                                 Short.MAX_VALUE)
                                                                                                                                                                 .addComponent(jTextField1,
-                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
                                                                                                                                                                                 167,
-                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE))
+                                                                                                                                .addGroup(GroupLayout.Alignment.LEADING,
                                                                                                                                                 add_menu_panelLayout
                                                                                                                                                                 .createSequentialGroup()
                                                                                                                                                                 .addComponent(jLabel5)
                                                                                                                                                                 .addGap(91, 91, 91)
                                                                                                                                                                 .addComponent(jTextField2,
-                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE,
                                                                                                                                                                                 167,
-                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                                                                                                                                                                GroupLayout.PREFERRED_SIZE)))))
                                                                                 .addGroup(add_menu_panelLayout
                                                                                                 .createSequentialGroup()
                                                                                                 .addGap(60, 60, 60)
                                                                                                 .addComponent(photo_Panel,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                                GroupLayout.PREFERRED_SIZE)))
                                                                 .addContainerGap(73, Short.MAX_VALUE))
-                                                .addGroup(add_menu_panelLayout.createParallelGroup(
-                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(add_menu_panelLayout
+                                                                .createParallelGroup(GroupLayout.Alignment.LEADING)
                                                                 .addGroup(add_menu_panelLayout.createSequentialGroup()
                                                                                 .addGap(16, 16, 16)
                                                                                 .addComponent(panel_label)
                                                                                 .addContainerGap(392,
                                                                                                 Short.MAX_VALUE))));
+
                 add_menu_panelLayout.setVerticalGroup(
-                                add_menu_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                add_menu_panelLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                 .addGroup(add_menu_panelLayout.createSequentialGroup()
                                                                 .addGap(67, 67, 67)
-                                                                .addGroup(add_menu_panelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                .addGroup(add_menu_panelLayout.createParallelGroup(
+                                                                                GroupLayout.Alignment.TRAILING)
                                                                                 .addComponent(jTextField1,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE)
                                                                                 .addComponent(jLabel3))
                                                                 .addGap(18, 18, 18)
-                                                                .addGroup(add_menu_panelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addGroup(add_menu_panelLayout.createParallelGroup(
+                                                                                GroupLayout.Alignment.LEADING)
                                                                                 .addComponent(jLabel5)
                                                                                 .addComponent(jTextField2,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE))
                                                                 .addGap(20, 20, 20)
-                                                                .addGroup(add_menu_panelLayout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                .addGroup(add_menu_panelLayout.createParallelGroup(
+                                                                                GroupLayout.Alignment.BASELINE)
                                                                                 .addComponent(jLabel7)
-                                                                                .addComponent(jTextField3,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(jComboBox1,
+                                                                                                GroupLayout.PREFERRED_SIZE,
+                                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                                GroupLayout.PREFERRED_SIZE))
                                                                 .addGap(18, 18, 18)
                                                                 .addComponent(jLabel8)
                                                                 .addGap(18, 18, 18)
-                                                                .addComponent(photo_Panel,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                49,
-                                                                                Short.MAX_VALUE)
+                                                                .addComponent(photo_Panel, GroupLayout.PREFERRED_SIZE,
+                                                                                GroupLayout.DEFAULT_SIZE,
+                                                                                GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+                                                                                49, Short.MAX_VALUE)
                                                                 .addComponent(jButton1)
                                                                 .addGap(28, 28, 28))
-                                                .addGroup(add_menu_panelLayout.createParallelGroup(
-                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(add_menu_panelLayout
+                                                                .createParallelGroup(GroupLayout.Alignment.LEADING)
                                                                 .addGroup(add_menu_panelLayout.createSequentialGroup()
                                                                                 .addGap(33, 33, 33)
                                                                                 .addComponent(panel_label)
@@ -362,6 +357,22 @@ public class add_remove_panel extends javax.swing.JPanel {
                 System.out.println("All files loaded successfully.");
 
         }// </editor-fold>//GEN-END:initComponents
+         // manage_photo(photo_Panel); in component when use net bean
+        /*
+         * public void action_button_of_suppanel(String menu_type, int menu_index) {
+         * if (menu_type == "snack") {
+         * snack.remove(menu_index);
+         * } else if (menu_type == "drinks") {
+         * drinks.remove(menu_index);
+         * } else if (menu_type == "one_dish") {
+         * one_dish.remove(menu_index);
+         * } else if (menu_type == "desert") {
+         * desert.remove(menu_index);
+         * } else if (menu_type == "main_course") {
+         * main_course.remove(menu_index);
+         * }
+         * }
+         */
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
                 // TODO add your handling code here:
@@ -436,7 +447,6 @@ public class add_remove_panel extends javax.swing.JPanel {
                                         if (dtde.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
                                                 dtde.acceptDrop(DnDConstants.ACTION_COPY);
 
-                                                // ดึงไฟล์ที่ถูกลากและวาง
                                                 List<File> droppedFiles = (List<File>) dtde.getTransferable()
                                                                 .getTransferData(DataFlavor.javaFileListFlavor);
 
@@ -445,6 +455,12 @@ public class add_remove_panel extends javax.swing.JPanel {
 
                                                 if (file_path.endsWith(".jpg") || file_path.endsWith(".jpeg")
                                                                 || file_path.endsWith(".png")) {
+
+                                                        // file_path
+
+                                                        // String destinationFolderPath =
+                                                        // "C:/Users/meama/source/repos/oop_project/src/ImageFolder";
+                                                        // String destinationFolderPath = "ImageFolder";
 
                                                         int lastIndex = file_path.lastIndexOf('\\');
                                                         String temp_path = file_path.substring(lastIndex + 1);
@@ -498,7 +514,6 @@ public class add_remove_panel extends javax.swing.JPanel {
         private javax.swing.JLabel panel_label;
         private javax.swing.JPanel top_panel_opera;
         private file_reader_for_remove_panal readder_adapter;
-        private javax.swing.JComboBox<String> jComboBox1;
         // for actionlistener
         private String new_menu_name;
         private String new_mewnu_price;
@@ -509,6 +524,8 @@ public class add_remove_panel extends javax.swing.JPanel {
         LinkedList<remove_sup_panal> desert;
         LinkedList<remove_sup_panal> one_dish;
         LinkedList<remove_sup_panal> main_course;
+
+        private javax.swing.JComboBox<String> jComboBox1;
         // End of variables declaration//GEN-END:variables
 
         public class ImagePanel extends JPanel {

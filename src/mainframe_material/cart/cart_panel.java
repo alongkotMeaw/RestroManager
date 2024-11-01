@@ -237,7 +237,7 @@ public class cart_panel extends javax.swing.JPanel {
                                 try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
                                                 new FileOutputStream(filePath, true), StandardCharsets.UTF_8))) {
                                         writer.write(data);
-                                        writer.newLine(); // 
+                                        writer.newLine(); //
                                 } catch (IOException e) {
                                         e.printStackTrace();
                                         System.out.println("Error writing to file: " + filePath);
@@ -248,7 +248,7 @@ public class cart_panel extends javax.swing.JPanel {
                 try (OutputStreamWriter writer = new OutputStreamWriter(
                                 new FileOutputStream("src\\restaurant_log\\cart_log\\cart_menu.txt", false),
                                 StandardCharsets.UTF_8)) {
-                        /
+
                         System.out.println("dataclear " + filePath);
                 } catch (IOException e) {
                         e.printStackTrace();
