@@ -97,6 +97,10 @@ public class add_remove_panel extends javax.swing.JPanel {
                 jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
                 jLabel7.setText("ประเภทเมนู");
 
+                jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(
+                                new String[] { "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+                                                "14", "15" }));
+
                 javax.swing.GroupLayout photo_PanelLayout = new javax.swing.GroupLayout(photo_Panel);
                 photo_Panel.setLayout(photo_PanelLayout);
                 photo_PanelLayout.setHorizontalGroup(
@@ -358,22 +362,6 @@ public class add_remove_panel extends javax.swing.JPanel {
                 System.out.println("All files loaded successfully.");
 
         }// </editor-fold>//GEN-END:initComponents
-         // manage_photo(photo_Panel); in component when use net bean
-        /*
-         * public void action_button_of_suppanel(String menu_type, int menu_index) {
-         * if (menu_type == "snack") {
-         * snack.remove(menu_index);
-         * } else if (menu_type == "drinks") {
-         * drinks.remove(menu_index);
-         * } else if (menu_type == "one_dish") {
-         * one_dish.remove(menu_index);
-         * } else if (menu_type == "desert") {
-         * desert.remove(menu_index);
-         * } else if (menu_type == "main_course") {
-         * main_course.remove(menu_index);
-         * }
-         * }
-         */
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
                 // TODO add your handling code here:
@@ -458,12 +446,6 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                 if (file_path.endsWith(".jpg") || file_path.endsWith(".jpeg")
                                                                 || file_path.endsWith(".png")) {
 
-                                                        // file_path
-
-                                                        // String destinationFolderPath =
-                                                        // "C:/Users/meama/source/repos/oop_project/src/ImageFolder";
-                                                        // String destinationFolderPath = "ImageFolder";
-
                                                         int lastIndex = file_path.lastIndexOf('\\');
                                                         String temp_path = file_path.substring(lastIndex + 1);
                                                         // temp_path = destinationFolderPath + "/" + temp_path;
@@ -516,6 +498,7 @@ public class add_remove_panel extends javax.swing.JPanel {
         private javax.swing.JLabel panel_label;
         private javax.swing.JPanel top_panel_opera;
         private file_reader_for_remove_panal readder_adapter;
+        private javax.swing.JComboBox<String> jComboBox1;
         // for actionlistener
         private String new_menu_name;
         private String new_mewnu_price;

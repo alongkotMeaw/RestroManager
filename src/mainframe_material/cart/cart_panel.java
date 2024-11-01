@@ -209,7 +209,7 @@ public class cart_panel extends javax.swing.JPanel {
         }// </editor-fold>
 
         private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
-                // TODO add your handling code here:
+
                 if (jComboBox1.getSelectedIndex() == 0)
                         jLabel5.setText("โปรดเลือกหมายเลขโต๊ะ");
                 else
@@ -237,7 +237,7 @@ public class cart_panel extends javax.swing.JPanel {
                                 try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
                                                 new FileOutputStream(filePath, true), StandardCharsets.UTF_8))) {
                                         writer.write(data);
-                                        writer.newLine(); // ขึ้นบรรทัดใหม่
+                                        writer.newLine(); // 
                                 } catch (IOException e) {
                                         e.printStackTrace();
                                         System.out.println("Error writing to file: " + filePath);
@@ -248,7 +248,7 @@ public class cart_panel extends javax.swing.JPanel {
                 try (OutputStreamWriter writer = new OutputStreamWriter(
                                 new FileOutputStream("src\\restaurant_log\\cart_log\\cart_menu.txt", false),
                                 StandardCharsets.UTF_8)) {
-                        // ไม่ต้องทำอะไรในนี้ เพราะแค่เปิดไฟล์เพื่อเคลียร์ข้อมูล
+                        /
                         System.out.println("dataclear " + filePath);
                 } catch (IOException e) {
                         e.printStackTrace();
@@ -272,7 +272,5 @@ public class cart_panel extends javax.swing.JPanel {
         private javax.swing.JScrollPane jScrollPane1;
         private LinkedList<cart_sub_panel> link_Sub_panels;
         private int table_index = 0;
-        // private LinkedList<cart_sub_panel> sub_panel_link = new
-        // LinkedList<cart_sub_panel>();
-        // End of variables declaration//GEN-END:variables
+
 }
