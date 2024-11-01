@@ -4,9 +4,6 @@
  */
 package mainframe_material.cart;
 
-import java.awt.Color;
-import java.util.LinkedList;
-import java.util.Objects;
 import java.nio.charset.StandardCharsets;
 import java.io.*;
 
@@ -86,13 +83,13 @@ public class cart_sub_panel extends javax.swing.JPanel {
     private void remove_buttonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_remove_buttonActionPerformed
 
         System.out.println("index = " + index_of_cart);
-        int lineToEdit = index_of_cart + 1;
-        String inputFilePath = "src/restaurant_log/cart_log/cart_menu.txt",
-                outputFilePath = "src/restaurant_log/menu_list/temp.txt";
+        int lineToEdit = index_of_cart;
+        String inputFilePath = "src\\restaurant_log\\cart_log\\cart_menu.txt",
+                outputFilePath = "src\\restaurant_log\\menu_list\\temp.txt";
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
                 BufferedWriter writer = new BufferedWriter(
-                        new OutputStreamWriter(new FileOutputStream(outputFilePath), StandardCharsets.UTF_8))) {
+                        new OutputStreamWriter(new FileOutputStream(outputFilePath, false), StandardCharsets.UTF_8))) {
 
             String line;
             int currentLine = 1;
@@ -100,7 +97,7 @@ public class cart_sub_panel extends javax.swing.JPanel {
             while ((line = reader.readLine()) != null) {
                 if (currentLine == lineToEdit) {
                     System.out.println("delete sucess");
-                } else {
+                } else if (currentLine != lineToEdit) {
                     writer.write(line);
                 }
                 writer.newLine();
