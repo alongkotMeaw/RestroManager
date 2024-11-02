@@ -196,9 +196,8 @@ public class remove_sup_panal extends javax.swing.JPanel {
                 if (currentLine == lineToEdit) {
                     System.out.println("delete sucess");
                 } else {
-                    writer.write(line);
+                    writer.write(line + "\n");
                 }
-                writer.newLine();
                 currentLine++;
             }
 

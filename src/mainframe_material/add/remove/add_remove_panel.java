@@ -591,11 +591,10 @@ public class add_remove_panel extends javax.swing.JPanel {
                         return old_path;
                 }
         }
-        
-        
 
         public static void menu_opera_reload(add_remove_panel p) {
                 menu_opera_for_add.removeAll();
+                menu_opera_for_add.revalidate();
                 menu_opera_for_add.add(top_panel_opera);
 
                 snack = new LinkedList<>();
@@ -604,11 +603,12 @@ public class add_remove_panel extends javax.swing.JPanel {
                 one_dish = new LinkedList<>();
                 main_course = new LinkedList<>();
 
-                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack,p, "Snack");
-                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks,p, "Drinks");
-                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt",desert,p, "Desert");
-                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt",one_dish, p, "Onedish");
-                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt",main_course, p, "Maincourse");
+                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack, p, "Snack");
+                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks, p, "Drinks");
+                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt", desert, p, "Desert");
+                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt", one_dish, p, "Onedish");
+                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt", main_course, p,
+                                "Maincourse");
 
                 // Add items to the main panel
 
@@ -624,10 +624,9 @@ public class add_remove_panel extends javax.swing.JPanel {
 
                 menu_opera_for_add.add(catagoly_box("อาหารจานหลัก"));
                 add_panel(main_course);
-
                 menu_opera_for_add.add(new JPanel());
 
-                System.out.println("All files loaded successfully.");
+                System.out.println("delte menu sucess.");
         }
 
 }

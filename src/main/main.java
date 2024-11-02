@@ -83,7 +83,7 @@ public class Main extends javax.swing.JFrame {
         setSize(1000, 700);
         setPreferredSize(new Dimension(1000, 700));
         setResizable(false);
-        setTitle("Order Receiver 0.2");
+        setTitle("Order Receiver 0.3");
         try {
             ImageIcon iconImage = new ImageIcon("src\\ImageFolder\\stack-overflow.png");
             Image icon = iconImage.getImage();
@@ -196,6 +196,5 @@ public class Main extends javax.swing.JFrame {
         main_cart_panel.removeAll();
         main_cart_panel.add(new cart_panel());
     }
-   
 
 }
