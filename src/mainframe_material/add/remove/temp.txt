@@ -65,19 +65,14 @@ public class add_remove_panel extends javax.swing.JPanel {
                 photo_Panel7 = new javax.swing.JPanel();
                 readder_adapter = new file_reader_for_remove_panal();
                 jComboBox1 = new javax.swing.JComboBox<>();
-                jComboBox1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+                jComboBox1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18));
                 jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(
                                 new String[] { "-", "ของว่าง", "อาหารจานหลัก", "อาหารจานเดียว", "เครื่องดื่ม",
                                                 "ของหวาน" }));
-                jComboBox1.putClientProperty("JComponent.roundRect", true);
                 // test
                 // menu_opera_for_add.setLayout(new BoxLayout(menu_opera_for_add,
                 // BoxLayout.Y_AXIS));
 
-                setSize(new Dimension(1000, 620));
-                setPreferredSize(new Dimension(1000, 620));
-                setMinimumSize(new Dimension(1000, 620));
-                setMaximumSize(new Dimension(1000, 620));
                 menu_opera_for_add.setSize(100, 100);
                 menu_opera_for_add.setPreferredSize(new Dimension(100, 100));
                 menu_opera_for_add.setMinimumSize(new Dimension(100, 100));
@@ -86,23 +81,19 @@ public class add_remove_panel extends javax.swing.JPanel {
                 // set defal photo of photo panel
                 photo_Panel.setBackgroundImage("src\\ImageFolder\\bgOfaddremove.png");
                 // set front
-                jTextField1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
-                jTextField2.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
-                jTextField3.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
-                jTextField1.putClientProperty("JComponent.roundRect", true);
-                jTextField2.putClientProperty("JComponent.roundRect", true);
-                jTextField3.putClientProperty("JComponent.roundRect", true);
-
-                jLabel3.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
+                jTextField1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18));
+                jTextField2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18));
+                jTextField3.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18));
+                jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18)); // NOI18N
                 jLabel3.setText("ชื่อเมนู");
 
-                panel_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 18));
+                panel_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
                 panel_label.setText("เพิ่มเมนู");
 
-                jLabel5.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
+                jLabel5.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
                 jLabel5.setText("ราคา");
 
-                jButton1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
+                jButton1.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
                 jButton1.setText("เพิ่ม");
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +105,7 @@ public class add_remove_panel extends javax.swing.JPanel {
 
                 jTextField2.setText("");
 
-                jLabel7.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
+                jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
                 jLabel7.setText("ประเภทเมนู");
 
                 javax.swing.GroupLayout photo_PanelLayout = new javax.swing.GroupLayout(photo_Panel);
@@ -126,7 +117,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                                 photo_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGap(0, 254, Short.MAX_VALUE));
 
-                jLabel8.setFont(new java.awt.Font("Sukhumvit Set", 0, 18)); // NOI18N
+                jLabel8.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
                 jLabel8.setText("เลือกรูป");
 
                 jTextField3.setText("");
@@ -250,12 +241,11 @@ public class add_remove_panel extends javax.swing.JPanel {
 
                 top_panel_opera.setBackground(new java.awt.Color(255, 255, 255));
 
-                jLabel2.setFont(new java.awt.Font("Sukhumvit Set", 0, 18)); // NOI18N
-                jLabel2.setForeground(Color.white);
+                jLabel2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
                 jLabel2.setText("จัดการเมนู");
 
                 jScrollPane8.setHorizontalScrollBar(null);
-                top_panel_opera.setBackground(new Color(85, 124, 86));
+
                 javax.swing.GroupLayout photo_Panel7Layout = new javax.swing.GroupLayout(photo_Panel7);
                 photo_Panel7.setLayout(photo_Panel7Layout);
                 photo_Panel7Layout.setHorizontalGroup(
@@ -303,7 +293,6 @@ public class add_remove_panel extends javax.swing.JPanel {
 
                 // set jscroll pane
                 JScrollPane scrollPane = new JScrollPane(menu_opera_for_add);
-                scrollPane.getVerticalScrollBar().setUnitIncrement(16);
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
                 scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
                 scrollPane.setPreferredSize(new Dimension(300, 600));
@@ -324,7 +313,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(scrollPane,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                450,
+                                                                                300,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addContainerGap(18, Short.MAX_VALUE)));
 
@@ -355,6 +344,30 @@ public class add_remove_panel extends javax.swing.JPanel {
                 one_dish = new LinkedList<>();
                 main_course = new LinkedList<>();
 
+                // Read menu files into lists
+
+                // ExecutorService executor = Executors.newFixedThreadPool(4);
+                // Runnable c1 = () ->
+                // readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack,
+                // this,
+                // "Snack");
+                // Runnable c2 = () ->
+                // readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks,
+                // this,
+                // "Drinks");
+                // Runnable c3 = () ->
+                // readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt",
+                // desert, this,
+                // "Desert");
+                // Runnable c4 = () ->
+                // readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt",
+                // main_course, this, "Maincourse");
+                // executor.submit(c1);
+                // executor.submit(c2);
+                // executor.submit(c3);
+                // executor.submit(c4);
+                // executor.shutdownNow();
+
                 readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack,
                                 this, "Snack");
                 readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks,
@@ -367,26 +380,31 @@ public class add_remove_panel extends javax.swing.JPanel {
                                 main_course, this, "Maincourse");
 
                 // Add items to the main panel
-
-                menu_opera_for_add.add(catagoly_box("ของว่าง"));
                 add_panel(snack);
-                menu_opera_for_add.add(catagoly_box("เครื่องดื่ม"));
                 add_panel(drinks);
-                menu_opera_for_add.add(catagoly_box("ของหวาน"));
                 add_panel(desert);
-
-                menu_opera_for_add.add(catagoly_box("อาหารจานเดียว"));
                 add_panel(one_dish);
-
-                menu_opera_for_add.add(catagoly_box("อาหารจานหลัก"));
                 add_panel(main_course);
-
-                menu_opera_for_add.add(new JPanel());
 
                 System.out.println("All files loaded successfully.");
 
         }// </editor-fold>//GEN-END:initComponents
          // manage_photo(photo_Panel); in component when use net bean
+        /*
+         * public void action_button_of_suppanel(String menu_type, int menu_index) {
+         * if (menu_type == "snack") {
+         * snack.remove(menu_index);
+         * } else if (menu_type == "drinks") {
+         * drinks.remove(menu_index);
+         * } else if (menu_type == "one_dish") {
+         * one_dish.remove(menu_index);
+         * } else if (menu_type == "desert") {
+         * desert.remove(menu_index);
+         * } else if (menu_type == "main_course") {
+         * main_course.remove(menu_index);
+         * }
+         * }
+         */
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
                 // TODO add your handling code here:
@@ -446,7 +464,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                 }
         }
 
-        public void manage_photo(ImagePanel photo_Panel) {
+        public String manage_photo(ImagePanel photo_Panel) {
 
                 // ตั้งค่า DropTarget ให้กับ J
                 new DropTarget(photo_Panel, new DropTargetListener() {
@@ -512,6 +530,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                         }
                 });
 
+                return "sad";
         }
 
         private void add_panel(LinkedList<remove_sup_panal> panel_add) {
@@ -519,17 +538,6 @@ public class add_remove_panel extends javax.swing.JPanel {
                         menu_opera_for_add.add(snack);
                 }
 
-        }
-
-        private JPanel catagoly_box(String name) {
-                JPanel catagory_name = new JPanel();
-                catagory_name.setPreferredSize(new Dimension(436, 50));
-                JLabel label_cata = new JLabel("");
-                label_cata.setFont(new java.awt.Font("Sukhumvit Set", 0, 18));
-                label_cata.setText(name);
-                catagory_name.setBackground(new Color(165, 182, 141));
-                catagory_name.add(label_cata);
-                return catagory_name;
         }
 
         private write_new_menu file_Write_new_menu = new write_new_menu();

@@ -220,50 +220,61 @@ public class cart_panel extends javax.swing.JPanel {
         }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-                System.out.println("test");
-                String filePath = "src\\restaurant_log\\user_order.txt";
-                LocalDateTime currentTime = LocalDateTime.now();
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy,HH:mm:ss");
+                if (link_Sub_panels.isEmpty()) {
+                        JLabel temp = new JLabel("รถเข็นว่าง");
+                        temp.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+                        JOptionPane.showMessageDialog(null, temp, "error", JOptionPane.ERROR_MESSAGE);
+                } else if (jComboBox1.getSelectedIndex() == 0) {
+                        JLabel temp = new JLabel("โปรดเลือกหมายเลขโต๊ะ");
+                        temp.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+                        JOptionPane.showMessageDialog(null, temp, "error", JOptionPane.ERROR_MESSAGE);
+                } else {
 
-                String formattedTime = currentTime.format(formatter);
-                for (cart_sub_panel p : link_Sub_panels) {
-                        total_price = total_price + p.getPrice() * p.getQuantity();
-                        jLabel3.setText(String.valueOf(total_price));
-                        String data = String.valueOf(jComboBox1.getSelectedIndex()) + ","
-                                        + p.getCatalog() + ","
-                                        + p.getName() + ","
-                                        + p.getQuantity() + ","
-                                        + p.getPrice() + ","
-                                        + formattedTime;
+                        System.out.println("test");
+                        String filePath = "src\\restaurant_log\\user_order.txt";
+                        LocalDateTime currentTime = LocalDateTime.now();
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy,HH:mm:ss");
 
-                        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-                                        new FileOutputStream(filePath, true), StandardCharsets.UTF_8))) {
-                                writer.write(data);
-                                writer.newLine(); //
+                        String formattedTime = currentTime.format(formatter);
+                        for (cart_sub_panel p : link_Sub_panels) {
+                                total_price = total_price + p.getPrice() * p.getQuantity();
+                                jLabel3.setText(String.valueOf(total_price));
+                                String data = String.valueOf(jComboBox1.getSelectedIndex()) + ","
+                                                + p.getCatalog() + ","
+                                                + p.getName() + ","
+                                                + p.getQuantity() + ","
+                                                + p.getPrice() + ","
+                                                + formattedTime;
+
+                                try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+                                                new FileOutputStream(filePath, true), StandardCharsets.UTF_8))) {
+                                        writer.write(data);
+                                        writer.newLine(); //
+                                } catch (IOException e) {
+                                        e.printStackTrace();
+                                        System.out.println("Error writing to file: " + filePath);
+                                }
+
+                        }
+                        // delete data
+                        try (OutputStreamWriter writer = new OutputStreamWriter(
+                                        new FileOutputStream("src\\restaurant_log\\cart_log\\cart_menu.txt", false),
+                                        StandardCharsets.UTF_8)) {
+
+                                System.out.println("dataclear " + filePath);
                         } catch (IOException e) {
                                 e.printStackTrace();
-                                System.out.println("Error writing to file: " + filePath);
+                                System.out.println("something wrong delete " + filePath);
                         }
 
+                        // popup
+
+                        Main.cart_reload();
+                        JLabel temp = new JLabel("ได้รับออเดอร์เรียบร้อยแล้ว");
+                        temp.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+                        JOptionPane.showMessageDialog(null, temp, "order received",
+                                        JOptionPane.INFORMATION_MESSAGE);
                 }
-                // delete data
-                try (OutputStreamWriter writer = new OutputStreamWriter(
-                                new FileOutputStream("src\\restaurant_log\\cart_log\\cart_menu.txt", false),
-                                StandardCharsets.UTF_8)) {
-
-                        System.out.println("dataclear " + filePath);
-                } catch (IOException e) {
-                        e.printStackTrace();
-                        System.out.println("something wrong delete " + filePath);
-                }
-
-                // popup
-
-                Main.cart_reload();
-                JLabel temp = new JLabel("ได้รับออเดอร์เรียบร้อยแล้ว");
-                temp.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
-                JOptionPane.showMessageDialog(null, temp, "order received",
-                                JOptionPane.DEFAULT_OPTION);
         }// GEN-LAST:event_jButton1ActionPerformed
 
         // Variables declaration - do not modify//GEN-BEGIN:variables

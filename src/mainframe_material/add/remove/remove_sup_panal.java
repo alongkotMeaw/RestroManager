@@ -1,5 +1,6 @@
 package mainframe_material.add.remove;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.nio.charset.StandardCharsets;
 import main.Main;
@@ -38,20 +39,26 @@ public class remove_sup_panal extends javax.swing.JPanel {
         menu_name_label = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(252, 250, 238));
 
         setPreferredSize(new java.awt.Dimension(436, 100));
-        menu_name_label.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18));
+        menu_name_label.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
         menu_name_label.setText(menu_name);
-        jButton3.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18));
-        jButton2.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 18));
+        jButton3.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
+        jButton2.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
         jButton2.setText("ลบ");
         jButton3.setText("ปิด");
+        jButton2.setFocusable(false);
+        jButton3.setFocusable(false);
 
         jButton2.setPreferredSize(new Dimension(10, 10));
         jButton3.setPreferredSize(new Dimension(10, 10));
-        if (menu_status == 0) {
+        if (menu_status == 1) {
+            jButton3.setText("ปิด");
+            menu_name_label.setForeground(Color.black);
+        } else {
             jButton3.setText("เปิด");
+            menu_name_label.setForeground(Color.red);
         }
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,10 +118,12 @@ public class remove_sup_panal extends javax.swing.JPanel {
                 .println("file path " + inputFilePath + "menu status " + menu_status + "menu index " + menu_index + 1);
         if (menu_status == 1) {
             menu_status = 0;
-            jButton3.setText("ปิด");
+            jButton3.setText("เปิด");
+            menu_name_label.setForeground(Color.red);
         } else {
             menu_status = 1;
-            jButton3.setText("เปิด");
+            jButton3.setText("ปิด");
+            menu_name_label.setForeground(Color.black);
         }
 
         int lineToEdit = menu_index + 1;
