@@ -193,17 +193,20 @@ public class sumary_panel extends javax.swing.JPanel {
 
         // week
         private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-
+                LocalDateTime currentTime = LocalDateTime.now().minusDays(7);
+                file_loader.excel_write.write_after(currentTime);
         }
 
         // month
         private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-
+                LocalDateTime currentTime = LocalDateTime.now().minusMonths(1);
+                file_loader.excel_write.write_after(currentTime);
         }
 
         // year
         private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-
+                LocalDateTime currentTime = LocalDateTime.now().minusYears(1);
+                file_loader.excel_write.write_after(currentTime);
         }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
