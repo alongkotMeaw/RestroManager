@@ -7,11 +7,12 @@ import mainframe_material.menu.Menu_panel_box;
 
 public class file_reader_for_add {
 
-    public void menu_reader_for_panel_add(String filePath, JPanel panelForAdd, String category) {
+    public static void menu_reader_for_panel_add(String filePath, JPanel panelForAdd, String category) {
 
         panelForAdd.setLayout(new BoxLayout(panelForAdd, BoxLayout.Y_AXIS));
         System.out.println("file reader call by " + filePath);
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"), 8192)) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"),
+                8192)) {
             String data;
             while ((data = br.readLine()) != null) {
                 String[] arrOfStr = data.split(",");
