@@ -220,6 +220,9 @@ public class remove_sup_panal extends javax.swing.JPanel {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        add_remove_panel.menu_opera_reload(main);
+
     }
 
     // Variables declaration - do not modify

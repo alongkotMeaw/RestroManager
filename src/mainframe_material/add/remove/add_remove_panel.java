@@ -510,14 +510,14 @@ public class add_remove_panel extends javax.swing.JPanel {
 
         }
 
-        private void add_panel(LinkedList<remove_sup_panal> panel_add) {
+        private static void add_panel(LinkedList<remove_sup_panal> panel_add) {
                 for (remove_sup_panal snack : panel_add) {
                         menu_opera_for_add.add(snack);
                 }
 
         }
 
-        private JPanel catagoly_box(String name) {
+        private static JPanel catagoly_box(String name) {
                 JPanel catagory_name = new JPanel();
                 catagory_name.setPreferredSize(new Dimension(436, 50));
                 JLabel label_cata = new JLabel("");
@@ -542,20 +542,20 @@ public class add_remove_panel extends javax.swing.JPanel {
         private javax.swing.JTextField jTextField1;
         private javax.swing.JTextField jTextField2;
         private javax.swing.JTextField jTextField3;
-        private javax.swing.JPanel menu_opera_for_add;
+        private static javax.swing.JPanel menu_opera_for_add;
         private javax.swing.JLabel panel_label;
-        private javax.swing.JPanel top_panel_opera;
-        private file_reader_for_remove_panal readder_adapter;
+        private static javax.swing.JPanel top_panel_opera;
+        private static file_reader_for_remove_panal readder_adapter;
         // for actionlistener
         private String new_menu_name;
         private String new_mewnu_price;
         private String new_menu_type;
 
-        LinkedList<remove_sup_panal> snack;
-        LinkedList<remove_sup_panal> drinks;
-        LinkedList<remove_sup_panal> desert;
-        LinkedList<remove_sup_panal> one_dish;
-        LinkedList<remove_sup_panal> main_course;
+        static LinkedList<remove_sup_panal> snack;
+        static LinkedList<remove_sup_panal> drinks;
+        static LinkedList<remove_sup_panal> desert;
+        static LinkedList<remove_sup_panal> one_dish;
+        static LinkedList<remove_sup_panal> main_course;
 
         private javax.swing.JComboBox<String> jComboBox1;
         // End of variables declaration//GEN-END:variables
@@ -590,6 +590,44 @@ public class add_remove_panel extends javax.swing.JPanel {
                 public String get_old_photo_path() {
                         return old_path;
                 }
+        }
+        
+        
+
+        public static void menu_opera_reload(add_remove_panel p) {
+                menu_opera_for_add.removeAll();
+                menu_opera_for_add.add(top_panel_opera);
+
+                snack = new LinkedList<>();
+                drinks = new LinkedList<>();
+                desert = new LinkedList<>();
+                one_dish = new LinkedList<>();
+                main_course = new LinkedList<>();
+
+                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack,p, "Snack");
+                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks,p, "Drinks");
+                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt",desert,p, "Desert");
+                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt",one_dish, p, "Onedish");
+                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt",main_course, p, "Maincourse");
+
+                // Add items to the main panel
+
+                menu_opera_for_add.add(catagoly_box("ของว่าง"));
+                add_panel(snack);
+                menu_opera_for_add.add(catagoly_box("เครื่องดื่ม"));
+                add_panel(drinks);
+                menu_opera_for_add.add(catagoly_box("ของหวาน"));
+                add_panel(desert);
+
+                menu_opera_for_add.add(catagoly_box("อาหารจานเดียว"));
+                add_panel(one_dish);
+
+                menu_opera_for_add.add(catagoly_box("อาหารจานหลัก"));
+                add_panel(main_course);
+
+                menu_opera_for_add.add(new JPanel());
+
+                System.out.println("All files loaded successfully.");
         }
 
 }

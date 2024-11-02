@@ -11,7 +11,7 @@ import mainframe_material.add.remove.remove_sup_panal;
 
 public class file_reader_for_remove_panal {
 
-    public void reader(String file_path, LinkedList<remove_sup_panal> supanel, add_remove_panel main,
+    public static void reader(String file_path, LinkedList<remove_sup_panal> supanel, add_remove_panel main,
             String menu_type) {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file_path), "UTF-8"),
                 8192)) {

@@ -196,5 +196,6 @@ public class Main extends javax.swing.JFrame {
         main_cart_panel.removeAll();
         main_cart_panel.add(new cart_panel());
     }
+   
 
 }
