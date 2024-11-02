@@ -4,6 +4,18 @@
  */
 package mainframe_material.sumary;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 /**
  *
  * @author meama
@@ -42,10 +54,32 @@ public class sumary_panel extends javax.swing.JPanel {
                 jPanel1.setMinimumSize(new java.awt.Dimension(910, 650));
 
                 jButton1.setText("one day");
+                jButton1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton1ActionPerformed(evt);
+                        }
+                });
 
                 jButton2.setText("one week");
+                jButton2.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton2ActionPerformed(evt);
+                        }
+                });
 
                 jButton3.setText("one month");
+                jButton3.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton3ActionPerformed(evt);
+                        }
+                });
+
+                jButton4.setText("one year");
+                jButton4.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton4ActionPerformed(evt);
+                        }
+                });
 
                 jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
                 jPanel2.setMaximumSize(new java.awt.Dimension(795, 490));
@@ -59,8 +93,6 @@ public class sumary_panel extends javax.swing.JPanel {
                 jPanel2Layout.setVerticalGroup(
                                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGap(0, 486, Short.MAX_VALUE));
-
-                jButton4.setText("one year");
 
                 jButton5.setText("Download Excel");
 
@@ -156,6 +188,58 @@ public class sumary_panel extends javax.swing.JPanel {
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 717,
                                                                 Short.MAX_VALUE));
         }// </editor-fold>//GEN-END:initComponents
+
+        // day
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+                LocalDateTime currentTime = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                final String currentDate = currentTime.format(formatter);
+                System.out.println(currentDate);
+
+                ////test excel
+                // Create a workbook
+        Workbook workbook = new XSSFWorkbook();
+
+        // Create a sheet in the workbook with a given name
+        Sheet sheet = workbook.createSheet("excel-sheet");
+
+        // Create a row in the sheet
+        Row row = sheet.createRow(0);
+
+        // Add a cell in the row
+        Cell cell = row.createCell(0);
+
+        // Set a value to the cell
+        cell.setCellValue("something");
+
+        try (FileOutputStream out = new FileOutputStream(new File("excel.xlsx"))) {
+            workbook.write(out);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                workbook.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+                /// 
+        }
+
+        // week
+        private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+
+        }
+
+        // month
+        private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+
+        }
+
+        // year
+        private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+
+        }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton jButton1;

@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ImageDropDemo",
+      "request": "launch",
+      "mainClass": "test.ImageDropDemo",
+      "projectName": "oop_project_7efcb524"
+    },
+    {
+      "type": "java",
       "name": "Main",
       "request": "launch",
       "mainClass": "main.Main",
