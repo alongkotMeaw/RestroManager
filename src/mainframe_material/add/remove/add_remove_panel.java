@@ -74,10 +74,6 @@ public class add_remove_panel extends javax.swing.JPanel {
                 // menu_opera_for_add.setLayout(new BoxLayout(menu_opera_for_add,
                 // BoxLayout.Y_AXIS));
 
-                setSize(new Dimension(1000, 620));
-                setPreferredSize(new Dimension(1000, 620));
-                setMinimumSize(new Dimension(1000, 620));
-                setMaximumSize(new Dimension(1000, 620));
                 menu_opera_for_add.setSize(100, 100);
                 menu_opera_for_add.setPreferredSize(new Dimension(100, 100));
                 menu_opera_for_add.setMinimumSize(new Dimension(100, 100));
