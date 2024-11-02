@@ -98,8 +98,8 @@ public class add_remove_panel extends javax.swing.JPanel {
                 jLabel5.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
                 jLabel5.setText("ราคา");
 
-                jButton1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16)); // NOI18N
-                jButton1.setBackground(new Color(165, 182, 141));
+                jButton1.setFont(new java.awt.Font("Sukhumvit Set", 0, 18)); // NOI18N
+                jButton1.setBackground(new Color(218, 131, 89));
                 jButton1.setForeground(Color.white);
                 jButton1.setText("เพิ่ม");
                 jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +233,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                                                 GroupLayout.DEFAULT_SIZE,
                                                                                 GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
-                                                                                25, Short.MAX_VALUE)
+                                                                                15, Short.MAX_VALUE)
                                                                 .addComponent(jButton1)
                                                                 .addGap(28, 28, 28))
                                                 .addGroup(add_menu_panelLayout
