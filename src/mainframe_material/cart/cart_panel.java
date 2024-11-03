@@ -244,7 +244,8 @@ public class cart_panel extends javax.swing.JPanel {
                                                 + p.getName() + ","
                                                 + p.getQuantity() + ","
                                                 + p.getPrice() + ","
-                                                + formattedTime;
+                                                + formattedTime + ","
+                                                + "0";
 
                                 try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
                                                 new FileOutputStream(filePath, true), StandardCharsets.UTF_8))) {
