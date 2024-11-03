@@ -85,9 +85,9 @@ public class cart_sub_panel extends javax.swing.JPanel {
 
         System.out.println("index = " + index_of_cart);
         int lineToEdit = index_of_cart;
-        // src/restaurant_log/cart_log/cart_menu.txt
-        String inputFilePath = "src/restaurant_log/cart_log/cart_menu.txt",
-                outputFilePath = "src/restaurant_log/menu_list/temp_cart.txt";
+        // resource/restaurant_log/cart_log/cart_menu.txt
+        String inputFilePath = "resource/restaurant_log/cart_log/cart_menu.txt",
+                outputFilePath = "resource/restaurant_log/menu_list/temp_cart.txt";
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
                 BufferedWriter writer = new BufferedWriter(
@@ -108,8 +108,8 @@ public class cart_sub_panel extends javax.swing.JPanel {
             e.printStackTrace();
         }
 
-        String inputFilePath2 = "src/restaurant_log/menu_list/temp_cart.txt",
-                outputFilePath2 = "src/restaurant_log/cart_log/cart_menu.txt";
+        String inputFilePath2 = "resource/restaurant_log/menu_list/temp_cart.txt",
+                outputFilePath2 = "resource/restaurant_log/cart_log/cart_menu.txt";
         try (BufferedReader reader2 = new BufferedReader(
                 new InputStreamReader(new FileInputStream(inputFilePath2),
                         StandardCharsets.UTF_8));

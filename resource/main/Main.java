@@ -87,7 +87,7 @@ public class Main extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Order Receiver 1.0");
         try {
-            ImageIcon iconImage = new ImageIcon("src\\ImageFolder\\stack-overflow.png");
+            ImageIcon iconImage = new ImageIcon("resource\\ImageFolder\\stack-overflow.png");
             Image icon = iconImage.getImage();
             setIconImage(icon);
         } catch (Exception e) {

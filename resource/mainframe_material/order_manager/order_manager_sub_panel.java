@@ -150,7 +150,7 @@ public class order_manager_sub_panel extends javax.swing.JPanel {
     // End of variables declaration
 
     private void done_buttonActionPerformed(java.awt.event.ActionEvent evt) {
-        String inputFilePath = "src/restaurant_log/user_order.txt";
+        String inputFilePath = "resource/restaurant_log/user_order.txt";
         String outputFilePath;
         int index = 0, index_temp = 0;
         try (BufferedReader reader = new BufferedReader(
@@ -169,8 +169,8 @@ public class order_manager_sub_panel extends javax.swing.JPanel {
             e.printStackTrace();
         }
 
-        inputFilePath = "src/restaurant_log/user_order.txt";
-        outputFilePath = "src/restaurant_log/cart_log/user_order_temp.txt";
+        inputFilePath = "resource/restaurant_log/user_order.txt";
+        outputFilePath = "resource/restaurant_log/cart_log/user_order_temp.txt";
 
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
@@ -195,8 +195,8 @@ public class order_manager_sub_panel extends javax.swing.JPanel {
             e.printStackTrace();
         }
         // rewrite to source
-        inputFilePath = "src/restaurant_log/cart_log/user_order_temp.txt";
-        outputFilePath = "src/restaurant_log/user_order.txt";
+        inputFilePath = "resource/restaurant_log/cart_log/user_order_temp.txt";
+        outputFilePath = "resource/restaurant_log/user_order.txt";
 
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
@@ -219,8 +219,8 @@ public class order_manager_sub_panel extends javax.swing.JPanel {
 
     private void removeActionPerformed(java.awt.event.ActionEvent evt) {
         System.out.println("removing");
-        String inputFilePath = "src/restaurant_log/user_order.txt",
-                outputFilePath = "src/restaurant_log/cart_log/user_order_temp.txt";
+        String inputFilePath = "resource/restaurant_log/user_order.txt",
+                outputFilePath = "resource/restaurant_log/cart_log/user_order_temp.txt";
 
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
@@ -246,8 +246,8 @@ public class order_manager_sub_panel extends javax.swing.JPanel {
             e.printStackTrace();
         }
         // rewrite to source
-        inputFilePath = "src/restaurant_log/cart_log/user_order_temp.txt";
-        outputFilePath = "src/restaurant_log/user_order.txt";
+        inputFilePath = "resource/restaurant_log/cart_log/user_order_temp.txt";
+        outputFilePath = "resource/restaurant_log/user_order.txt";
 
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));

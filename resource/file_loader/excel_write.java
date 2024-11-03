@@ -21,11 +21,11 @@ public class excel_write {
         Map<String, Object[]> Data = new TreeMap<String, Object[]>();
 
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream("src/restaurant_log/user_order.txt"),
+                new InputStreamReader(new FileInputStream("resource/restaurant_log/user_order.txt"),
                         StandardCharsets.UTF_8))) {
             String line;
             int line_index = 1;
-            
+
             Data.put("0", new Object[] { "จำนวน", "ประเภท", "ชื่อเมนู", "ราคารวม", "วันที่" });
             while ((line = reader.readLine()) != null) {
                 String temp[] = line.split(",");
@@ -73,7 +73,7 @@ public class excel_write {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy.HH-mm");
             final String currentDate = currentTime.format(formatter);
             FileOutputStream out = new FileOutputStream(
-                    new File("src/../summary"+currentDate+".xlsx"));
+                    new File("src/../summary" + currentDate + ".xlsx"));
 
             workbook.write(out);
             out.close();
@@ -88,7 +88,7 @@ public class excel_write {
         Map<String, Object[]> Data = new TreeMap<String, Object[]>();
 
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream("src/restaurant_log/user_order.txt"),
+                new InputStreamReader(new FileInputStream("resource/restaurant_log/user_order.txt"),
                         StandardCharsets.UTF_8))) {
             String line;
             int line_index = 1;
@@ -144,7 +144,7 @@ public class excel_write {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy.HH-mm");
             final String currentDate = currentTime.format(formatter);
             FileOutputStream out = new FileOutputStream(
-                    new File("src/../summary"+currentDate+".xlsx"));
+                    new File("resource/../summary" + currentDate + ".xlsx"));
 
             workbook.write(out);
             out.close();

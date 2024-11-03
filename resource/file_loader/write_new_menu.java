@@ -8,15 +8,15 @@ public class write_new_menu {
         String file_path = null;
 
         if (type.equals("Desert")) {
-            file_path = "src\\restaurant_log\\menu_list\\desert_menu.txt";
+            file_path = "resource\\restaurant_log\\menu_list\\desert_menu.txt";
         } else if (type.equals("Snack")) {
-            file_path = "src\\restaurant_log\\menu_list\\snack_menu.txt";
+            file_path = "resource\\restaurant_log\\menu_list\\snack_menu.txt";
         } else if (type.equals("Maincourse")) {
-            file_path = "src\\restaurant_log\\menu_list\\maincourse_menu.txt";
+            file_path = "resource\\restaurant_log\\menu_list\\maincourse_menu.txt";
         } else if (type.equals("Onedish")) {
-            file_path = "src\\restaurant_log\\menu_list\\one_dish_menu.txt";
+            file_path = "resource\\restaurant_log\\menu_list\\one_dish_menu.txt";
         } else if (type.equals("Drinks")) {
-            file_path = "src\\restaurant_log\\menu_list\\drinks.txt";
+            file_path = "resource\\restaurant_log\\menu_list\\drinks.txt";
         } else {
             System.out.println("Invalid menu type: " + type);
             return false;

@@ -212,7 +212,7 @@ public class Menu_panel_box extends javax.swing.JPanel {
 
             // read file for check
             int line_edit = 0;
-            String filePath = "src\\restaurant_log\\cart_log\\cart_menu.txt";
+            String filePath = "resource\\restaurant_log\\cart_log\\cart_menu.txt";
             Boolean check_menu = true;
             try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), "UTF-8"),
                     8192)) {
@@ -239,7 +239,7 @@ public class Menu_panel_box extends javax.swing.JPanel {
             if (check_menu) {
                 try (BufferedWriter writer = new BufferedWriter(
                         new OutputStreamWriter(
-                                new FileOutputStream("src\\restaurant_log\\cart_log\\cart_menu.txt", true),
+                                new FileOutputStream("resource\\restaurant_log\\cart_log\\cart_menu.txt", true),
                                 StandardCharsets.UTF_8))) {
                     System.out.println("user order" + menu_type + ',' + menu_name + ',' + menu_price + ',' + puatity);
                     writer.write(menu_type + ',' + menu_name + ',' + menu_price + ',' + puatity + "\n");
@@ -249,8 +249,8 @@ public class Menu_panel_box extends javax.swing.JPanel {
                 }
             } else {
 
-                String inputFilePath = "src\\restaurant_log\\cart_log\\cart_menu.txt",
-                        outputFilePath = "src\\restaurant_log\\cart_log\\cart_temp.txt";
+                String inputFilePath = "resource\\restaurant_log\\cart_log\\cart_menu.txt",
+                        outputFilePath = "resource\\restaurant_log\\cart_log\\cart_temp.txt";
                 try (BufferedReader reader = new BufferedReader(
                         new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
                         BufferedWriter writer = new BufferedWriter(
@@ -275,8 +275,8 @@ public class Menu_panel_box extends javax.swing.JPanel {
                     e.printStackTrace();
                 }
 
-                inputFilePath = "src\\restaurant_log\\cart_log\\cart_temp.txt";
-                outputFilePath = "src\\restaurant_log\\cart_log\\cart_menu.txt";
+                inputFilePath = "resource\\restaurant_log\\cart_log\\cart_temp.txt";
+                outputFilePath = "resource\\restaurant_log\\cart_log\\cart_menu.txt";
                 try (BufferedReader reader = new BufferedReader(
                         new InputStreamReader(new FileInputStream(inputFilePath), StandardCharsets.UTF_8));
                         BufferedWriter writer = new BufferedWriter(

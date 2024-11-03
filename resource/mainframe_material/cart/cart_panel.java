@@ -201,7 +201,7 @@ public class cart_panel extends javax.swing.JPanel {
 
                 jPanel3.setLayout(new BoxLayout(jPanel3, BoxLayout.Y_AXIS));
 
-                add_Reader_adapter.menu_reader_for_panel_add("src//restaurant_log//cart_log//cart_menu.txt",
+                add_Reader_adapter.menu_reader_for_panel_add("resource//restaurant_log//cart_log//cart_menu.txt",
                                 link_Sub_panels);
                 // add panel
                 for (cart_sub_panel p : link_Sub_panels) {
@@ -231,7 +231,7 @@ public class cart_panel extends javax.swing.JPanel {
                 } else {
 
                         System.out.println("test");
-                        String filePath = "src\\restaurant_log\\user_order.txt";
+                        String filePath = "resource\\restaurant_log\\user_order.txt";
                         LocalDateTime currentTime = LocalDateTime.now();
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy,HH:mm:ss");
 
@@ -259,7 +259,8 @@ public class cart_panel extends javax.swing.JPanel {
                         }
                         // delete data
                         try (OutputStreamWriter writer = new OutputStreamWriter(
-                                        new FileOutputStream("src\\restaurant_log\\cart_log\\cart_menu.txt", false),
+                                        new FileOutputStream("resource\\restaurant_log\\cart_log\\cart_menu.txt",
+                                                        false),
                                         StandardCharsets.UTF_8)) {
 
                                 System.out.println("dataclear " + filePath);

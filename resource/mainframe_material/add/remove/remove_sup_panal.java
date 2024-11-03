@@ -99,17 +99,17 @@ public class remove_sup_panal extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         // main.action_button_of_suppanel(menu_type, menu_index);
         String inputFilePath = "";
-        String outputFilePath = "src\\restaurant_log\\menu_list\\temp.txt";
+        String outputFilePath = "resource\\restaurant_log\\menu_list\\temp.txt";
         if (menu_type == "Desert") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\desert_menu.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\desert_menu.txt";
         } else if (menu_type == "Snack") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\snack_menu.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\snack_menu.txt";
         } else if (menu_type == "Maincourse") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\maincourse_menu.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\maincourse_menu.txt";
         } else if (menu_type == "Onedish") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\one_dish_menu.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\one_dish_menu.txt";
         } else if (menu_type == "Drinks") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\drinks.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\drinks.txt";
         } else {
             System.out.println("Invalid menu type: " + menu_type);
 
@@ -167,17 +167,17 @@ public class remove_sup_panal extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         String inputFilePath = "";
-        String outputFilePath = "src\\restaurant_log\\menu_list\\temp.txt";
+        String outputFilePath = "resource\\restaurant_log\\menu_list\\temp.txt";
         if (menu_type == "Desert") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\desert_menu.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\desert_menu.txt";
         } else if (menu_type == "Snack") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\snack_menu.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\snack_menu.txt";
         } else if (menu_type == "Maincourse") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\maincourse_menu.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\maincourse_menu.txt";
         } else if (menu_type == "Onedish") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\one_dish_menu.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\one_dish_menu.txt";
         } else if (menu_type == "Drinks") {
-            inputFilePath = "src\\restaurant_log\\menu_list\\drinks.txt";
+            inputFilePath = "resource\\restaurant_log\\menu_list\\drinks.txt";
         } else {
             System.out.println("Invalid menu type: " + menu_type);
 

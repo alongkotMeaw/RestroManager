@@ -80,7 +80,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                 menu_opera_for_add.setMaximumSize(new Dimension(100, 100));
                 add_menu_panel.setBackground(new java.awt.Color(255, 255, 255));
                 // set defal photo of photo panel
-                photo_Panel.setBackgroundImage("src\\ImageFolder\\bgOfaddremove.png");
+                photo_Panel.setBackgroundImage("resource\\ImageFolder\\bgOfaddremove.png");
                 // set front
                 jTextField1.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
                 jTextField2.setFont(new java.awt.Font("Sukhumvit Set", 0, 16));
@@ -353,15 +353,15 @@ public class add_remove_panel extends javax.swing.JPanel {
                 one_dish = new LinkedList<>();
                 main_course = new LinkedList<>();
 
-                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack,
+                readder_adapter.reader("resource/restaurant_log/menu_list/snack_menu.txt", snack,
                                 this, "Snack");
-                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks,
+                readder_adapter.reader("resource/restaurant_log/menu_list/drinks.txt", drinks,
                                 this, "Drinks");
-                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt",
+                readder_adapter.reader("resource/restaurant_log/menu_list/desert_menu.txt",
                                 desert, this, "Desert");
-                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt",
+                readder_adapter.reader("resource/restaurant_log/menu_list/one_dish_menu.txt",
                                 one_dish, this, "Onedish");
-                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt",
+                readder_adapter.reader("resource/restaurant_log/menu_list/maincourse_menu.txt",
                                 main_course, this, "Maincourse");
 
                 // Add items to the main panel
@@ -410,7 +410,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                         System.out.println("mewnu format add eror");
                 } else {
                         Path sourcePath = Paths.get(photo_Panel.get_old_photo_path());
-                        Path destinationPath = Paths.get(System.getProperty("user.dir"), "src", "ImageFolder",
+                        Path destinationPath = Paths.get(System.getProperty("user.dir"), "resource", "ImageFolder",
                                         photo_Panel.get_new_photo_path());
 
                         System.out.println("sourcePath = " + sourcePath + "\ndestinationPath" + destinationPath);
@@ -437,7 +437,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                 jTextField2.setText("");
                 jTextField3.setText("");
                 try {
-                        photo_Panel.setBackgroundImage("src\\ImageFolder\\bgOfaddremove.png");
+                        photo_Panel.setBackgroundImage("resource\\ImageFolder\\bgOfaddremove.png");
 
                 } catch (Exception e) {
                         System.out.println("image defal not found");
@@ -483,7 +483,7 @@ public class add_remove_panel extends javax.swing.JPanel {
                                                         // file_path
 
                                                         // String destinationFolderPath =
-                                                        // "C:/Users/meama/source/repos/oop_project/src/ImageFolder";
+                                                        // "C:/Users/meama/source/repos/oop_project/resource/ImageFolder";
                                                         // String destinationFolderPath = "ImageFolder";
 
                                                         int lastIndex = file_path.lastIndexOf('\\');
@@ -605,11 +605,11 @@ public class add_remove_panel extends javax.swing.JPanel {
                 one_dish = new LinkedList<>();
                 main_course = new LinkedList<>();
 
-                readder_adapter.reader("src/restaurant_log/menu_list/snack_menu.txt", snack, p, "Snack");
-                readder_adapter.reader("src/restaurant_log/menu_list/drinks.txt", drinks, p, "Drinks");
-                readder_adapter.reader("src/restaurant_log/menu_list/desert_menu.txt", desert, p, "Desert");
-                readder_adapter.reader("src/restaurant_log/menu_list/one_dish_menu.txt", one_dish, p, "Onedish");
-                readder_adapter.reader("src/restaurant_log/menu_list/maincourse_menu.txt", main_course, p,
+                readder_adapter.reader("resource/restaurant_log/menu_list/snack_menu.txt", snack, p, "Snack");
+                readder_adapter.reader("resource/restaurant_log/menu_list/drinks.txt", drinks, p, "Drinks");
+                readder_adapter.reader("resource/restaurant_log/menu_list/desert_menu.txt", desert, p, "Desert");
+                readder_adapter.reader("resource/restaurant_log/menu_list/one_dish_menu.txt", one_dish, p, "Onedish");
+                readder_adapter.reader("resource/restaurant_log/menu_list/maincourse_menu.txt", main_course, p,
                                 "Maincourse");
 
                 // Add items to the main panel

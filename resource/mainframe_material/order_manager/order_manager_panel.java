@@ -137,7 +137,7 @@ public class order_manager_panel extends javax.swing.JPanel {
         private static javax.swing.JPanel panel_for_add;
 
         public static void read_file() {
-                String file_path = "src/restaurant_log/user_order.txt";
+                String file_path = "resource/restaurant_log/user_order.txt";
                 try (BufferedReader br = new BufferedReader(
                                 new InputStreamReader(new FileInputStream(file_path), "UTF-8"),
                                 8192)) {
