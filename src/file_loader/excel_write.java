@@ -24,8 +24,9 @@ public class excel_write {
                 new InputStreamReader(new FileInputStream("src/restaurant_log/user_order.txt"),
                         StandardCharsets.UTF_8))) {
             String line;
-            int line_index = 0;
-
+            int line_index = 1;
+            
+            Data.put("0", new Object[] { "จำนวน", "ประเภท", "ชื่อเมนู", "ราคารวม", "วันที่" });
             while ((line = reader.readLine()) != null) {
                 String temp[] = line.split(",");
                 if (temp[5].equals(now_day)) {
@@ -44,7 +45,7 @@ public class excel_write {
             XSSFWorkbook workbook = new XSSFWorkbook();
 
             // spreadsheet object
-            XSSFSheet spreadsheet = workbook.createSheet(" 1-Day summary ");
+            XSSFSheet spreadsheet = workbook.createSheet(" Sales Summary ");
 
             // creating a row object
             XSSFRow row;
@@ -68,8 +69,11 @@ public class excel_write {
 
             // .xlsx is the format for Excel Sheets...
             // writing the workbook into the file...
+            LocalDateTime currentTime = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy.HH-mm");
+            final String currentDate = currentTime.format(formatter);
             FileOutputStream out = new FileOutputStream(
-                    new File("src/../test.xlsx"));
+                    new File("src/../summary"+currentDate+".xlsx"));
 
             workbook.write(out);
             out.close();
@@ -87,9 +91,10 @@ public class excel_write {
                 new InputStreamReader(new FileInputStream("src/restaurant_log/user_order.txt"),
                         StandardCharsets.UTF_8))) {
             String line;
-            int line_index = 0;
+            int line_index = 1;
             // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
+            Data.put("0", new Object[] { "จำนวน", "ประเภท", "ชื่อเมนู", "ราคารวม", "วันที่" });
             while ((line = reader.readLine()) != null) {
                 String temp[] = line.split(",");
                 System.out.println(temp[5]);
@@ -111,7 +116,7 @@ public class excel_write {
             XSSFWorkbook workbook = new XSSFWorkbook();
 
             // spreadsheet object
-            XSSFSheet spreadsheet = workbook.createSheet(" 1-Day summary ");
+            XSSFSheet spreadsheet = workbook.createSheet(" Sales Summary ");
 
             // creating a row object
             XSSFRow row;
@@ -135,8 +140,11 @@ public class excel_write {
 
             // .xlsx is the format for Excel Sheets...
             // writing the workbook into the file...
+            LocalDateTime currentTime = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy.HH-mm");
+            final String currentDate = currentTime.format(formatter);
             FileOutputStream out = new FileOutputStream(
-                    new File("src/../test.xlsx"));
+                    new File("src/../summary"+currentDate+".xlsx"));
 
             workbook.write(out);
             out.close();

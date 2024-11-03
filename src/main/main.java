@@ -17,6 +17,7 @@ import mainframe_material.menu.*;
 import mainframe_material.cart.*;
 import mainframe_material.add.remove.add_remove_panel;
 import mainframe_material.sumary.sumary_panel;
+import mainframe_material.order_manager.*;
 
 /**
  *
@@ -62,6 +63,7 @@ public class Main extends javax.swing.JFrame {
         main_cart_panel = new javax.swing.JPanel();
         main_addremove_panel = new javax.swing.JPanel();
         main_Summary_panel = new javax.swing.JPanel();
+        main_ordermanager_panel = new javax.swing.JPanel();
 
         jScrollPane6.setHorizontalScrollBar(null);
 
@@ -83,7 +85,7 @@ public class Main extends javax.swing.JFrame {
         setSize(1000, 700);
         setPreferredSize(new Dimension(1000, 700));
         setResizable(false);
-        setTitle("Order Receiver 0.3");
+        setTitle("Order Receiver 1.0");
         try {
             ImageIcon iconImage = new ImageIcon("src\\ImageFolder\\stack-overflow.png");
             Image icon = iconImage.getImage();
@@ -93,18 +95,21 @@ public class Main extends javax.swing.JFrame {
         }
         main_panel.addTab("เมนู", main_menu_panel);
         main_panel.addTab("รถเข็น", main_cart_panel);
+        main_panel.addTab("จัดการออเดอร์", main_ordermanager_panel);
         main_panel.addTab("เพิ่ม/ลบ", main_addremove_panel);
         main_panel.addTab("สรุปยอด", main_Summary_panel);
         setVisible(true);
-        ExecutorService executor = Executors.newFixedThreadPool(4);
+        ExecutorService executor = Executors.newFixedThreadPool(5);
         Runnable menu = () -> main_menu_panel.add(new menu());
         Runnable cart = () -> main_cart_panel.add(new cart_panel());
         Runnable addremove = () -> main_addremove_panel.add(new add_remove_panel());
         Runnable summary = () -> main_Summary_panel.add(new sumary_panel());
+        Runnable ordermanager = () -> main_ordermanager_panel.add(new order_manager_panel());
         executor.submit(menu);
         executor.submit(cart);
         executor.submit(addremove);
         executor.submit(summary);
+        executor.submit(ordermanager);
 
         executor.shutdownNow();
         main_panel.addChangeListener(new ChangeListener() {
@@ -117,9 +122,12 @@ public class Main extends javax.swing.JFrame {
                 } else if (((JTabbedPane) e.getSource()).getSelectedIndex() == 1) {
                     main_cart_panel.removeAll();
                     main_cart_panel.add(new cart_panel());
-                } else if (((JTabbedPane) e.getSource()).getSelectedIndex() == 2) {
+                } else if (((JTabbedPane) e.getSource()).getSelectedIndex() == 3) {
                     main_addremove_panel.removeAll();
                     main_addremove_panel.add(new add_remove_panel());
+                } else if (((JTabbedPane) e.getSource()).getSelectedIndex() == 2) {
+                    main_ordermanager_panel.removeAll();
+                    main_ordermanager_panel.add(new order_manager_panel());
                 }
             }
         });
@@ -191,6 +199,7 @@ public class Main extends javax.swing.JFrame {
     private static javax.swing.JPanel main_cart_panel;
     private javax.swing.JPanel main_menu_panel;
     private javax.swing.JTabbedPane main_panel;
+    private javax.swing.JPanel main_ordermanager_panel;
     // End of variables declaration//GEN-END:variables
 
     public static void cart_reload() {
