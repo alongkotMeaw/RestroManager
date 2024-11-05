@@ -1,4 +1,4 @@
-🍽️ Welcome to the Restaurant Management Program! 🍽️
+🍽️ Welcome to the Restaurant order Management Program! 🍽️
 
 Folder Structure 📂
 ---------------------------------
@@ -11,4 +11,4 @@ Starting the Program 🏁
 To launch the program, navigate to:
   resource/main/Main
 ---------------------------------
-Project: Restaurant Management
+Project: Restaurant order Management
